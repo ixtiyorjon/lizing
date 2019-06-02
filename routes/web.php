@@ -15,7 +15,7 @@ Route::get('/', 'Controller@index');
 
 Route::get('/news', 'NewsController@index');
 
-Route::get('/news/more', 'NewsController@new');
+Route::get('/news/more/{slug}', 'NewsController@new');
 
 Route::get('/quest_answer', 'QuestAnswerController@index');
 

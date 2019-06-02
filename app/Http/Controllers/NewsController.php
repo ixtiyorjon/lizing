@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\News;
 
 class NewsController extends Controller
 {
@@ -13,10 +14,16 @@ class NewsController extends Controller
      */
     public function index()
     {
-        return view('news.news');
+        $model = News::orderBy('id','DESC')->get();
+        return view('news.news',[
+            'model' => $model
+        ]);
     }
-    public function new(){
-        return view('news.new');
+    public function new($slug){
+        $model = News::where('slug',$slug)->first();
+        return view('news.new',[
+            'model' => $model
+        ]);
     }
 
     /**

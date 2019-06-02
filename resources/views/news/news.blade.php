@@ -2,7 +2,7 @@
 
 @section('content')
   <!-- ##### Breadcrumb Area Start ##### -->
-  <div class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url('img/bg-img/18.jpg');">
+  <div class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url('/img/bg-img/18.jpg');">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12">
@@ -34,48 +34,18 @@
           <div class="posts-area">
 
             <!-- Single Blog Post Area -->
+            @foreach($model as $value)
             <div class="single-blog-post-area mb-50 wow fadeInUp" data-wow-delay="100ms">
-              <h6><i class="calendar"></i> 1 май 2019</h6>
-              <a href="/news/more" class="post-title">ЯНГИ РЕЖАЛАР БЕЛГИЛАБ ОЛИНДИ</a>
+              <h6><i class="calendar"></i>{{ $value->created_at->format('Y-m-d') }}</h6>
+              <a href="/news/more/{{ $value->slug }}" class="post-title">{{ $value->getTranslatedAttribute('title',App::getLocale()) }}</a>
               <img src="img/bg-img/26.jpg" alt="" class="post-thumb">
               <p class="post-excerpt">
-                Жорий йилнинг 13 февраль куни “Ўзагролизинг” акциядорлик жамиятида 2018 йил якунларига бағишланган коллегия йиғилиши бўлиб ўтди..
+                {{ str_limit($value->getTranslatedAttribute('title',App::getLocale()),100) }}
               </p>
             </div>
-
+            @endforeach
             <!-- Single Blog Post Area -->
-            <div class="single-blog-post-area mb-50 wow fadeInUp" data-wow-delay="300ms">
-              <h6><i class="calendar"></i> 1 май 2019</h6>
-              <a href="/news/more" class="post-title">“Ўзагролизинг” - лизинг хизматлари кўлами кенгаймоқда</a>
-              <img src="img/bg-img/27.jpg" alt="" class="post-thumb">
-              <p class="post-excerpt">
-                 Юртимизда кейинги икки йилда барча соҳалар қатори қишлоқ хўжалиги бўйича ҳам муҳим дастурлар, йўл харита”лари ишлаб чиқилиб, изчил амалга оширилмоқда..
-              </p>
-            </div>
-
-            <!-- Single Blog Post Area -->
-            <div class="single-blog-post-area mb-50 wow fadeInUp" data-wow-delay="500ms">
-              <h6><i class="calendar"></i> 1 май 2019</h6>
-              <a href="/news/more" class="post-title">“O‘zagrolizing” акциядорлик жамияти акциядорлари диққатига!</a>
-              <img src="img/bg-img/28.jpg" alt="" class="post-thumb">
-              <p class="post-excerpt">
-                “O‘zagrolizing” акциядорлик жамияти (100011, Тошкент шаҳар, Абай кўчаси, 4А-уй, info@agroleasing.uz) 2018 йил 23 ноябрь куни соат 10:00 дажамият акциядорларининг 
-                навбатдан ташқари умумий йиғилиши ўтказилишини маълум қилади.
-              </p>
-            </div>
-
-            <!-- Single Blog Post Area -->
-            <div class="single-blog-post-area mb-50 wow fadeInUp" data-wow-delay="300ms">
-              <h6><i class="calendar"></i> 1 май 2019</h6>
-              <a href="/news/more" class="post-title">“Ўзагролизинг” - лизинг хизматлари кўлами кенгаймоқда</a>
-              <img src="img/bg-img/27.jpg" alt="" class="post-thumb">
-              <p class="post-excerpt">
-                 Юртимизда кейинги икки йилда барча соҳалар қатори қишлоқ хўжалиги бўйича ҳам муҳим дастурлар, йўл харита”лари ишлаб чиқилиб, изчил амалга оширилмоқда..
-              </p>
-            </div>
-
           </div>
-
           <!-- pagination -->
           <nav>
             <ul class="pagination wow fadeInUp" data-wow-delay="900ms">
