@@ -14,7 +14,11 @@ class AboutController extends Controller
      */
     public function index()
     {
-        //
+        $model = About::first();
+
+        return view('about.index',[
+            'model' => $model
+        ]);
     }
 
     /**

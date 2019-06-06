@@ -86,8 +86,9 @@
               <!-- Navbar Start -->
               <div class="classynav">
                 <ul>
-                  <li class="active"><a href="index.html">АСОСИЙ</a></li>
-                  <li><a href="about.html">АКЦИЯДОРЛАР</a></li>
+                  <li class="active"><a href="/">АСОСИЙ</a></li>
+                  <li><a href="/about">О Нас </a></li>
+                  {{-- <li><a href="#">АКЦИЯДОРЛАР</a></li> --}}
                   <li><a href="#">ИНТЕРАКТИВ ХИЗМАТЛАР</a>
                     <ul class="dropdown">
                       <li><a href="/quest_answer">Вопросы</a></li>
@@ -104,9 +105,9 @@
                       <li><a href="/table">таблица</a></li>
                     </ul>
                   </li>
-                  <li><a href="our-product.html">МИЖОЗЛАР</a></li>
+                  {{-- <li><a href="our-product.html">МИЖОЗЛАР</a></li> --}}
                   <li><a href="/news">ЯНГИЛИКЛАР</a></li>
-                  <li><a href="farming-practice.html">КОНТАКТЛАР</a></li>
+                  {{-- <li><a href="farming-practice.html">КОНТАКТЛАР</a></li> --}}
                 </ul>
                 <!-- Search Icon -->
                 <div id="searchIcon">

@@ -201,7 +201,7 @@
               <!-- <img src="img/core-img/decor.png" alt=""> -->
             </div>
             <p>{!! str_limit($about->getTranslatedAttribute('body',App::getLocale()),150) !!}</p>
-            <a href="#" class="btn famie-btn mt-30">Read More</a>
+            <a href="/about" class="btn famie-btn mt-30">Read More</a>
           </div>
         </div>
 
@@ -304,7 +304,7 @@
                 <div class="single-farming-practice-area mb-50 wow fadeInUp" data-wow-delay="100ms">
                   <div class="media_rec">
                       <a target="_blank" title="{!! $value->getTranslatedAttribute('title',App::getLocale()) !!}" href="{{ $value->url }}">
-                        <img src="{{ $value->image }}" class="newProjectIcon projectIcon0" alt=""><br>
+                        <img src="{{ Voyager::image($value->image) }}" class="newProjectIcon projectIcon0" alt=""><br>
                         <span class="newProjectName projectName0">{!! $value->getTranslatedAttribute('title',App::getLocale()) !!}</span>
                       </a>
                   </div>

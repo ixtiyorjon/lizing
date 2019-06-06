@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Июн 02 2019 г., 14:42
+-- Время создания: Июн 03 2019 г., 07:57
 -- Версия сервера: 10.1.38-MariaDB
 -- Версия PHP: 7.2.17
 
@@ -42,7 +42,7 @@ CREATE TABLE `abouts` (
 --
 
 INSERT INTO `abouts` (`id`, `title`, `body`, `video`, `created_at`, `updated_at`) VALUES
-(1, '“O‘zagrolizing” акциядорлик жамияти акциядорлари диққатига! EN', 'Жорий йилнинг 13 февраль куни  Ўзагролизинг  акциядорлик жамиятида 2018 йил якунларига бағишланган коллегия йиғилиши бўлиб ўтди Жорий йилнинг 13 февраль куни Ўзагролизинг  акциядорлик жамиятида 2018 йил якунларига бағишланган коллегия йиғилиши бўлиб ўтди  interdum mollis.', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/MIyTMkLz_Ao\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', '2019-05-31 23:44:00', '2019-06-01 01:50:35');
+(1, '\"O\'zagrolizing\" is an act of love to the attention of the actors!', '<p>Tashkent, Uzbekistan (UzDaily.com) - On March 20, 2019, a memorandum of cooperation (Memorandum) was signed between Buyuk Kelajak and Uzagrolizing JSC in the project office of Buyuk Kelajak. In order to unite efforts and systematize relations between the Parties, for further intensive development of the leasing sector of the Republic of Uzbekistan, based on the &ldquo;Action Strategy for the Five Priority Development Areas of the Republic of Uzbekistan in 2017&ndash;2021&rdquo;, Acting Executive Director of the INNC &ldquo;Buyuk Kelajak&rdquo; Zukhra Azimova and Chairman the board of the joint-stock company Uzagrolizing Holmuradov Akmal Arslanovich signed a memorandum.</p>\n<p><img style=\"display: block; margin-left: auto; margin-right: auto;\" src=\"http://127.0.0.1:8000/storage/abouts/June2019/n2.jpg\" alt=\"\" /></p>\n<p>The parties agreed on cooperation based on the use of advanced foreign experience in the following areas: - studying the needs of lessees in modern agricultural and other equipment, equipment and mini-technologies implemented on a leasing basis; - diversification and expansion of leasing activities, ensuring the priority of activities in the agricultural sector; - the introduction of modern, international standards of types of leasing services and innovative financial products; - diversification of sources of financing for leasing projects of enterprises of the agro-industrial complex, the real sector of the economy and entrepreneurship, including the development of relations with international financial institutions, the issuance of various securities, assistance in privatization, etc .; - introduction of modern methods of corporate management and staff development in the field of leasing services; - development of a development strategy and a roadmap of the Company. It is envisaged that the parties can cooperate in organizing educational seminars, attracting leading experts to conduct negotiations, make decisions on projects, etc. Also, within the framework of the partnership, it is planned to organize an expert group with representatives of both sides (including young, promising specialists of Uzagrolizing JSC), in order to increase the efficiency of teamwork. The parties expect that this Memorandum will become an important mechanism for the development and promotion of the agricultural sector, other real sectors of the economy, as well as entrepreneurship in the country. Within the framework of this Memorandum, the Parties have agreed on mutually beneficial cooperation, mutual understanding, respect and trust. Consulting services Buyuk Kelajak is provided by Uzagroleasing JSC at no cost.</p>', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/MIyTMkLz_Ao\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', '2019-05-31 23:44:00', '2019-06-02 23:37:42');
 
 -- --------------------------------------------------------
 
@@ -95,6 +95,13 @@ CREATE TABLE `category_lizings` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп данных таблицы `category_lizings`
+--
+
+INSERT INTO `category_lizings` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'Galaxy S7', '2019-06-03 00:00:42', '2019-06-03 00:00:42');
 
 -- --------------------------------------------------------
 
@@ -206,7 +213,7 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (55, 6, 'image', 'image', 'Page Image', 0, 1, 1, 1, 1, 1, NULL, 12),
 (56, 7, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
 (57, 7, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '{}', 2),
-(58, 7, 'body', 'text_area', 'Body', 1, 1, 1, 1, 1, 1, '{}', 3),
+(58, 7, 'body', 'rich_text_box', 'Body', 1, 1, 1, 1, 1, 1, '{}', 3),
 (59, 7, 'video', 'text_area', 'Video', 1, 1, 1, 1, 1, 1, '{}', 4),
 (60, 7, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 5),
 (61, 7, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 6),
@@ -244,7 +251,18 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (93, 13, 'created_at', 'timestamp', 'Created At', 0, 0, 1, 1, 0, 1, '{}', 5),
 (94, 13, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 6),
 (95, 13, 'status', 'select_dropdown', 'Status', 0, 1, 1, 1, 1, 1, '{\"default\":\"INACTIVE\",\"options\":{\"ACTIVE\":\"ACTIVE\",\"INACTIVE\":\"INACTIVE\"}}', 7),
-(96, 13, 'slug', 'text', 'Slug', 1, 0, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"title\",\"forceUpdate\":true},\"validation\":{\"rule\":\"unique:posts,slug\"}}', 8);
+(96, 13, 'slug', 'text', 'Slug', 1, 0, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"title\",\"forceUpdate\":true},\"validation\":{\"rule\":\"unique:posts,slug\"}}', 8),
+(102, 15, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(103, 15, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '{}', 3),
+(104, 15, 'image', 'multiple_images', 'Image', 1, 1, 1, 1, 1, 1, '{}', 4),
+(105, 15, 'category_lizings_id', 'text', 'Category Lizings Id', 1, 1, 1, 1, 1, 1, '{\"relationship\":{\"key\":\"id\",\"label\":\"name\"}}', 2),
+(106, 15, 'created_at', 'timestamp', 'Created At', 0, 0, 1, 1, 0, 1, '{}', 5),
+(107, 15, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 6),
+(108, 17, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
+(109, 17, 'name', 'text', 'Name', 1, 1, 1, 1, 1, 1, '{}', 2),
+(110, 17, 'created_at', 'timestamp', 'Created At', 0, 0, 1, 1, 0, 1, '{}', 3),
+(111, 17, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 4),
+(112, 15, 'lizing_belongsto_lizing_relationship', 'relationship', 'lizings', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\CategoryLizing\",\"table\":\"category_lizings\",\"type\":\"belongsTo\",\"column\":\"category_lizings_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"abouts\",\"pivot\":\"0\",\"taggable\":\"0\"}', 7);
 
 -- --------------------------------------------------------
 
@@ -281,12 +299,14 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (4, 'categories', 'categories', 'Category', 'Categories', 'voyager-categories', 'TCG\\Voyager\\Models\\Category', NULL, '', '', 1, 0, NULL, '2019-05-31 07:10:47', '2019-05-31 07:10:47'),
 (5, 'posts', 'posts', 'Новости', 'Новости', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2019-05-31 07:10:47', '2019-06-01 06:29:33'),
 (6, 'pages', 'pages', 'Page', 'Pages', 'voyager-file-text', 'TCG\\Voyager\\Models\\Page', NULL, '', '', 1, 0, NULL, '2019-05-31 07:10:47', '2019-05-31 07:10:47'),
-(7, 'abouts', 'abouts', 'About', 'Abouts', NULL, 'App\\About', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-05-31 07:11:32', '2019-06-01 01:34:53'),
+(7, 'abouts', 'abouts', 'About', 'Abouts', NULL, 'App\\About', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-05-31 07:11:32', '2019-06-02 23:34:19'),
 (8, 'workers', 'workers', 'Worker', 'Workers', NULL, 'App\\Worker', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2019-05-31 08:27:55', '2019-05-31 08:27:55'),
 (9, 'sliders', 'sliders', 'Slider', 'Sliders', NULL, 'App\\Slider', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-05-31 08:28:12', '2019-06-01 01:17:36'),
 (10, 'information', 'information', 'Information', 'Information', NULL, 'App\\Information', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2019-05-31 08:28:43', '2019-05-31 08:28:43'),
 (11, 'links', 'links', 'Link', 'Links', NULL, 'App\\Link', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-06-01 02:02:43', '2019-06-01 02:17:39'),
-(13, 'news', 'news', 'News', 'News', NULL, 'App\\News', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-06-01 06:37:43', '2019-06-01 07:52:43');
+(13, 'news', 'news', 'News', 'News', NULL, 'App\\News', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-06-01 06:37:43', '2019-06-01 07:52:43'),
+(15, 'lizings', 'lizings', 'Lizing', 'Lizings', NULL, 'App\\Lizing', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2019-06-02 23:57:38', '2019-06-03 00:08:27'),
+(17, 'category_lizings', 'category-lizings', 'Category Lizing', 'Category Lizings', NULL, 'App\\CategoryLizing', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2019-06-02 23:59:28', '2019-06-02 23:59:28');
 
 -- --------------------------------------------------------
 
@@ -355,6 +375,14 @@ CREATE TABLE `lizings` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Дамп данных таблицы `lizings`
+--
+
+INSERT INTO `lizings` (`id`, `title`, `image`, `category_lizings_id`, `created_at`, `updated_at`) VALUES
+(1, '“O‘zagrolizing” акциядорлик жамияти акциядорлари диққатига! EN', '[\"lizings\\\\June2019\\\\yk4F9N8XT4KhQnFNohX5.jpg\"]', 1, '2019-06-03 00:09:07', '2019-06-03 00:09:07'),
+(2, '“O‘zagrolizing” акциядорлик жамияти акциядорлари диққатига! EN', '[\"lizings\\\\June2019\\\\1bRdAuH72utJnSqvi4Tl.jpg\",\"lizings\\\\June2019\\\\ZZw8OHPUR3SRBxnGCALX.jpg\",\"lizings\\\\June2019\\\\HUZlwDnU7dTf8rLqt9Sq.jpg\"]', 1, '2019-06-03 00:14:20', '2019-06-03 00:14:20');
+
 -- --------------------------------------------------------
 
 --
@@ -406,7 +434,7 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (2, 1, 'Media', '', '_self', 'voyager-images', NULL, 5, 4, '2019-05-31 07:10:46', '2019-06-01 06:44:02', 'voyager.media.index', NULL),
 (3, 1, 'Users', '', '_self', 'voyager-person', NULL, 5, 3, '2019-05-31 07:10:46', '2019-06-01 06:44:02', 'voyager.users.index', NULL),
 (4, 1, 'Roles', '', '_self', 'voyager-lock', NULL, 5, 7, '2019-05-31 07:10:46', '2019-06-01 06:44:02', 'voyager.roles.index', NULL),
-(5, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 9, '2019-05-31 07:10:46', '2019-06-01 06:44:02', NULL, NULL),
+(5, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 10, '2019-05-31 07:10:46', '2019-06-03 00:21:18', NULL, NULL),
 (6, 1, 'Menu Builder', '', '_self', 'voyager-list', NULL, 5, 6, '2019-05-31 07:10:46', '2019-06-01 06:44:02', 'voyager.menus.index', NULL),
 (7, 1, 'Database', '', '_self', 'voyager-data', NULL, 5, 8, '2019-05-31 07:10:46', '2019-06-01 06:44:02', 'voyager.database.index', NULL),
 (8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 9, '2019-05-31 07:10:46', '2019-06-01 06:44:02', 'voyager.compass.index', NULL),
@@ -419,9 +447,10 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (15, 1, 'О Нас', '/admin/abouts', '_self', 'voyager-people', NULL, NULL, 3, '2019-05-31 07:11:32', '2019-06-01 06:44:02', NULL, ''),
 (16, 1, 'Рабочие', '/admin/workers', '_self', 'voyager-hammer', NULL, NULL, 4, '2019-05-31 08:27:55', '2019-06-01 06:44:02', NULL, ''),
 (17, 1, 'Слайдеры', '/admin/sliders', '_self', 'voyager-photos', NULL, NULL, 5, '2019-05-31 08:28:12', '2019-06-01 06:44:02', NULL, ''),
-(18, 1, 'Информация', '/admin/information', '_self', 'voyager-book', NULL, NULL, 6, '2019-05-31 08:28:43', '2019-06-01 06:44:02', NULL, ''),
-(19, 1, 'Полезные ссылки', '/admin/links', '_self', 'voyager-forward', NULL, NULL, 7, '2019-06-01 02:02:43', '2019-06-01 06:44:02', NULL, ''),
-(20, 1, 'Новости', '/admin/news', '_self', 'voyager-documentation', NULL, NULL, 8, '2019-06-01 06:37:43', '2019-06-01 06:44:02', NULL, '');
+(19, 1, 'Полезные ссылки', '/admin/links', '_self', 'voyager-forward', NULL, NULL, 6, '2019-06-01 02:02:43', '2019-06-02 23:49:58', NULL, ''),
+(20, 1, 'Новости', '/admin/news', '_self', 'voyager-documentation', NULL, NULL, 7, '2019-06-01 06:37:43', '2019-06-02 23:49:58', NULL, ''),
+(22, 1, 'Техника', '/admin/lizings', '_self', 'voyager-play', NULL, NULL, 9, '2019-06-02 23:57:38', '2019-06-03 00:26:11', NULL, ''),
+(23, 1, 'Категория Техника', '/admin/category-lizings', '_self', 'voyager-double-right', NULL, NULL, 8, '2019-06-02 23:59:28', '2019-06-03 00:21:30', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -651,7 +680,17 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (68, 'read_news', 'news', '2019-06-01 06:37:43', '2019-06-01 06:37:43'),
 (69, 'edit_news', 'news', '2019-06-01 06:37:43', '2019-06-01 06:37:43'),
 (70, 'add_news', 'news', '2019-06-01 06:37:43', '2019-06-01 06:37:43'),
-(71, 'delete_news', 'news', '2019-06-01 06:37:43', '2019-06-01 06:37:43');
+(71, 'delete_news', 'news', '2019-06-01 06:37:43', '2019-06-01 06:37:43'),
+(77, 'browse_lizings', 'lizings', '2019-06-02 23:57:38', '2019-06-02 23:57:38'),
+(78, 'read_lizings', 'lizings', '2019-06-02 23:57:38', '2019-06-02 23:57:38'),
+(79, 'edit_lizings', 'lizings', '2019-06-02 23:57:38', '2019-06-02 23:57:38'),
+(80, 'add_lizings', 'lizings', '2019-06-02 23:57:38', '2019-06-02 23:57:38'),
+(81, 'delete_lizings', 'lizings', '2019-06-02 23:57:38', '2019-06-02 23:57:38'),
+(82, 'browse_category_lizings', 'category_lizings', '2019-06-02 23:59:28', '2019-06-02 23:59:28'),
+(83, 'read_category_lizings', 'category_lizings', '2019-06-02 23:59:28', '2019-06-02 23:59:28'),
+(84, 'edit_category_lizings', 'category_lizings', '2019-06-02 23:59:28', '2019-06-02 23:59:28'),
+(85, 'add_category_lizings', 'category_lizings', '2019-06-02 23:59:28', '2019-06-02 23:59:28'),
+(86, 'delete_category_lizings', 'category_lizings', '2019-06-02 23:59:28', '2019-06-02 23:59:28');
 
 -- --------------------------------------------------------
 
@@ -670,6 +709,7 @@ CREATE TABLE `permission_role` (
 
 INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (1, 1),
+(1, 2),
 (2, 1),
 (3, 1),
 (4, 1),
@@ -690,10 +730,15 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (19, 1),
 (20, 1),
 (21, 1),
+(21, 2),
 (22, 1),
+(22, 2),
 (23, 1),
+(23, 2),
 (24, 1),
+(24, 2),
 (25, 1),
+(25, 2),
 (26, 1),
 (27, 1),
 (28, 1),
@@ -710,35 +755,83 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (39, 1),
 (40, 1),
 (42, 1),
+(42, 2),
 (43, 1),
+(43, 2),
 (44, 1),
+(44, 2),
 (45, 1),
 (46, 1),
 (47, 1),
+(47, 2),
 (48, 1),
+(48, 2),
 (49, 1),
+(49, 2),
 (50, 1),
+(50, 2),
 (51, 1),
+(51, 2),
 (52, 1),
+(52, 2),
 (53, 1),
+(53, 2),
 (54, 1),
+(54, 2),
 (55, 1),
+(55, 2),
 (56, 1),
+(56, 2),
 (57, 1),
+(57, 2),
 (58, 1),
+(58, 2),
 (59, 1),
+(59, 2),
 (60, 1),
+(60, 2),
 (61, 1),
+(61, 2),
 (62, 1),
+(62, 2),
 (63, 1),
+(63, 2),
 (64, 1),
+(64, 2),
 (65, 1),
+(65, 2),
 (66, 1),
+(66, 2),
 (67, 1),
+(67, 2),
 (68, 1),
+(68, 2),
 (69, 1),
+(69, 2),
 (70, 1),
-(71, 1);
+(70, 2),
+(71, 1),
+(71, 2),
+(77, 1),
+(77, 2),
+(78, 1),
+(78, 2),
+(79, 1),
+(79, 2),
+(80, 1),
+(80, 2),
+(81, 1),
+(81, 2),
+(82, 1),
+(82, 2),
+(83, 1),
+(83, 2),
+(84, 1),
+(84, 2),
+(85, 1),
+(85, 2),
+(86, 1),
+(86, 2);
 
 -- --------------------------------------------------------
 
@@ -928,12 +1021,12 @@ INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `l
 (34, 'data_types', 'display_name_plural', 7, 'ru', 'Abouts', '2019-05-31 08:29:07', '2019-05-31 08:29:07'),
 (35, 'data_types', 'display_name_plural', 7, 'uz', 'Abouts', '2019-05-31 08:29:07', '2019-05-31 08:29:07'),
 (36, 'data_types', 'display_name_plural', 7, 'uzk', 'Abouts', '2019-05-31 08:29:07', '2019-05-31 08:29:07'),
-(37, 'abouts', 'title', 1, 'ru', '“O‘zagrolizing” акциядорлик жамияти акциядорлари диққатига! RU', '2019-05-31 23:44:06', '2019-06-01 01:11:16'),
-(38, 'abouts', 'title', 1, 'uz', '“O‘zagrolizing” акциядорлик жамияти акциядорлари диққатига! UZ', '2019-05-31 23:44:06', '2019-06-01 01:11:16'),
-(39, 'abouts', 'title', 1, 'uzk', '“O‘zagrolizing” акциядорлик жамияти акциядорлари диққатига! UZK', '2019-05-31 23:44:06', '2019-06-01 01:11:16'),
-(40, 'abouts', 'body', 1, 'ru', 'Жорий йилнинг 13 февраль куни  Ўзагролизинг  акциядорлик жамиятида 2018 йил якунларига бағишланган коллегия йиғилиши бўлиб ўтди Жорий йилнинг 13 февраль куни Ўзагролизинг  акциядорлик жамиятида 2018 йил якунларига бағишланган коллегия йиғилиши бўлиб ўтди  interdum mollis.', '2019-05-31 23:44:06', '2019-06-01 01:35:51'),
-(41, 'abouts', 'body', 1, 'uz', 'Жорий йилнинг 13 февраль куни  Ўзагролизинг  акциядорлик жамиятида 2018 йил якунларига бағишланган коллегия йиғилиши бўлиб ўтди Жорий йилнинг 13 февраль куни Ўзагролизинг  акциядорлик жамиятида 2018 йил якунларига бағишланган коллегия йиғилиши бўлиб ўтди  interdum mollis.', '2019-05-31 23:44:06', '2019-06-01 01:35:51'),
-(42, 'abouts', 'body', 1, 'uzk', 'Жорий йилнинг 13 февраль куни  Ўзагролизинг  акциядорлик жамиятида 2018 йил якунларига бағишланган коллегия йиғилиши бўлиб ўтди Жорий йилнинг 13 февраль куни Ўзагролизинг  акциядорлик жамиятида 2018 йил якунларига бағишланган коллегия йиғилиши бўлиб ўтди  interdum mollis.', '2019-05-31 23:44:06', '2019-06-01 01:35:51'),
+(37, 'abouts', 'title', 1, 'ru', '«O\'zagrolizing» - это акт любви к вниманию актеров!', '2019-05-31 23:44:06', '2019-06-02 23:37:42'),
+(38, 'abouts', 'title', 1, 'uz', '\"O\'zagrolizing\" aktyorlar e\'tiborini o\'ziga jalb qiladi!', '2019-05-31 23:44:06', '2019-06-02 23:37:42'),
+(39, 'abouts', 'title', 1, 'uzk', '“O‘zagrolizing” акциядорлик жамияти акциядорлари диққатига!', '2019-05-31 23:44:06', '2019-06-02 23:37:42'),
+(40, 'abouts', 'body', 1, 'ru', '<p>Ташкент, Узбекистан (UzDaily.uz) -- 20 марта 2019 года в проектном офисе &laquo;Buyuk Kelajak&raquo; был подписан меморандум о сотрудничестве (Меморандум) между МННО &laquo;Buyuk Kelajak&raquo; и АО &laquo;Узагролизинг&raquo;. В целях объединения усилий и систематизации взаимоотношений между Сторонами, для дальнейшего интенсивного развития лизингового сектора Республики Узбекистан, исходя из &laquo;Стратегии действий по пяти приоритетным направлениям развития Республики Узбекистан в 2017-2021 годах&raquo;, Врио исполнительного директора МННО &laquo;Buyuk Kelajak&raquo; Зухра Азимова и Председатель правления акционерного общества</p>\n<p><img style=\"display: block; margin-left: auto; margin-right: auto;\" src=\"http://127.0.0.1:8000/storage/abouts/June2019/n21.jpg\" alt=\"\" /></p>\n<p>\"Узагролизинг\" Холмурадов Акмал Арсланович подписали меморандум. Стороны договорились о сотрудничестве, основанном на использовании передового зарубежного опыта, по следующим направлениям: - изучение потребности лизингополучателей в современной сельскохозяйственной и другой технике, оборудовании и мини технологиях, реализуемых на лизинговой основе; - диверсификация и расширение направлений лизинговой деятельности с обеспечением приоритета деятельности по аграрному направлению; - внедрение современных, отвечающих международным стандартам видов лизинговых услуг и инновационных финансовых продуктов; - диверсификация источников финансирования для лизинговых проектов предприятий агропромышленного комплекса, реального сектора экономики и предпринимательства, включая развитие отношений с международными финансовыми институтами, выпуск различных ценных бумаг, содействие в приватизации и т.п.; - внедрение современных методов корпоративного управления и повышение квалификации кадров в сфере оказания лизинговых услуг; - разработка стратегии развития и дорожной карты Компании. Предусмотрено, что стороны могут сотрудничать в организации образовательных семинаров, привлечении ведущих специалистов для проведения переговоров, принятия решения по проектам и т.д. Также, в рамках партнерства планируется организовать экспертную группу с представителями обеих сторон (включая молодых, перспективных специалистов АО &laquo;Узагролизинг&raquo;), для повышения эффективности совместной работы. Стороны рассчитывают, что настоящий Меморандум станет важным механизмом развития и продвижения сельскохозяйственной отрасли, других реальных секторов экономике, а также предпринимательства в стране. В рамках настоящего Меморандума Стороны договорились о взаимовыгодном сотрудничестве, взаимопонимании, уважении и доверии. Консультационные услуги &laquo;Buyuk Kelajak&raquo; предоставляет АО &laquo;Узагролизинг&raquo; на безвозмездной основе.</p>', '2019-05-31 23:44:06', '2019-06-02 23:35:57'),
+(41, 'abouts', 'body', 1, 'uz', '<p>2019 yil 20 mart kuni \"Buyuk Kelajak\" va \"O\'zagrolizing\" AJ o\'rtasida Buyuk Kelajak loyihasi ofisida hamkorlik memorandumi imzolandi. Tomonlar o\'rtasidagi munosabatlarni tartibga solish va O\'zbekiston Respublikasi lizing sektorini yanada jadal rivojlantirish maqsadida \"2017-2021 yillarda O\'zbekiston Respublikasining beshta muhim rivojlanish yo\'nalishlari bo\'yicha harakatlar strategiyasi\", \"Buyuk Kelajak\" INNC ijrochi direktori vazifasini bajaruvchi Zukra Azimova va rais O\'zagrolizing \"aktsiyadorlik kompaniyasi boshqaruv kengashi tomonidan Xolmurodov Akmal Arslonovich imzolagan memorandumga imzo chekdi. Tomonlar quyidagi sohalarda ilg\'or</p>\n<p><img style=\"display: block; margin-left: auto; margin-right: auto;\" src=\"http://127.0.0.1:8000/storage/abouts/June2019/n22.jpg\" alt=\"\" /></p>\n<p>xorij tajribasini qo\'llashga asoslangan hamkorlik to\'g\'risida kelishib oldilar: - lizing asosida zamonaviy qishloq xo\'jaligi va boshqa uskunalar, uskunalar va minitexnologiyalarda lizing oluvchilarning ehtiyojlarini o\'rganish; - lizing faoliyatini diversifikatsiyalash va kengaytirish, agrar sektorda faoliyatning ustuvorligini ta\'minlash; - lizing xizmatlari va innovatsion moliyaviy mahsulotlarning zamonaviy, xalqaro standartlarini joriy etish; - agrosanoat kompleksi korxonalari, iqtisodiyotning real sektori va tadbirkorlik sub\'ektlari lizing loyihalarini moliyalashtirish manbalarini diversifikatsiya qilish, shu jumladan, xalqaro moliya institutlari bilan aloqalarni rivojlantirish, turli qimmatli qog\'ozlarni berish, xususiylashtirishda ko\'maklashish va boshqalar; - lizing xizmatlari sohasida korporativ boshqaruv va xodimlarni rivojlantirishning zamonaviy usullarini joriy qilish; - Kompaniyaning rivojlanish strategiyasini va yo\'l xaritasini ishlab chiqish. Tomonlar o\'quv seminarlarini tashkil etish, muzokaralar olib borish, loyihalar bo\'yicha qarorlar qabul qilish bo\'yicha etakchi mutaxassislarni jalb qilish bo\'yicha hamkorlik qilishlari mumkin. Hamkorlik doirasida birgalikdagi ish samaradorligini oshirish maqsadida har ikki tomon vakillarining (jumladan, \"O\'zagrolizing\" aksiyadorlik kompaniyasining yosh, istiqbolli mutaxassislari) ekspert guruhini tashkil etish rejalashtirilmoqda. Tomonlar ushbu Memorandum qishloq xo\'jaligi sektori, iqtisodiyotning boshqa real sektori, shuningdek, mamlakatdagi tadbirkorlikni rivojlantirish va rivojlantirish uchun muhim mexanizmga aylanishini kutishmoqda. Ushbu Memorandum doirasida Tomonlar o\'zaro manfaatli hamkorlik, o\'zaro tushunish, hurmat va ishonch haqida kelishib oldilar. Konsalting xizmatlari \"Buyuk Kelajak\" mas\'uliyati cheklangan jamiyat tomonidan \"O\'zagrolaying\" OAJ tomonidan bepul.</p>', '2019-05-31 23:44:06', '2019-06-02 23:35:57'),
+(42, 'abouts', 'body', 1, 'uzk', '<p>Ташкент, Узбекистан (UzDaily.uz) -- 20 марта 2019 года в проектном офисе &laquo;Buyuk Kelajak&raquo; был подписан меморандум о сотрудничестве (Меморандум) между МННО &laquo;Buyuk Kelajak&raquo; и АО &laquo;Узагролизинг&raquo;. В целях объединения усилий и систематизации взаимоотношений между Сторонами, для дальнейшего интенсивного развития лизингового сектора Республики Узбекистан, исходя из &laquo;Стратегии действий по пяти приоритетным направлениям развития Республики Узбекистан в 2017-2021 годах&raquo;, Врио исполнительного директора МННО &laquo;Buyuk Kelajak&raquo; Зухра Азимова и Председатель правления акционерного общества</p>\n<p><img style=\"display: block; margin-left: auto; margin-right: auto;\" src=\"http://127.0.0.1:8000/storage/abouts/June2019/n23.jpg\" alt=\"\" /></p>\n<p>\"Узагролизинг\" Холмурадов Акмал Арсланович подписали меморандум. Стороны договорились о сотрудничестве, основанном на использовании передового зарубежного опыта, по следующим направлениям: - изучение потребности лизингополучателей в современной сельскохозяйственной и другой технике, оборудовании и мини технологиях, реализуемых на лизинговой основе; - диверсификация и расширение направлений лизинговой деятельности с обеспечением приоритета деятельности по аграрному направлению; - внедрение современных, отвечающих международным стандартам видов лизинговых услуг и инновационных финансовых продуктов; - диверсификация источников финансирования для лизинговых проектов предприятий агропромышленного комплекса, реального сектора экономики и предпринимательства, включая развитие отношений с международными финансовыми институтами, выпуск различных ценных бумаг, содействие в приватизации и т.п.; - внедрение современных методов корпоративного управления и повышение квалификации кадров в сфере оказания лизинговых услуг; - разработка стратегии развития и дорожной карты Компании. Предусмотрено, что стороны могут сотрудничать в организации образовательных семинаров, привлечении ведущих специалистов для проведения переговоров, принятия решения по проектам и т.д. Также, в рамках партнерства планируется организовать экспертную группу с представителями обеих сторон (включая молодых, перспективных специалистов АО &laquo;Узагролизинг&raquo;), для повышения эффективности совместной работы. Стороны рассчитывают, что настоящий Меморандум станет важным механизмом развития и продвижения сельскохозяйственной отрасли, других реальных секторов экономике, а также предпринимательства в стране. В рамках настоящего Меморандума Стороны договорились о взаимовыгодном сотрудничестве, взаимопонимании, уважении и доверии. Консультационные услуги &laquo;Buyuk Kelajak&raquo; предоставляет АО &laquo;Узагролизинг&raquo; на безвозмездной основе.</p>', '2019-05-31 23:44:06', '2019-06-02 23:37:42'),
 (43, 'menu_items', 'title', 15, 'ru', 'О Нас', '2019-05-31 23:51:23', '2019-05-31 23:51:23'),
 (44, 'menu_items', 'title', 15, 'uz', 'О Нас', '2019-05-31 23:51:23', '2019-05-31 23:51:23'),
 (45, 'menu_items', 'title', 15, 'uzk', 'О Нас', '2019-05-31 23:51:23', '2019-05-31 23:51:23'),
@@ -943,9 +1036,6 @@ INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `l
 (49, 'menu_items', 'title', 17, 'ru', 'Слайдеры', '2019-05-31 23:54:24', '2019-05-31 23:54:24'),
 (50, 'menu_items', 'title', 17, 'uz', 'Слайдеры', '2019-05-31 23:54:24', '2019-05-31 23:54:24'),
 (51, 'menu_items', 'title', 17, 'uzk', 'Слайдеры', '2019-05-31 23:54:24', '2019-05-31 23:54:24'),
-(52, 'menu_items', 'title', 18, 'ru', 'Информация', '2019-05-31 23:55:36', '2019-05-31 23:55:36'),
-(53, 'menu_items', 'title', 18, 'uz', 'Информация', '2019-05-31 23:55:36', '2019-05-31 23:55:36'),
-(54, 'menu_items', 'title', 18, 'uzk', 'Информация', '2019-05-31 23:55:36', '2019-05-31 23:55:36'),
 (55, 'menu_items', 'title', 1, 'ru', 'Главный', '2019-05-31 23:58:35', '2019-05-31 23:58:35'),
 (56, 'menu_items', 'title', 1, 'uz', 'Главный', '2019-05-31 23:58:35', '2019-05-31 23:58:35'),
 (57, 'menu_items', 'title', 1, 'uzk', 'Главный', '2019-05-31 23:58:35', '2019-05-31 23:58:35'),
@@ -1017,7 +1107,22 @@ INSERT INTO `translations` (`id`, `table_name`, `column_name`, `foreign_key`, `l
 (123, 'news', 'title', 3, 'uzk', 'Ўзбекистон Республикаси Конституцияси', '2019-06-01 07:07:04', '2019-06-01 07:07:04'),
 (124, 'news', 'body', 3, 'ru', '“O‘zagrolizing” акциядорлик жамияти акциядорлари диққатига! EN“O‘zagrolizing” акциядорлик жамияти акциядорлари диққатига! EN', '2019-06-01 07:07:04', '2019-06-01 07:07:04'),
 (125, 'news', 'body', 3, 'uz', '“O‘zagrolizing” акциядорлик жамияти акциядорлари диққатига! EN', '2019-06-01 07:07:04', '2019-06-01 07:07:04'),
-(126, 'news', 'body', 3, 'uzk', '“O‘zagrolizing” акциядорлик жамияти акциядорлари диққатига! EN', '2019-06-01 07:07:04', '2019-06-01 07:07:04');
+(126, 'news', 'body', 3, 'uzk', '“O‘zagrolizing” акциядорлик жамияти акциядорлари диққатига! EN', '2019-06-01 07:07:04', '2019-06-01 07:07:04'),
+(127, 'category_lizings', 'name', 1, 'ru', 'Galaxy S7', '2019-06-03 00:00:42', '2019-06-03 00:00:42'),
+(128, 'category_lizings', 'name', 1, 'uz', 'Galaxy S7', '2019-06-03 00:00:42', '2019-06-03 00:00:42'),
+(129, 'category_lizings', 'name', 1, 'uzk', 'Galaxy S7', '2019-06-03 00:00:42', '2019-06-03 00:00:42'),
+(130, 'data_types', 'display_name_singular', 15, 'ru', 'Lizing', '2019-06-03 00:07:38', '2019-06-03 00:07:38'),
+(131, 'data_types', 'display_name_singular', 15, 'uz', 'Lizing', '2019-06-03 00:07:38', '2019-06-03 00:07:38'),
+(132, 'data_types', 'display_name_singular', 15, 'uzk', 'Lizing', '2019-06-03 00:07:38', '2019-06-03 00:07:38'),
+(133, 'data_types', 'display_name_plural', 15, 'ru', 'Lizings', '2019-06-03 00:07:38', '2019-06-03 00:07:38'),
+(134, 'data_types', 'display_name_plural', 15, 'uz', 'Lizings', '2019-06-03 00:07:38', '2019-06-03 00:07:38'),
+(135, 'data_types', 'display_name_plural', 15, 'uzk', 'Lizings', '2019-06-03 00:07:38', '2019-06-03 00:07:38'),
+(136, 'menu_items', 'title', 23, 'ru', 'Категория Техника', '2019-06-03 00:20:25', '2019-06-03 00:20:25'),
+(137, 'menu_items', 'title', 23, 'uz', 'Категория Техника', '2019-06-03 00:20:25', '2019-06-03 00:20:25'),
+(138, 'menu_items', 'title', 23, 'uzk', 'Категория Техника', '2019-06-03 00:20:25', '2019-06-03 00:20:25'),
+(139, 'menu_items', 'title', 22, 'ru', 'Техника', '2019-06-03 00:21:09', '2019-06-03 00:21:09'),
+(140, 'menu_items', 'title', 22, 'uz', 'Техника', '2019-06-03 00:21:09', '2019-06-03 00:21:09'),
+(141, 'menu_items', 'title', 22, 'uzk', 'Техника', '2019-06-03 00:21:09', '2019-06-03 00:21:09');
 
 -- --------------------------------------------------------
 
@@ -1058,7 +1163,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Admin', 'admin@admin.com', 'users/default.png', '$2y$10$Emd7HxQ17bwLT0FTQuR3Qu27JvD6RBxP21pprJbbso4j2.M0BkWLq', 'ATeR1I2jG1BgRfw910rrQcGWDLaejEB7NX9LRSz1Hm2NClrBaz3KoVnJZD98', '{\"locale\":\"ru\"}', '2019-05-31 07:10:47', '2019-06-01 05:23:03');
+(1, 1, 'Admin', 'admin@admin.com', 'users/default.png', '$2y$10$Emd7HxQ17bwLT0FTQuR3Qu27JvD6RBxP21pprJbbso4j2.M0BkWLq', 'lv0dtnmXHq7QtbZHsrFzMEO3YIqZMShOr6Qg4CA2rK7Imi54QQQJsNVybSVs', '{\"locale\":\"ru\"}', '2019-05-31 07:10:47', '2019-06-01 05:23:03'),
+(2, 2, 'User', 'user@admin.com', 'users/default.png', '$2y$10$bOD.eGzgAbZMHUDD2Wjy/ucISQ54K7LyHCpBBZi5Rsmg3gW9AIwW2', 'Uy44vzZjiTZTVozyr5U1Te6kDHx6084onFNcjZhL8gNTcqWGyMVH3GWPGorh', '{\"locale\":\"ru\"}', '2019-06-03 00:23:00', '2019-06-03 00:23:00');
 
 -- --------------------------------------------------------
 
@@ -1070,6 +1176,13 @@ CREATE TABLE `user_roles` (
   `user_id` int(10) UNSIGNED NOT NULL,
   `role_id` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп данных таблицы `user_roles`
+--
+
+INSERT INTO `user_roles` (`user_id`, `role_id`) VALUES
+(2, 2);
 
 -- --------------------------------------------------------
 
@@ -1328,7 +1441,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT для таблицы `category_lizings`
 --
 ALTER TABLE `category_lizings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT для таблицы `category_rule_staffs`
@@ -1346,13 +1459,13 @@ ALTER TABLE `category_workers`
 -- AUTO_INCREMENT для таблицы `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
 -- AUTO_INCREMENT для таблицы `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT для таблицы `information`
@@ -1370,7 +1483,7 @@ ALTER TABLE `links`
 -- AUTO_INCREMENT для таблицы `lizings`
 --
 ALTER TABLE `lizings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `menus`
@@ -1382,7 +1495,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT для таблицы `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT для таблицы `migrations`
@@ -1412,13 +1525,13 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT для таблицы `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- AUTO_INCREMENT для таблицы `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `questions`
@@ -1454,7 +1567,7 @@ ALTER TABLE `sliders`
 -- AUTO_INCREMENT для таблицы `translations`
 --
 ALTER TABLE `translations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
 
 --
 -- AUTO_INCREMENT для таблицы `useful_ustafs`
@@ -1466,7 +1579,7 @@ ALTER TABLE `useful_ustafs`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `workers`

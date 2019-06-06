@@ -31,10 +31,10 @@ Route::get('/online_order', 'OnlineOrderController@index');
 
 Route::get('/workers', 'WorkerController@index');
 
-Route::get('/table', function(){
-	
-	return view('table');
+Route::get('/about', 'AboutController@index');
 
+Route::get('/table', function(){
+	return view('table');
 });
 
 Route::group(['prefix' => 'admin'], function () {
