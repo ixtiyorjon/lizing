@@ -14,7 +14,7 @@
                 <div class="welcome-content" style="text-align: center;">
                   <h2 data-animation="fadeInUp" data-delay="200ms">{{ $value->getTranslatedAttribute('title',App::getLocale()) }}</h2>
                   <p data-animation="fadeInUp" data-delay="400ms">{{ $value->getTranslatedAttribute('body',App::getLocale()) }}</p>
-                  <a href="#" class="btn famie-btn mt-4" data-animation="bounceInUp" data-delay="600ms">Contact Us</a>
+                  <a href="#" class="btn famie-btn mt-4" data-animation="bounceInUp" data-delay="600ms">@lang('messages.Contact Us')</a>
                 </div>
               </div>
             </div>
@@ -152,7 +152,7 @@
   <section class="news-area bg-gray p-50">
     <div class="container">
       <div class="section-heading">
-          <h2 class="bg-gray"><span>Долзарб  </span>  Янгиликлар</h2>
+          <h2 class="bg-gray">@lang('messages.<span>Долзарб </span>  Янгиликлар')</h2>
           <!-- <img src="img/core-img/decor.png" alt=""> -->
       </div>
       <div class="row">
@@ -201,7 +201,7 @@
               <!-- <img src="img/core-img/decor.png" alt=""> -->
             </div>
             <p>{!! str_limit($about->getTranslatedAttribute('body',App::getLocale()),150) !!}</p>
-            <a href="/about" class="btn famie-btn mt-30">Read More</a>
+            <a href="/about" class="btn famie-btn mt-30">@lang('messages.Read More')</a>
           </div>
         </div>
 
@@ -226,29 +226,29 @@
       <!-- Newsletter Form -->
       <div class="row justify-content-center">
         <div class="col-12 col-lg-8">
-            <h4>Сайтга мурожаатлар</h4>
+            <h4>@lang('messages.Сайтга мурожаатлар')</h4>
             <ul class="skill-list"> 
               <li class="skill">
-                <h3>QABUL QILINDI: 930</h3>
+                <h3>@lang('messages.QABUL QILINDI') : 930</h3>
                 <progress class="skill-2" max="100" value="75">
-                  <strong>Skill Level: 75%</strong>
+                  <strong>@lang('messages.Skill Level') : 75%</strong>
                 </progress>
               </li>
               <li class="skill">
-                <h3>ISH JARAYONIDA:500</h3>
+                <h3>@lang('messages.ISH JARAYONIDA') : 500</h3>
                 <progress class="skill-1" max="100" value="50">
-                  <strong>Skill Level: 50%</strong>
+                  <strong>@lang('messages.Skill Level') : 50%</strong>
                 </progress>
               </li>
 
               <li class="skill">
-                <h3>KO'RIB CHIQILDI: 100</h3>
+                <h3>@lang('messages.KORIB CHIQILDI') : 100</h3>
                 <progress class="skill-3" max="100" value="25">
-                  <strong>Skill Level: 25%</strong>
+                  <strong>@lang('messages.Skill Level') : 25%</strong>
                 </progress>
               </li>
             </ul>
-            <button type="submit" class="btn famie-btn">Обуна бўлиш</button>
+            <button type="submit" class="btn famie-btn">@lang('messages.Обуна бўлиш')</button>
         </div>
         <!-- <div class="col-12 col-lg-4">
           <form action="#" method="post" class="obuna">
@@ -258,23 +258,23 @@
           </form>
         </div> -->
         <div class="col-12 col-lg-4">
-          <h4>Саволлар ва жавоблар</h4>
+          <h4>@lang('messages.Саволлар ва жавоблар')</h4>
           <form action="#" method="post">
               <div class="row">
                 <div class="col-lg-6">
-                  <input type="text" class="form-control" name="name" placeholder="Your Name">
+                  <input type="text" class="form-control" name="name" placeholder="@lang('messages.Your Name')">
                 </div>
                 <div class="col-lg-6">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email">
+                  <input type="email" class="form-control" name="email" placeholder="@lang('messages.Your Email')">
                 </div>
                 <div class="col-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Your Subject">
+                  <input type="text" class="form-control" name="subject" placeholder="@lang('messages.Your Subject')">
                 </div>
                 <div class="col-12">
-                  <textarea name="message" class="form-control" cols="30" rows="10" placeholder="Your Message"></textarea>
+                  <textarea name="message" class="form-control" cols="30" rows="10" placeholder="@lang('messages.1')"></textarea>
                 </div>
                 <div class="col-12">
-                  <button type="submit" class="btn famie-btn">Send Message</button>
+                  <button type="submit" class="btn famie-btn">@lang('messages.Send Message')</button>
                 </div>
               </div>
             </form>
@@ -294,7 +294,7 @@
             <!-- Section Heading -->
             <div class="section-heading">
               <!-- <p>Make the green world</p> -->
-              <h2 class="bg-white"><span>Foydali havolalar</span></h2>
+              <h2 class="bg-white">@lang('messages.<span>Foydali </span> havolalar')</h2>
             </div>
           </div>
         </div>
@@ -325,7 +325,7 @@
               <div class="contact-icon">
                 <i class="icon-telegram"></i>
               </div>
-              <h5>Telegram</h5>
+              <h5>@lang('messages.Telegram')</h5>
               <h6><a href="https://t.me/{{ setting('site.telegram') }}">{{ setting('site.telegram') }}</a></h6>
             </div>
           </div>
@@ -335,7 +335,7 @@
               <div class="contact-icon">
                 <i class="icon_phone"></i>
               </div>
-              <h5>Телефон</h5>
+              <h5>@lang('messages.Телефон')</h5>
               <h6><a href="tel:{{ setting('site.tel') }}">{{ setting('site.tel') }}</a></h6>
             </div>
           </div>
@@ -345,7 +345,7 @@
               <div class="contact-icon">
                 <i class="icon_mail_alt"></i>
               </div>
-              <h5>Эл.адрес</h5>
+              <h5>@lang('messages.Эл.адрес')</h5>
               <h6><a href="mailto:{{ setting('site.email') }}">{{ setting('site.email') }}</a></h6>
             </div>
           </div>
@@ -354,7 +354,7 @@
               <div class="contact-icon">
                 <i class="icon_pin_alt"></i>
               </div>
-              <h5>Адрес</h5>
+              <h5>@lang('messages.Адрес')</h5>
               <h6><a href="#">{{ setting('site.address') }}</a></h6>
             </div>
           </div>

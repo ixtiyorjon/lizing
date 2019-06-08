@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCategoryLizingsTable extends Migration
+class CreateTexnicsCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateCategoryLizingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('category_lizings', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
+        Schema::create('texnics_categories', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $title->string('title');
+            $title->string('image');
+            $title->string('slug');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateCategoryLizingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category_lizings');
+        Schema::dropIfExists('texnics_categories');
     }
 }

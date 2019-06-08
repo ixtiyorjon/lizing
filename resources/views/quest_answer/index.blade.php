@@ -8,7 +8,7 @@
       <div class="row h-100 align-items-center">
         <div class="col-12">
           <div class="breadcrumb-text">
-            <h2>Вопросы и Ответы</h2>
+            <h2>@lang('messages.savol') @lang('messages.javob')</h2>
           </div>
         </div>
       </div>
@@ -19,8 +19,8 @@
     <div class="container">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> Главная</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Вопросы  и Ответы</li>
+          <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> @lang('messages.Главная')</a></li>
+          <li class="breadcrumb-item active" aria-current="page"> @lang('messages.savol') @lang('messages.javob')</li>
         </ol>
       </nav>
     </div>
@@ -33,7 +33,7 @@
         <div class="col-12">
           <!-- Section Heading -->
           <div class="section-heading">
-              <h2 class=" bg-white"><span>Savol  </span> va Javob</h2>
+              <h2 class=" bg-white"><span>@lang('messages.savol') </span> @lang('messages.javob')</h2>
           </div>
         </div>
       </div>

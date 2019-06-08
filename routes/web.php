@@ -21,9 +21,9 @@ Route::get('/quest_answer', 'QuestAnswerController@index');
 
 Route::get('/useful_ustafs', 'UsefulUstafController@index');
 
-Route::get('/lizing_texnics', 'LizingController@index');
+Route::get('/lizing_texnics2', 'LizingController@index');
 
-Route::get('/lizing_texnics2', 'LizingController@index2');
+Route::get('/lizing_texnics', 'LizingController@index2');
 
 Route::get('/texnics_more', 'LizingController@more');
 

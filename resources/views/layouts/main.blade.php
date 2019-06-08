@@ -12,6 +12,8 @@
   <!-- Favicon -->
   <!-- <link rel="icon" href="img/core-img/favicon.ico"> -->
   <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="/css/bvi.min.css">
+  <link rel="stylesheet" href="/css/bvi-font.css">
   <link rel="stylesheet" href="/css1/style.css">
 </head>
 
@@ -35,8 +37,8 @@
               </div> -->
               <!-- Top Header Content -->
               <div class="top-header-meta text-left">
-                <a href="mailto:{{ setting('site.email') }}" data-toggle="tooltip" data-placement="bottom" title="{{ setting('site.email') }}"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>Email: {{ setting('site.email') }}</span></a>
-                <a href="tel:{{ setting('site.tel') }}" data-toggle="tooltip" data-placement="bottom" title="{{ setting('site.tel') }}"><i class="fa fa-phone" aria-hidden="true"></i> <span>Tel: {{ setting('site.tel') }}</span></a>
+                <a href="mailto:{{ setting('site.email') }}" data-toggle="tooltip" data-placement="bottom" title="{{ setting('site.email') }}"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>@lang('messages.Email'): {{ setting('site.email') }}</span></a>
+                <a href="tel:{{ setting('site.tel') }}" data-toggle="tooltip" data-placement="bottom" title="{{ setting('site.tel') }}"><i class="fa fa-phone" aria-hidden="true"></i> <span>@lang('messages.Tel'): {{ setting('site.tel') }}</span></a>
               </div>
               
               <div class="my-lang">
@@ -53,8 +55,8 @@
                   </div>
               </div>
               <div id="eyeIcon">
-                  <a href="#">
-                    <i  class="fa fa-eye" aria-hidden="true"></i>
+                  <a href="#" class="bvi-open">
+                    <i  class="bvi-icon bvi-eye bvi-2x" aria-hidden="true"></i>
                   </a>
               </div>
           </div>
@@ -85,42 +87,19 @@
               </div>
               <!-- Navbar Start -->
               <div class="classynav">
-                <ul>
-                  <li class="active"><a href="/">АСОСИЙ</a></li>
-                  <li><a href="/about">О Нас </a></li>
-                  {{-- <li><a href="#">АКЦИЯДОРЛАР</a></li> --}}
-                  <li><a href="#">ИНТЕРАКТИВ ХИЗМАТЛАР</a>
-                    <ul class="dropdown">
-                      <li><a href="/quest_answer">Вопросы</a></li>
-                      <li><a href="/useful_ustafs">Закон усатф</a></li>
-                      <li><a href="#">Лизинг</a>
-                        <ul class="dropdown">
-                          <li><a href="/lizing_texnics2">Лизинг техника 2</a></li>
-                          <li><a href="/lizing_texnics">Лизинг техника 1</a></li>
-                          <li><a href="/texnics_more">Лизинг техника лист</a></li>
-                        </ul>
-                      </li>
-                      <li><a href="/online_order">Онлайн набат</a></li>
-                      <li><a href="/workers">Руководитель</a></li>
-                      <li><a href="/table">таблица</a></li>
-                    </ul>
-                  </li>
-                  {{-- <li><a href="our-product.html">МИЖОЗЛАР</a></li> --}}
-                  <li><a href="/news">ЯНГИЛИКЛАР</a></li>
-                  {{-- <li><a href="farming-practice.html">КОНТАКТЛАР</a></li> --}}
-                </ul>
+                {{ menu('Site','layouts.menu') }}
                 <!-- Search Icon -->
                 <div id="searchIcon">
                   <i class="icon_search" aria-hidden="true"></i>
                 </div>
                 <div id="cartIcon">
                     <a href="#">
-                      <i class="calculatorTop" aria-hidden="true" title="kabnet"></i>Kalkulyator
+                      <i class="calculatorTop" aria-hidden="true" title="kabnet"></i>@lang('messages.Kalkulyator')
                     </a>
                 </div>
                 <div id="cartIcon">
                     <a   data-toggle="modal" data-target="#myModal">
-                      <i class="icon_cabinert_alt" aria-hidden="true" title="kabnet"></i>Kirish
+                      <i class="icon_cabinert_alt" aria-hidden="true" title="kabnet"></i>@lang('messages.Kirish')
                     </a>
                 </div>
                
@@ -132,7 +111,7 @@
           <!-- Search Form -->
           <div class="search-form">
             <form action="#" method="get">
-              <input type="search" name="search" id="search" placeholder="Type keywords &amp; press enter...">
+              <input type="search" name="search" id="search" placeholder="@lang('messages.Type keywords &amp; press enter...')">
               <button type="submit" class="d-none"></button>
             </form>
             <!-- Close Icon -->
@@ -156,7 +135,7 @@
           <div class="row align-items-center">
             <div class="col-md-6">
               <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Разработано в -<a href="https://www.goodone.uz/" target="_blank"> GOODONE</a>
+                @lang('messages.Разработано в') -<a href="https://www.goodone.uz/" target="_blank"> GOODONE</a>
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </p>
             </div>
@@ -175,17 +154,6 @@
               <a href="http://www.uz/rus/toprating/cmd/stat/id/27276" target="_top" >
                 <img src="http://www.uz/plugins/top_rating/count/cnt.png?id=27276&amp;r=http%3A//www.agroleasing.uz/kontaktlar&amp;pg=http%3A//www.agroleasing.uz/interaktiv-khizmatlar/sajt-kharitasi&amp;c=Y&amp;j=N&amp;wh=1920x1080&amp;px=24&amp;js=1.3&amp;col=7DC53B&amp;t=ffffff&amp;p=DD444E" width="88" height="31" alt="Топ рейтинг www.uz">
               </a>
-              <a href=""><!--LiveInternet counter--><script type="text/javascript">
-document.write('<a href="//www.liveinternet.ru/click" '+
-'target="_blank"><img src="//counter.yadro.ru/hit?t12.6;r'+
-escape(document.referrer)+((typeof(screen)=='undefined')?'':
-';s'+screen.width+'*'+screen.height+'*'+(screen.colorDepth?
-screen.colorDepth:screen.pixelDepth))+';u'+escape(document.URL)+
-';h'+escape(document.title.substring(0,150))+';'+Math.random()+
-'" alt="" title="LiveInternet: показано число просмотров за 24'+
-' часа, посетителей за 24 часа и за сегодня" '+
-'border="0" width="88" height="31"><\/a>')
-</script><!--/LiveInternet--></a>
             </div>
           </div>
         </div>
@@ -204,19 +172,19 @@ screen.colorDepth:screen.pixelDepth))+';u'+escape(document.URL)+
             <div class="cd-tabs">
                 <nav>
                   <ul class="cd-tabs-navigation">
-                    <li><a href="#" data-content="login" class="selected">Кириш</a></li>
+                    <li><a href="#" data-content="login" class="selected">@lang('messages.Kirish')</a></li>
                   </ul>
                 </nav>
                 <ul class="cd-tabs-content">
                   <li data-content="login" class="selected">
                     <form name="login-form">
                       <div class="form-fild">
-                        <input type="text" name="" placeholder="Information">
+                        <input type="text" name="" placeholder="Email">
                       </div>
                       <div class="form-fild">
-                        <input type="text" name="" placeholder="Telefon raqmingiz">
+                        <input type="text" name="" placeholder="@lang('messages.Password')">
                       </div>
-                      <button type="submit">YUBORISH</button>
+                      <button type="submit">@lang('messages.YUBORISH')</button>
                     </form>
                   </li>
                 </ul>
@@ -232,6 +200,8 @@ screen.colorDepth:screen.pixelDepth))+';u'+escape(document.URL)+
   <!-- ##### All Javascript Files ##### -->
   <!-- jquery 2.2.4  -->
   <script src="/js/jquery.min.js"></script>
+  <script src="/js/visualimpaired.js"></script>
+  {{-- <script src="/js/script.js"></script> --}}
   <!-- Popper js -->
   <script src="/js/popper.min.js"></script>
   <!-- Bootstrap js -->

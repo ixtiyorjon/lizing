@@ -8,7 +8,7 @@
       <div class="row h-100 align-items-center">
         <div class="col-12">
           <div class="breadcrumb-text">
-            <h2>О Нас </h2>
+            <h2>@lang('messages.about')</h2>
           </div>
         </div>
       </div>
@@ -18,8 +18,8 @@
     <div class="container">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> Главная</a></li>
-          <li class="breadcrumb-item active" aria-current="page">О Нас </li>
+          <li class="breadcrumb-item"><a href="/"><i class="fa fa-home"></i> @lang('messages.Главная')</a></li>
+          <li class="breadcrumb-item active" aria-current="page">@lang('messages.about') </li>
         </ol>
       </nav>
     </div>
@@ -43,7 +43,7 @@
               <img class="w-100 mb-30" src="/{{ Voyager::image($model->image) }}" alt="">
 
           </div>
-
+          <a href="{{ URL::previous() }}" class="btn famie-btn mt-30">@lang('messages.Orqaga')</a>
         </div>
       </div>
     </div>

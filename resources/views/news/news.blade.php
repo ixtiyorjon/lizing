@@ -7,7 +7,7 @@
       <div class="row h-100 align-items-center">
         <div class="col-12">
           <div class="breadcrumb-text">
-            <h2>Новости</h2>
+            <h2>@lang('messages.Новости')</h2>
           </div>
         </div>
       </div>
@@ -17,8 +17,8 @@
     <div class="container">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> Главная</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Новости</li>
+          <li class="breadcrumb-item"><a href="/"><i class="fa fa-home"></i> @lang('messages.Главная')</a></li>
+          <li class="breadcrumb-item active" aria-current="page">@lang('messages.Новости')</li>
         </ol>
       </nav>
     </div>
@@ -32,13 +32,17 @@
         <!-- Posts Area -->
         <div class="col-12 col-md-8">
           <div class="posts-area">
-
             <!-- Single Blog Post Area -->
             @foreach($model as $value)
             <div class="single-blog-post-area mb-50 wow fadeInUp" data-wow-delay="100ms">
-              <h6><i class="calendar"></i>{{ $value->created_at->format('Y-m-d') }}</h6>
+              <h6><i class="calendar" style="  -webkit-mask: url(/img/calendar.svg);mask: url(/img/calendar.svg);"></i>
+                <?php
+                  $date = new \Carbon\Carbon($value->created_at);
+                  echo (App::getLocale()=='uzk')?$date->locale('uz')->isoFormat('LLLL'):$date->locale(App::getLocale())->isoFormat('LLLL');
+                ?>
+              </h6>
               <a href="/news/more/{{ $value->slug }}" class="post-title">{{ $value->getTranslatedAttribute('title',App::getLocale()) }}</a>
-              <img src="img/bg-img/26.jpg" alt="" class="post-thumb">
+              <img src="{{ Voyager::image($value->image) }}" alt="" class="post-thumb">
               <p class="post-excerpt">
                 {{ str_limit($value->getTranslatedAttribute('title',App::getLocale()),100) }}
               </p>
@@ -52,27 +56,7 @@
 
         <!-- Sidebar Area -->
         <div class="col-12 col-md-4">
-          <div class="sidebar-area">
-
-            <!-- Single Widget Area -->
-            <div class="single-widget-area">
-              <form action="#" method="post" class="search-widget-form">
-                <input type="search" class="form-control" placeholder="Search">
-                <button type="submit"><i class="icon_search" aria-hidden="true"></i></button>
-              </form>
-            </div>
-
-            <!-- Single Widget Area -->
-              <div class="single-widget-area">
-                <ul class="cata-list">
-                  <li><a href="#">Умумий маълумотлар</a></li>
-                  <li><a href="#">Матбуот хизмати</a></li>
-                  <li><a href="#">Гувоҳномалар</a></li>
-                  <li><a href="#">Марказий аппарат</a></li>
-                  <li><a href="#">Овоз бериш</a></li>
-                </ul>
-              </div>
-          </div>
+          @include('left_block.index')
         </div>
       </div>
     </div>

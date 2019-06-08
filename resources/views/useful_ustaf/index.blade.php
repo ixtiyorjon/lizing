@@ -8,7 +8,7 @@
       <div class="row h-100 align-items-center">
         <div class="col-12">
           <div class="breadcrumb-text">
-            <h2>закон и усатф</h2>
+            <h2>@lang('messages.qonun')@lang('messages.ustaf')</h2>
           </div>
         </div>
       </div>
@@ -18,8 +18,8 @@
     <div class="container">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> Главная</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Закон и Усатф</li>
+          <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> @lang('messages.Главная')</a></li>
+          <li class="breadcrumb-item active" aria-current="page">@lang('messages.qonun')@lang('messages.ustaf')</li>
         </ol>
       </nav>
     </div>
@@ -34,7 +34,7 @@
         <!-- Posts Area -->
         <div class="col-12 col-md-8">
             <div class="section-heading text-left">
-                <h2 class=" bg-white"><span>Закон и </span>Усатф</h2>
+                <h2 class=" bg-white"><span>@lang('messages.qonun')</span>@lang('messages.ustaf')</h2>
             </div>
 
             <div class="row mb-30">

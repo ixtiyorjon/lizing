@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Category_lizing;
+use App\Texnics;
 use Illuminate\Http\Request;
 
-class CategoryLizingController extends Controller
+class TexnicsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class CategoryLizingController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Category_lizing  $category_lizing
+     * @param  \App\Texnics  $texnics
      * @return \Illuminate\Http\Response
      */
-    public function show(Category_lizing $category_lizing)
+    public function show(Texnics $texnics)
     {
         //
     }
@@ -52,10 +52,10 @@ class CategoryLizingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Category_lizing  $category_lizing
+     * @param  \App\Texnics  $texnics
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category_lizing $category_lizing)
+    public function edit(Texnics $texnics)
     {
         //
     }
@@ -64,10 +64,10 @@ class CategoryLizingController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Category_lizing  $category_lizing
+     * @param  \App\Texnics  $texnics
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category_lizing $category_lizing)
+    public function update(Request $request, Texnics $texnics)
     {
         //
     }
@@ -75,10 +75,10 @@ class CategoryLizingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Category_lizing  $category_lizing
+     * @param  \App\Texnics  $texnics
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category_lizing $category_lizing)
+    public function destroy(Texnics $texnics)
     {
         //
     }

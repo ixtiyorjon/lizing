@@ -2039,8 +2039,8 @@ progress, progress[role] {
     height: 21px;
     background-color: #000;
     background-repeat: no-repeat;
-    -webkit-mask: url(/../img/avatar.svg);
-    mask: url(/../img/avatar.svg);
+    -webkit-mask: url(../img/avatar.svg);
+    mask: url(../img/avatar.svg);
     -webkit-mask-size: cover;
     mask-size: cover;
     -webkit-transition: 1s;
@@ -2055,8 +2055,8 @@ progress, progress[role] {
   height: 21px;
   background-color: #000;
   background-repeat: no-repeat;
-  -webkit-mask: url(/../img/calculator.svg);
-  mask: url(/../img/calculator.svg);
+  -webkit-mask: url(../img/calculator.svg);
+  mask: url(../img/calculator.svg);
   -webkit-mask-size: cover;
   mask-size: cover;
   -webkit-transition: 1s;
@@ -2145,7 +2145,7 @@ progress, progress[role] {
     width: 21px;
     height: 21px;
     background-repeat: no-repeat;
-    background-image: url(/../img/telegram_2.svg);
+    background-image: url(../img/telegram_2.svg);
     background-size: contain;
 }
 .fdb-block .contact-icon{
@@ -2177,8 +2177,8 @@ progress, progress[role] {
   width: 19px;
   height: 19px;
   background-repeat: no-repeat;
-  -webkit-mask: url(/..img/calendar.svg);
-  mask: url(/..img/calendar.svg);
+  -webkit-mask: url(../img/calendar.svg);
+  mask: url(../img/calendar.svg);
   -webkit-mask-size: cover;
   mask-size: cover;
   margin-right: 5px;
@@ -2715,22 +2715,22 @@ footer .nav-brand img{
     transition: 1s;
 }
 .kambayin{
-    -webkit-mask: url(/../img/harvester.svg);
-    mask: url(/../img/harvester.svg);
+    -webkit-mask: url(../img/harvester.svg);
+    mask: url(../img/harvester.svg);
     -webkit-mask-size: cover;
     mask-size: cover;
     background-color: #000;
 }
 .tractor{
-  -webkit-mask: url(/../img/tractor.svg);
-  mask: url(/../img/tractor.svg);
+  -webkit-mask: url(../img/tractor.svg);
+  mask: url(../img/tractor.svg);
   -webkit-mask-size: cover;
   mask-size: cover;
   background-color: #000;
 }
 .truck{
-  -webkit-mask: url(/../img/hammer-truck.svg);
-  mask: url(/../img/hammer-truck.svg);
+  -webkit-mask: url(../img/hammer-truck.svg);
+  mask: url(../img/hammer-truck.svg);
   -webkit-mask-size: cover;
   mask-size: cover;
   background-color: #000;
@@ -2936,156 +2936,156 @@ img {
   display: block;
 }
 .imt1{
-    -webkit-mask: url(/../img/svg_icon/harvester.svg);
-    mask: url(/../img/svg_icon/harvester.svg);
+    -webkit-mask: url(../img/svg_icon/harvester.svg);
+    mask: url(../img/svg_icon/harvester.svg);
     -webkit-mask-size: cover;
     mask-size: cover;
 }
 .imt2{
-  -webkit-mask: url(/../img/svg_icon/tractor.svg);
-  mask: url(/../img/svg_icon/tractor.svg);
+  -webkit-mask: url(../img/svg_icon/tractor.svg);
+  mask: url(../img/svg_icon/tractor.svg);
   -webkit-mask-size: cover;
   mask-size: cover;
 }
 .imt3{
-  -webkit-mask: url(/../img/svg_icon/tipper-truck.svg);
-  mask: url(/../img/svg_icon/tipper-truck.svg);
+  -webkit-mask: url(../img/svg_icon/tipper-truck.svg);
+  mask: url(../img/svg_icon/tipper-truck.svg);
   -webkit-mask-size: cover;
   mask-size: cover;
 }
 .imt4{
--webkit-mask: url(/../img/svg_icon/hay-bale.svg);
-mask: url(/../img/svg_icon/hay-bale.svg);
+-webkit-mask: url(../img/svg_icon/hay-bale.svg);
+mask: url(../img/svg_icon/hay-bale.svg);
 -webkit-mask-size: cover;
 mask-size: cover;
 }
 .imt5{
-  -webkit-mask: url(/../img/svg_icon/cargo.svg);
-  mask: url(/../img/svg_icon/cargo.svg);
+  -webkit-mask: url(../img/svg_icon/cargo.svg);
+  mask: url(../img/svg_icon/cargo.svg);
   -webkit-mask-size: cover;
   mask-size: cover;
 }
 .imt6{
--webkit-mask: url(/../img/svg_icon/transformer-truck.svg);
-mask: url(/../img/svg_icon/transformer-truck.svg);
+-webkit-mask: url(../img/svg_icon/transformer-truck.svg);
+mask: url(../img/svg_icon/transformer-truck.svg);
 -webkit-mask-size: cover;
 mask-size: cover;
 }
 .imt7{
--webkit-mask: url(/../img/svg_icon/crane.svg);
-mask: url(/../img/svg_icon/crane.svg);
+-webkit-mask: url(../img/svg_icon/crane.svg);
+mask: url(../img/svg_icon/crane.svg);
 -webkit-mask-size: cover;
 mask-size: cover;
 }
 .imt8{
--webkit-mask: url(/../img/svg_icon/mixer-truck.svg);
-mask: url(/../img/svg_icon/mixer-truck.svg);
+-webkit-mask: url(../img/svg_icon/mixer-truck.svg);
+mask: url(../img/svg_icon/mixer-truck.svg);
 -webkit-mask-size: cover;
 mask-size: cover;
 }
 .imt9{
-  -webkit-mask: url(/../img/svg_icon/loader-truck.svg);
-  mask: url(/../img/svg_icon/loader-truck.svg);
+  -webkit-mask: url(../img/svg_icon/loader-truck.svg);
+  mask: url(../img/svg_icon/loader-truck.svg);
   -webkit-mask-size: cover;
   mask-size: cover;
 }
 .imt10{
--webkit-mask: url(/../img/svg_icon/truck.svg);
-mask: url(/../img/svg_icon/truck.svg);
+-webkit-mask: url(../img/svg_icon/truck.svg);
+mask: url(../img/svg_icon/truck.svg);
 -webkit-mask-size: cover;
 mask-size: cover;
 }
 .imt11{
--webkit-mask: url(/../img/svg_icon/paver.svg);
-mask: url(/../img/svg_icon/paver.svg);
+-webkit-mask: url(../img/svg_icon/paver.svg);
+mask: url(../img/svg_icon/paver.svg);
 -webkit-mask-size: cover;
 mask-size: cover;
 }
 .imt12{
--webkit-mask: url(/../img/svg_icon/right-arrow.svg);
-mask: url(/../img/svg_icon/right-arrow.svg);
+-webkit-mask: url(../img/svg_icon/right-arrow.svg);
+mask: url(../img/svg_icon/right-arrow.svg);
 -webkit-mask-size: cover;
 mask-size: cover;
 height: 50px;
 width: 50px;
 }
 .techniqueProList .imt12{
--webkit-mask: url(/../img/svg_icon/cargo.svg);
-mask: url(/../img/svg_icon/cargo.svg);
+-webkit-mask: url(../img/svg_icon/cargo.svg);
+mask: url(../img/svg_icon/cargo.svg);
 -webkit-mask-size: cover;
 mask-size: cover;
 width: 65px;
 height: 65px;
 }
 .imt13{
-  -webkit-mask: url(/../img/svg_icon/harvester.svg);
-  mask: url(/../img/svg_icon/harvester.svg);
+  -webkit-mask: url(../img/svg_icon/harvester.svg);
+  mask: url(../img/svg_icon/harvester.svg);
   -webkit-mask-size: cover;
   mask-size: cover;
 }
 .imt14{
--webkit-mask: url(/../img/svg_icon/tractor.svg);
-mask: url(/../img/svg_icon/tractor.svg);
+-webkit-mask: url(../img/svg_icon/tractor.svg);
+mask: url(../img/svg_icon/tractor.svg);
 -webkit-mask-size: cover;
 mask-size: cover;
 }
 .imt15{
--webkit-mask: url(/../img/svg_icon/tipper-truck.svg);
-mask: url(/../img/svg_icon/tipper-truck.svg);
+-webkit-mask: url(../img/svg_icon/tipper-truck.svg);
+mask: url(../img/svg_icon/tipper-truck.svg);
 -webkit-mask-size: cover;
 mask-size: cover;
 }
 .imt16{
--webkit-mask: url(/../img/svg_icon/hay-bale.svg);
-mask: url(/../img/svg_icon/hay-bale.svg);
+-webkit-mask: url(../img/svg_icon/hay-bale.svg);
+mask: url(../img/svg_icon/hay-bale.svg);
 -webkit-mask-size: cover;
 mask-size: cover;
 }
 .imt17{
--webkit-mask: url(/../img/svg_icon/cargo.svg);
-mask: url(/../img/svg_icon/cargo.svg);
+-webkit-mask: url(../img/svg_icon/cargo.svg);
+mask: url(../img/svg_icon/cargo.svg);
 -webkit-mask-size: cover;
 mask-size: cover;
 }
 .imt18{
--webkit-mask: url(/../img/svg_icon/transformer-truck.svg);
-mask: url(/../img/svg_icon/transformer-truck.svg);
+-webkit-mask: url(../img/svg_icon/transformer-truck.svg);
+mask: url(../img/svg_icon/transformer-truck.svg);
 -webkit-mask-size: cover;
 mask-size: cover;
 }
 .imt19{
--webkit-mask: url(/../img/svg_icon/crane.svg);
-mask: url(/../img/svg_icon/crane.svg);
+-webkit-mask: url(../img/svg_icon/crane.svg);
+mask: url(../img/svg_icon/crane.svg);
 -webkit-mask-size: cover;
 mask-size: cover;
 }
 .imt20{
--webkit-mask: url(/../img/svg_icon/mixer-truck.svg);
-mask: url(/../img/svg_icon/mixer-truck.svg);
+-webkit-mask: url(../img/svg_icon/mixer-truck.svg);
+mask: url(../img/svg_icon/mixer-truck.svg);
 -webkit-mask-size: cover;
 mask-size: cover;
 }
 .imt21{
--webkit-mask: url(/../img/svg_icon/loader-truck.svg);
-mask: url(/../img/svg_icon/loader-truck.svg);
+-webkit-mask: url(../img/svg_icon/loader-truck.svg);
+mask: url(../img/svg_icon/loader-truck.svg);
 -webkit-mask-size: cover;
 mask-size: cover;
 }
 .imt22{
--webkit-mask: url(/../img/svg_icon/truck.svg);
-mask: url(/../img/svg_icon/truck.svg);
+-webkit-mask: url(../img/svg_icon/truck.svg);
+mask: url(../img/svg_icon/truck.svg);
 -webkit-mask-size: cover;
 mask-size: cover;
 }
 .imt23{
--webkit-mask: url(/../img/svg_icon/paver.svg);
-mask: url(/../img/svg_icon/paver.svg);
+-webkit-mask: url(../img/svg_icon/paver.svg);
+mask: url(../img/svg_icon/paver.svg);
 -webkit-mask-size: cover;
 mask-size: cover;
 }
 .imt24{
-  -webkit-mask: url(/../img/svg_icon/mixer-truck.svg);
-  mask: url(/../img/svg_icon/mixer-truck.svg);
+  -webkit-mask: url(../img/svg_icon/mixer-truck.svg);
+  mask: url(../img/svg_icon/mixer-truck.svg);
   -webkit-mask-size: cover;
   mask-size: cover;
 }
@@ -3116,7 +3116,7 @@ mask-size: cover;
   content: '';
   display: block;
   bottom: 0;
-  background-image: url(/../img/fon2.png);
+  background-image: url(../img/fon2.png);
   background-position: bottom;
   background-repeat: no-repeat, repeat;
   padding: 50px 0;
@@ -3170,7 +3170,7 @@ input#search-bar:focus:-ms-placeholder {
 .ion-ios-arrow-thin-left{
   display: block;
   bottom: 0;
-  background-image: url(/../img/next.svg);
+  background-image: url(../img/next.svg);
   width: 17px;
   height: 16px;
   background-position: bottom;
@@ -3185,10 +3185,223 @@ input#search-bar:focus:-ms-placeholder {
 .ion-ios-arrow-thin-right {
   display: block;
   bottom: 0;
-  background-image: url(/../img/next.svg);
+  background-image: url(../img/next.svg);
   width: 17px;
   height: 16px;
   background-position: bottom;
   background-repeat: no-repeat, repeat;
   margin: 6px 0px 0px 6px;
+}
+
+
+/* Starter CSS for Flyout Menu */
+#cssmenua2 {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  line-height: 1;
+}
+#cssmenua2 ul,
+#cssmenua2 ul li,
+#cssmenua2 ul ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#cssmenua2 ul {
+  position: relative;
+  z-index: 597;
+  float: left;
+}
+#cssmenua2 ul li {
+  float: left;
+  min-height: 1px;
+  line-height: 1em;
+  vertical-align: middle;
+  position: relative;
+}
+#cssmenua2 ul li.hover,
+#cssmenua2 ul li:hover {
+  position: relative;
+  z-index: 599;
+  cursor: default;
+}
+#cssmenua2 ul ul {
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  z-index: 598;
+  width: 100%;
+}
+#cssmenua2 ul ul li {
+  float: none;
+}
+#cssmenua2 ul ul ul {
+  top: -2px;
+  right: 0;
+}
+#cssmenua2 ul li:hover > ul {
+  visibility: visible;
+}
+#cssmenua2 ul ul {
+  top: 1px;
+  left: 100%;
+}
+#cssmenua2 ul li {
+  float: none;
+}
+#cssmenua2 ul ul {
+  margin-top: 1px;
+}
+#cssmenua2 ul ul li {
+  font-weight: normal;
+}
+/* Custom CSS Styles */
+#cssmenua2 {
+  width: 250px;
+  color: #333333;
+  -webkit-box-shadow: 0px 0px 38px -14px rgb(233, 233, 233);
+  -moz-box-shadow: 0px 0px 38px -14px rgb(233, 233, 233);
+  box-shadow: 0px 0px 38px -14px rgb(233, 233, 233);
+  /* font-family: 'Oxygen Mono', Tahoma, Arial, sans-serif;
+  zoom: 1;
+  font-size: 12px; */
+}
+#cssmenua2:before {
+  content: '';
+  display: block;
+}
+#cssmenua2:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+#cssmenua2 a {
+  display: block;
+  padding: 15px 20px;
+  color: #333333;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+#cssmenua2 > ul {
+  width: 250px;
+}
+#cssmenua2 ul ul {
+  width: 250px;
+}
+#cssmenua2 > ul > li > a:hover {
+  color: #ffffff;
+}
+#cssmenua2 > ul > li.active a {
+  background: #77b122;
+  color: #fff;
+}
+#cssmenua2 > ul > li a:hover,
+#cssmenua2 > ul > li:hover a {
+  background: #77b122;
+}
+#cssmenua2 li {
+  position: relative;
+}
+#cssmenua2 ul li.has-sub > a:after {
+  content: "\f105";
+  font-family: "FontAwesome";
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  margin-top: -6px;
+}
+#cssmenua2 ul ul li.first {
+  -webkit-border-radius: 0 3px 0 0;
+  -moz-border-radius: 0 3px 0 0;
+  border-radius: 0 3px 0 0;
+}
+#cssmenua2 ul ul li.last {
+  -webkit-border-radius: 0 0 3px 0;
+  -moz-border-radius: 0 0 3px 0;
+  border-radius: 0 0 3px 0;
+  border-bottom: 0;
+}
+#cssmenua2 ul ul {
+  -webkit-border-radius: 0 3px 3px 0;
+  -moz-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
+}
+/* #cssmenua2 ul ul {
+  border: 1px solid #77b122
+} */
+#cssmenua2 ul ul a {
+  font-size: 12px;
+  color: #ffffff;
+}
+#cssmenua2 ul ul a:hover {
+  color: #ffffff;
+}
+/* #cssmenua2 ul ul li {
+  border-bottom: 1px solid #77b122
+} */
+#cssmenua2 ul ul li:hover > a {
+  background: #fff;
+  color:#77b122
+}
+/* #cssmenua2.align-right > ul > li > a {
+  border-left: 4px solid ##77b122;
+  border-right: none;
+} */
+#cssmenua2.align-right {
+  float: right;
+}
+#cssmenua2.align-right li {
+  text-align: right;
+}
+#cssmenua2.align-right ul li.has-sub > a:before {
+  content: '+';
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  margin-top: -6px;
+}
+#cssmenua2.align-right ul li.has-sub > a:after {
+  content: none;
+}
+#cssmenua2.align-right ul ul {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: 598;
+  width: 100%;
+}
+#cssmenua2.align-right ul ul li.first {
+  -webkit-border-radius: 3px 0 0 0;
+  -moz-border-radius: 3px 0 0 0;
+  border-radius: 3px 0 0 0;
+}
+#cssmenua2.align-right ul ul li.last {
+  -webkit-border-radius: 0 0 0 3px;
+  -moz-border-radius: 0 0 0 3px;
+  border-radius: 0 0 0 3px;
+}
+ .align-right ul ul {
+  -webkit-border-radius: 3px 0 0 3px;
+  -moz-border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 3px;
+}
+
+#cssmenua2 a {
+  -webkit-transition-duration: 0ms;
+  -o-transition-duration: 0ms;
+  transition-duration: 0ms;
+}
+.team-member-area  select.form-control{
+  -webkit-appearance: menulist-button;
+  margin-bottom: 10px;
+  font-size: 14px;
+  padding-left: 20px;
+  /* -moz-appearance: none;
+   appearance: none; */
+}
+.team-member-area  select.summa{
+  -webkit-appearance: none;
 }

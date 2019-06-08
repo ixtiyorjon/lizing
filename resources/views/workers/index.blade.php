@@ -8,7 +8,7 @@
       <div class="row h-100 align-items-center">
         <div class="col-12">
           <div class="breadcrumb-text">
-            <h2>Руководитель</h2>
+            <h2>@lang('messages.ishchilar')</h2>
           </div>
         </div>
       </div>
@@ -18,8 +18,8 @@
     <div class="container d-flex justify-content-between">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> Главная</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Руководитель</li>
+          <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> @lang('messages.Главная')</a></li>
+          <li class="breadcrumb-item active" aria-current="page">@lang('messages.ishchilar')</li>
         </ol>
       </nav>
       <div class="print">
@@ -37,7 +37,7 @@
         <div class="col-12">
           <!-- Section Heading -->
           <div class="section-heading">
-             <h2 class=" bg-white">Руководство</h2>
+             <h2 class=" bg-white">@lang('messages.ishchilar')</h2>
           </div>
         </div>
         <div class="col-12 col-sm-12 col-lg-8" id="printTable">
