@@ -19,6 +19,7 @@
 		'Обуна бўлиш' => 'Obuna bo\'lish',
 		'Саволлар ва жавоблар' => 'Savol va Javoblar',
 		'Your Name' => 'Ismingiz',
+		'Last Name' => 'Familiyangiz',
 		'Your Email' => 'Emailingiz',
 		'Your Subject' => 'Sizning mavzuyingiz',
 		'1' => 'Sizning Izohingiz',
@@ -39,6 +40,9 @@
 		'qonun' => 'Qonun',
 		'ustaf' => ' va Ustav',
 		'ishchilar' => 'Xodimlar',
+		'Contact' => 'Biz bilan aloqa',
+		'work_time' => 'Ish kunlari',
+		'' => '',
 		'' => '',
 
 	];

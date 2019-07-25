@@ -14,154 +14,183 @@
   <!-- Core Stylesheet -->
   <link rel="stylesheet" href="/css/bvi.min.css">
   <link rel="stylesheet" href="/css/bvi-font.css">
+  <link rel="stylesheet" href="/css/slider.style.css">
+  
   <link rel="stylesheet" href="/css1/style.css">
 </head>
 
 <body>
   <!-- Preloader -->
-  <div class="preloader d-flex align-items-center justify-content-center Samandar">
+ {{--  <div class="preloader d-flex align-items-center justify-content-center Samandar">
     <div class="spinner"></div>
   </div>
-
-  <!-- ##### Header Area Start ##### -->
+ --}}
   <header class="header-area">
-    <!-- Top Header Area -->
-    <div class="top-header-area">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <div class="top-header-content d-flex align-items-center justify-content-between">
-              <!-- Top Header Content -->
-              <!-- <div class="top-header-meta">
-                <p>Welcome to <span>Farmie</span>, we hope you will enjoy our products and have good experience</p>
-              </div> -->
-              <!-- Top Header Content -->
-              <div class="top-header-meta text-left">
-                <a href="mailto:{{ setting('site.email') }}" data-toggle="tooltip" data-placement="bottom" title="{{ setting('site.email') }}"><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>@lang('messages.Email'): {{ setting('site.email') }}</span></a>
-                <a href="tel:{{ setting('site.tel') }}" data-toggle="tooltip" data-placement="bottom" title="{{ setting('site.tel') }}"><i class="fa fa-phone" aria-hidden="true"></i> <span>@lang('messages.Tel'): {{ setting('site.tel') }}</span></a>
-              </div>
-              
-              <div class="my-lang">
-                  <div class="dropdown ">
-                      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                          {!! $locale !!}
-                      </button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/lang/uz">O'zbekcha</a>
-                        <a class="dropdown-item" href="/lang/uzk">Ўзбекча</a>
-                        <a class="dropdown-item" href="/lang/ru">Русский</a>
-                        <a class="dropdown-item" href="/lang/en">English</a>
-                      </div>
-                  </div>
-              </div>
-              <div id="eyeIcon">
-                  <a href="#" class="bvi-open">
-                    <i  class="bvi-icon bvi-eye bvi-2x" aria-hidden="true"></i>
-                  </a>
-              </div>
-          </div>
-        </div>
-      </div>
-    </div>
+        <!-- Top Header Area -->
+        <div class="top-header-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="top-header-content d-flex align-items-center justify-content-between">
 
-    <!-- Navbar Area -->
-   <div class="famie-main-menu">
-      <div class="classy-nav-container breakpoint-off">
-        <div class="container-fluid">
-          <!-- Menu -->
-          <nav class="classy-navbar justify-content-between" id="famieNav">
-            <!-- Nav Brand -->
-              <a href="/" class="nav-brand logo">
-                <!-- <img src="img/core-img/logo.png" alt=""> -->
-                <span style="color: #77b122;">{{ setting('site.site_name') }}</span>
-              </a>
-            <!-- Navbar Toggler -->
-            <div class="classy-navbar-toggler">
-              <span class="navbarToggler"><span></span><span></span><span></span></span>
-            </div>
-            <!-- Menu -->
-            <div class="classy-menu">
-              <!-- Close Button -->
-              <div class="classycloseIcon">
-                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-              </div>
-              <!-- Navbar Start -->
-              <div class="classynav">
-                {{ menu('Site','layouts.menu') }}
-                <!-- Search Icon -->
-                <div id="searchIcon">
-                  <i class="icon_search" aria-hidden="true"></i>
-                </div>
-                <div id="cartIcon">
-                    <a href="#">
-                      <i class="calculatorTop" aria-hidden="true" title="kabnet"></i>@lang('messages.Kalkulyator')
-                    </a>
-                </div>
-                <div id="cartIcon">
-                    <a   data-toggle="modal" data-target="#myModal">
-                      <i class="icon_cabinert_alt" aria-hidden="true" title="kabnet"></i>@lang('messages.Kirish')
-                    </a>
-                </div>
-               
-              </div>
-              <!-- Navbar End -->
-            </div>
-          </nav>
+                            <div class="top-header-meta text-left">
+                                <a href="/" class="nav-brand logo">
+                                    <img src="/img/logo.png" alt="">
+                                    <!-- <span>O'ZGROLIZING AKSIYADORLIK JAMYATI расмий-веб сайти</span> -->
+                                </a>
+                            </div>
 
-          <!-- Search Form -->
-          <div class="search-form">
-            <form action="#" method="get">
-              <input type="search" name="search" id="search" placeholder="@lang('messages.Type keywords &amp; press enter...')">
-              <button type="submit" class="d-none"></button>
-            </form>
-            <!-- Close Icon -->
-            <div class="closeIcon"><i class="fa fa-times" aria-hidden="true"></i></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+                            <div class="header-top-right">
+                                <div id="eyeIcon">
+                                    <a href="#">
+                                      <i class="my-fa-icon bayro"></i> <span>Baryoq</span>
+                                    </a>
+                                </div>
+                                <div id="eyeIcon">
+                                    <a href="#">
+                                      <i class="my-fa-icon gerp"></i>
+                                      <span>Gerb</span>
+                                    </a>
+                                </div>
+                                <div id="eyeIcon">
+                                    <a href="#">
+                                      <i class="my-fa-icon mathiya"></i>
+                                      <span>Madhiya</span>
+                                    </a>
+                                </div>
+                                <div id="eyeIcon">
+                                    <a href="#" class="bvi-open">
+                                        <i  class="fa fa-eye" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="my-lang">
+                                    <div class="dropdown ">
+                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                          {!! $locale !!}
+                                        </button>
+                                        <div class="dropdown-menu">
+                                          <a class="dropdown-item" href="/lang/uz">O'zbekcha</a>
+                                          <a class="dropdown-item" href="/lang/uzk">Ўзбекча</a>
+                                          <a class="dropdown-item" href="/lang/ru">Русский</a>
+                                          <a class="dropdown-item" href="/lang/en">English</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navbar Area -->
+            <div class="famie-main-menu">
+                <div class="classy-nav-container breakpoint-off">
+                    <div class="container">
+                        <!-- Menu -->
+                        <nav class="classy-navbar" id="famieNav">
+                            <!-- Nav Brand -->
+
+                            <!-- Navbar Toggler -->
+                            <div class="classy-navbar-toggler">
+                                <span class="navbarToggler"><span></span><span></span><span></span></span>
+                            </div>
+                            <!-- Menu -->
+                            <div class="classy-menu">
+                                <!-- Close Button -->
+                                <div class="classycloseIcon">
+                                    <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                                </div>
+                                <!-- Navbar Start -->
+                                <div class="classynav">
+                                    {{ menu('Главное меню','layouts.head_menu') }}
+                                    <!-- Search Icon -->
+                                    <div id="searchIcon">
+                                        <i class="icon_search" aria-hidden="true"></i>
+                                    </div>
+
+
+                                </div>
+                                <!-- Navbar End -->
+                            </div>
+                        </nav>
+
+                        <!-- Search Form -->
+                        <div class="search-form">
+                          <form action="/search" method="get" role="search">
+                            <input type="search" required name="q" id="search" placeholder="@lang('messages.Type keywords &amp; press enter...')">
+                            <button type="submit" class="d-none"></button>
+                          </form>
+                          <!-- Close Icon -->
+                          <div class="closeIcon"><i class="fa fa-times" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </header>
   <!-- ##### Header Area End ##### -->
 
   @yield('content')
 
 
-  <!-- ##### Footer Area Start ##### --> 
-  <footer class="footer-area">
-    <!-- Copywrite Area  -->
-    <div class="copywrite-area">
-      <div class="container">
-        <div class="copywrite-text">
-          <div class="row align-items-center">
-            <div class="col-md-6">
-              <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                @lang('messages.Разработано в') -<a href="https://www.goodone.uz/" target="_blank"> GOODONE</a>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </p>
+  <!-- ##### Footer Area End ##### -->
+  <footer class="fdb-block footer-large bg-dark">
+    <div class="container pt-3 mb-3">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-8">
+            <ul class="nav justify-content-center justify-content-md-start">
+                {{ menu('Нижнее меню','layouts.footer_menu') }}
+            </ul>
             </div>
-            <div class="col-md-6" style="text-align:right;">
-              <!-- <div class="footer-nav">
-                <nav>
-                  <ul>
-                    <li><a href="#">АСОСИЙ</a></li>
-                    <li><a href="#">АКЦИЯДОРЛАР</a></li>
-                    <li><a href="#">МИЖОЗЛАР</a></li>
-                    <li><a href="#">ЯНГИЛИКЛАР</a></li>
-                    <li><a href="#">КОНТАКТЛАР</a></li>
-                  </ul>
-                </nav>
-              </div> -->
-              <a href="http://www.uz/rus/toprating/cmd/stat/id/27276" target="_top" >
-                <img src="http://www.uz/plugins/top_rating/count/cnt.png?id=27276&amp;r=http%3A//www.agroleasing.uz/kontaktlar&amp;pg=http%3A//www.agroleasing.uz/interaktiv-khizmatlar/sajt-kharitasi&amp;c=Y&amp;j=N&amp;wh=1920x1080&amp;px=24&amp;js=1.3&amp;col=7DC53B&amp;t=ffffff&amp;p=DD444E" width="88" height="31" alt="Топ рейтинг www.uz">
-              </a>
+
+
+            <div class="col-12 col-md-4" style="text-align:right;">
+                <a href="http://www.uz/rus/toprating/cmd/stat/id/27276" target="_top" >
+                    <img src="http://www.uz/plugins/top_rating/count/cnt.png?id=27276&amp;r=http%3A//www.agroleasing.uz/kontaktlar&amp;pg=http%3A//www.agroleasing.uz/interaktiv-khizmatlar/sajt-kharitasi&amp;c=Y&amp;j=N&amp;wh=1920x1080&amp;px=24&amp;js=1.3&amp;col=7DC53B&amp;t=ffffff&amp;p=DD444E" width="88" height="31" alt="Топ рейтинг www.uz">
+                </a>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
+    <div class="copywrite-area">
+        <div class="container">
+            <div class="copywrite-text">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Разработано в -<a href="https://www.goodone.uz/" target="_blank"> GOODONE</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                    </div>
+                    <div class="col-12 col-md-6 "  style="text-align:right;">
+                         © 2018 Froala. All Rights Reserved
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
   </footer>
-  <!-- ##### Footer Area End ##### -->
-
+  <ul class="left_m hidden-xs hidden-sm mytop">
+        <li>
+            <a class="facebookmy" data-toggle="modal" data-target="#myModal">
+                <i class="icon_cabinert_alt" aria-hidden="true" title="kabnet"></i>
+                <p> Kirish </p>
+            </a>
+        </li>
+        <li>
+            <a class="facebookmy" href="#" title="">
+                <i class="calculatorTop" aria-hidden="true" title="kabnet"></i>
+                <p> Kalkulyator </p>
+            </a>
+        </li>
+        <li>
+            <a class="facebookmy" data-toggle="modal" data-target="#mycontacts">
+                <i class="icon-contact"></i>
+                <p> Qayta aloqa </p>
+            </a>
+        </li>
+    </ul>
   
   <!-- ##### start modalr okne ##### -->    
     <div class="modal fade regiMy" id="myModal">
@@ -194,19 +223,48 @@
       </div>
     </div>
   <!-- #####  modalr okne ##### -->     
+  <div class="modal fade modal-contats" id="mycontacts">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+          <h4>@lang('messages.Саволлар ва жавоблар')</h4>
+          <form action="/appeal" method="post">
+            @csrf
+              <div class="row">
+                <div class="col-lg-6">
+                  <input type="text" class="form-control" required name="name" placeholder="@lang('messages.Your Name')">
+                </div>
+                <div class="col-lg-6">
+                  <input type="email" class="form-control" required name="email" placeholder="@lang('messages.Your Email')">
+                </div>
+                <div class="col-12">
+                  <input type="text" class="form-control" required name="subject" placeholder="@lang('messages.Your Subject')">
+                </div>
+                <div class="col-12">
+                  <textarea name="comment" class="form-control" required cols="30" rows="10" placeholder="@lang('messages.1')"></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn famie-btn">@lang('messages.Send Message')</button>
+                </div>
+              </div>
+            </form>
+            </div>
+        </div>
+    </div>
 
 
+    <script type="text/javascript" src="https://johnny.github.io/jquery-sortable/js/jquery-sortable.js"></script>
   
   <!-- ##### All Javascript Files ##### -->
   <!-- jquery 2.2.4  -->
   <script src="/js/jquery.min.js"></script>
   <script src="/js/visualimpaired.js"></script>
+  <script src="/js/slider.js"></script>
   {{-- <script src="/js/script.js"></script> --}}
   <!-- Popper js -->
   <script src="/js/popper.min.js"></script>
   <!-- Bootstrap js -->
   <script src="/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/jquery.jcarousellite.min.js"></script>
+  <script src="/js/jquery.jcarousellite.min.js"></script>
   <!-- Owl Carousel js -->
   <script src="/js/owl.carousel.min.js"></script>
   <!-- Classynav -->
@@ -225,6 +283,28 @@
   <script src="/js/jarallax-video.min.js"></script>
   <!-- Active js -->
   <script src="/js/active.js"></script>
+  <script>
+        $('#ham').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            // autoplayHoverPause: true,
+            // navText: ['<span class="icon-arrow_back">', '<span class="icon-arrow_forward">'],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 5
+                }
+            }
+        })
+    </script>
 </body>
 
 </html>

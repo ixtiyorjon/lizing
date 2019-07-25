@@ -105,15 +105,7 @@
         </div>
 
         <div class="col-12 col-sm-12 col-lg-4">
-              <div class="single-widget-area">
-                <ul class="cata-list">
-                  <li><a href="#">Умумий маълумотлар</a></li>
-                  <li><a href="#">Матбуот хизмати</a></li>
-                  <li><a href="#">Гувоҳномалар</a></li>
-                  <li><a href="#">Марказий аппарат</a></li>
-                  <li><a href="#">Овоз бериш</a></li>
-                </ul>
-              </div>
+               @include('left_block.index')
         </div>
 
       </div>

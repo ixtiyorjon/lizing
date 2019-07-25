@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TexnicsCategory extends Model
+class TexnicsCategory extends AppModels
 {
-    //
+    protected $translatable = ['title'];
 }

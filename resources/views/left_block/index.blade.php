@@ -1,11 +1,11 @@
 <div class="sidebar-area">
   <!-- Single Widget Area -->
-  <div class="single-widget-area">
+  {{-- <div class="single-widget-area">
     <form action="#" method="post" class="search-widget-form">
       <input type="search" class="form-control" placeholder="Search">
       <button type="submit"><i class="icon_search" aria-hidden="true"></i></button>
     </form>
-  </div>
+  </div> --}}
   <!-- Single Widget Area -->
     <div class="single-widget-area">
       <ul class="cata-list">

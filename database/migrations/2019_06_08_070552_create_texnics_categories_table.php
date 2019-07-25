@@ -15,9 +15,9 @@ class CreateTexnicsCategoriesTable extends Migration
     {
         Schema::create('texnics_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $title->string('title');
-            $title->string('image');
-            $title->string('slug');
+            $table->string('title');
+            $table->string('image');
+            $table->string('slug');
             $table->timestamps();
         });
     }

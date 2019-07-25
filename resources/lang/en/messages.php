@@ -19,6 +19,7 @@
 		'Обуна бўлиш' => 'Subscribe',
 		'Саволлар ва жавоблар' => 'Questions and Answers',
 		'Your Name' => 'Your Name',
+		'Last Name' => 'Last Name',
 		'Your Email' => 'Your Email',
 		'Your Subject' => 'Your Subject',
 		'1' => 'Your Message',
@@ -39,6 +40,9 @@
 		'qonun' => 'Law',
 		'ustaf' => ' and Usatf',
 		'ishchilar' => 'Workers',
+		'Contact' => 'Contact',
+		'work_time' => 'Work time',
+		'' => '',
 		'' => '',
 
 

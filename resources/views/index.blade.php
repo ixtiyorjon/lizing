@@ -2,42 +2,135 @@
 
 @section('content')
   <!-- ##### Hero Area Start ##### -->
-  <div class="hero-area">
-    <div class="welcome-slides owl-carousel">
-      
-      <!-- Single Welcome Slides -->
-      @foreach($slider as $value)
-        <div class="single-welcome-slides bg-img bg-overlay jarallax" style="background-image: url({{ Voyager::image($value->image) }});">
-          <div class="container h-100">
-            <div class="row h-100 align-items-center">
-              <div class="col-12 col-lg-12">
-                <div class="welcome-content" style="text-align: center;">
-                  <h2 data-animation="fadeInUp" data-delay="200ms">{{ $value->getTranslatedAttribute('title',App::getLocale()) }}</h2>
-                  <p data-animation="fadeInUp" data-delay="400ms">{{ $value->getTranslatedAttribute('body',App::getLocale()) }}</p>
-                  <a href="#" class="btn famie-btn mt-4" data-animation="bounceInUp" data-delay="600ms">@lang('messages.Contact Us')</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      @endforeach
+  <div class="my-slidre">
+        <div class="page-hero d-flex flex-column align-content-stretch flex-wrap">
+            <div class=slider_main_block style="background-size:cover;background-position:bottom center;">
+                <!--страхование имущества-->
+              @foreach($slider as $value)
+                <div>
+                    <div class="container">
 
+                        <div class="site-slider__content">
+                            <div class="site-slider__title">{{ $value->getTranslatedAttribute('title',App::getLocale()) }}</div>
+                            <div class="site-slider__description">
+                              {{ str_limit($value->getTranslatedAttribute('body',App::getLocale()),100) }}
+                            </div>
+                            <a href="{{ $value->slug }}" class="button-main-slider" tabindex="0">@lang('messages.Read More')</a>
+                        </div>
+                    </div>
+                    <div class="bgslider"
+                        data-mobile="{{ Voyager::image($value->image) }}"
+                        data-tablet="{{ Voyager::image($value->image) }}"
+                        data-desctop="{{ Voyager::image($value->image) }}">
+                    </div>
+                </div>
+              @endforeach
+
+            </div>
+            <script type="text/javascript">
+                if (document.querySelector('.slider_main_block') != null) {
+
+                    if (window.innerWidth < 750) {
+                        document.querySelector('.slider_main_block').setAttribute('style', 'background-image:url(' + document.querySelector('.slider_main_block').getAttribute('data-mobile') + '); background-size:cover;background-position:bottom center;')
+                    }
+                    if (window.innerWidth > 749 && window.innerWidth < 1185) {
+                        document.querySelector('.slider_main_block').setAttribute('style', 'background-image:url(' + document.querySelector('.slider_main_block').getAttribute('data-tablet') + '); background-size:cover;background-position:bottom center;')
+                    }
+                    if (window.innerWidth > 1184) {
+                        document.querySelector('.slider_main_block').setAttribute('style', 'background-image:url(' + document.querySelector('.slider_main_block').getAttribute('data-desktop') + ');background-size:cover;background-position:bottom center;')
+                    }
+                }
+            </script>
+            <!-- Area End [SliderMain] -->
+        </div>
     </div>
-  </div>
+    <div class="for-eliment">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-3">
+
+                    <div class="rt-info-text-8">
+                        <div class="service-box" data-icon-hv-color="#222222" data-title-hv-color="#1fa12e"
+                            data-title-color="#ffffff">
+                            <span><i style="color:#ffffff;" class="flaticon-green-1-nature"
+                                    aria-hidden="true"></i></span>
+                            <h3><a style="color:#ffffff" href="#">Калькулятор</a></h3>
+                            <a class="btn-quote2 btn-light " href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3">
+
+                    <div class="rt-info-text-8">
+                        <div class="service-box" data-icon-hv-color="#222222" data-title-hv-color="#1fa12e"
+                            data-title-color="#ffffff">
+                            <span><i style="color:#ffffff;" class="flaticon-green-2-nature"
+                                    aria-hidden="true"></i></span>
+                            <h3><a style="color:#ffffff" href="#">Онлайн очередь</a></h3>
+                            <a class="btn-quote2 btn-light " href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3">
+
+                    <div class="rt-info-text-8">
+                        <div class="service-box" data-icon-hv-color="#222222" data-title-hv-color="#1fa12e"
+                            data-title-color="#ffffff">
+                            <span><i style="color:#ffffff;" class="flaticon-green-4-nature"
+                                    aria-hidden="true"></i></span>
+                            <h3><a style="color:#ffffff" href="#">Kизинг техники</a></h3>
+                            <a class="btn-quote2 btn-light " href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
   <!-- ##### Hero Area End ##### -->
+  <!-- ##### News Area Start ##### -->
+    <section class="news-area bg-gray p-50">
+        <div class="container mb-3 bt-3">
+            <div class="section-heading">
+                <h2 class="bg-gray"><span>Долзарб </span> Янгиликлар</h2>
+                <!-- <img src="img/core-img/decor.png" alt=""> -->
+            </div>
+            <div class="row">
+                <!-- Single Blog Area -->
+              @foreach($news as $value)
+                <div class="col-12 col-lg-4">
+
+                    <!-- Single Blog Area -->
+                    <div class="single-blog-area style-2 wow fadeInUp" >
+                        <img src="{{ Voyager::image($value->image) }}" alt="">
+                        <!-- Post Content -->
+                        <div class="post-content">
+                            <a href="/new/{{ $value->slug }}" class="post-title">{{ str_limit($value->getTranslatedAttribute('title',App::getLocale()),45) }}</a>
+                            <p>{{ str_limit($value->getTranslatedAttribute('body',App::getLocale()),120) }}</p>
+                            <h6>{{ $value->created_at->format('d.m.Y') }}</h6>
+                        </div>
+                    </div>
+
+                </div>
+              @endforeach
+
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- ##### News Area End ##### -->
 
   <!-- ##### Technique  Start ##### -->
   <section class="technique bg-white mt-50 mb-50">
       <div class="container">
           <div class="section-heading"> 
-              <h2 class=" bg-white"><span>Lizing  </span>Texnika</h2>
+              <h2><span>Lizing  </span>Texnika</h2>
               <!-- <img src="img/core-img/decor.png" alt=""> -->
           </div>
           <div class="row">
            
             <div class="col-12 col-md-4 col-lg-3">
                   <div class="mytenolog">
-                    <a href="#">
+                    <a href="{{ url('lizing_texnics2') }}">
                        <div class="imgTava imt1"></div>
                        <div class="titleTehno">Texnika nomi</div>
                     </a>
@@ -46,7 +139,7 @@
             
               <div class="col-12 col-md-4 col-lg-3">
                   <div class="mytenolog">
-                    <a href="#">
+                    <a href="{{ url('lizing_texnics2') }}">
                       <div class="imgTava imt2"></div>
                       <div class="titleTehno">Texnika nomiTexnika nomi Texnika nomi</div>
                     </a>
@@ -55,7 +148,7 @@
             
               <div class="col-12 col-md-4 col-lg-3">
                   <div class="mytenolog">
-                    <a href="#">
+                    <a href="{{ url('lizing_texnics2') }}">
                       <div class="imgTava imt3"></div>
                       <div class="titleTehno">Texnika nomi</div>
                     </a>
@@ -64,7 +157,7 @@
             
               <div class="col-12 col-md-4 col-lg-3">
                   <div class="mytenolog">
-                    <a href="#">
+                    <a href="{{ url('lizing_texnics2') }}">
                       <div class="imgTava imt4"></div>
                       <div class="titleTehno">Texnika nomi</div>
                     </a>
@@ -73,7 +166,7 @@
            
               <div class="col-12 col-md-4 col-lg-3">
                   <div class="mytenolog">
-                    <a href="#">
+                    <a href="{{ url('lizing_texnics2') }}">
                        <div class="imgTava imt5"></div>
                        <div class="titleTehno">Texnika nomi</div>
                     </a>
@@ -82,7 +175,7 @@
           
               <div class="col-12 col-md-4 col-lg-3">
                   <div class="mytenolog">
-                    <a href="#">
+                    <a href="{{ url('lizing_texnics2') }}">
                       <div class="imgTava imt6"></div>
                       <div class="titleTehno">Texnika nomi</div>
                     </a>
@@ -91,7 +184,7 @@
           
               <div class="col-12 col-md-4 col-lg-3">
                   <div class="mytenolog">
-                    <a href="#">
+                    <a href="{{ url('lizing_texnics2') }}">
                       <div class="imgTava imt7"></div>
                       <div class="titleTehno">Texnika nomi</div>
                     </a>
@@ -100,7 +193,7 @@
            
               <div class="col-12 col-md-4 col-lg-3">
                   <div class="mytenolog">
-                    <a href="#">
+                    <a href="{{ url('lizing_texnics2') }}">
                       <div class="imgTava imt8"></div>
                       <div class="titleTehno">Texnika nomi</div>
                     </a>
@@ -109,7 +202,7 @@
             
               <div class="col-12 col-md-4 col-lg-3">
                   <div class="mytenolog">
-                    <a href="#">
+                    <a href="{{ url('lizing_texnics2') }}">
                       <div class="imgTava imt9"></div>
                       <div class="titleTehno">Texnika nomi</div>
                     </a>
@@ -118,7 +211,7 @@
             
               <div class="col-12 col-md-4 col-lg-3">
                   <div class="mytenolog">
-                    <a href="#">
+                    <a href="{{ url('lizing_texnics2') }}">
                        <div class="imgTava imt10"></div>
                        <div class="titleTehno">Texnika nomi</div>
                     </a>
@@ -127,7 +220,7 @@
              
               <div class="col-12 col-md-4 col-lg-3">
                   <div class="mytenolog">
-                    <a href="#">
+                    <a href="{{ url('lizing_texnics2') }}">
                       <div class="imgTava imt11"></div>
                       <div class="titleTehno">Texnika nomi</div>
                     </a>
@@ -136,7 +229,7 @@
           
               <div class="col-12 col-md-4 col-lg-3">
                   <div class="mytenolog">
-                    <a href="#">
+                    <a href="{{ url('lizing_texnics2') }}">
                       <div class="imgTava imt12"></div>
                       <div class="titleTehno">Ko'proq</div>
                     </a>
@@ -148,45 +241,6 @@
   </section>
   <!-- ##### Technique end ##### -->
 
-  <!-- ##### News Area Start ##### -->
-  <section class="news-area bg-gray p-50">
-    <div class="container">
-      <div class="section-heading">
-          <h2 class="bg-gray">@lang('messages.<span>Долзарб </span>  Янгиликлар')</h2>
-          <!-- <img src="img/core-img/decor.png" alt=""> -->
-      </div>
-      <div class="row">
-        <!-- Featured Post Area -->
-        <div class="col-12 col-lg-6">
-          <div class="featured-post-area mb-100 wow fadeInUp" data-wow-delay="100ms">
-            <img src="{{ Voyager::image($new->image) }}" alt="">
-            <!-- Post Content -->
-            <div class="post-content">
-              <h6>{{ $new->created_at->format('Y-m-d') }}</h6>
-              <a href="/new/{{ $new->slug }}" class="post-title">
-                {{ $new->getTranslatedAttribute('title',App::getLocale()) }}</a>
-            </div>
-          </div>
-        </div>
-        <!-- Single Blog Area -->
-        <div class="col-12 col-lg-6 mb-100">
-        @foreach($news as $value)
-          <!-- Single Blog Area -->
-          <div class="single-blog-area style-2 wow fadeInUp" data-wow-delay="300ms">
-            <!-- Post Content -->
-            <div class="post-content">
-              <h6>{{ $value->created_at->format('Y-m-d') }}</h6>
-              <a href="/new/{{ $new->slug }}" class="post-title">{{ $value->getTranslatedAttribute('title',App::getLocale()) }}</a>
-              <p>{{ str_limit($value->getTranslatedAttribute('body',App::getLocale()),70) }}</p>
-            </div>
-          </div>
-        @endforeach
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ##### News Area End ##### -->
-
   <!-- ##### About Us Area Start ##### -->
   <section class="about-us-area section-padding-100-0 pb-5">
     <div class="container">
@@ -197,7 +251,7 @@
           <div class="about-us-content mb-100">
             <!-- Section Heading -->
             <div class="section-heading">
-              <h2 class=" bg-white"><span>{{ $about->getTranslatedAttribute('title',App::getLocale()) }}</span></h2>
+              <h2><span>{{ $about->getTranslatedAttribute('title',App::getLocale()) }}</span></h2>
               <!-- <img src="img/core-img/decor.png" alt=""> -->
             </div>
             <p>{!! str_limit($about->getTranslatedAttribute('body',App::getLocale()),150) !!}</p>
@@ -221,69 +275,127 @@
 
   
   <!-- ##### Newsletter Area Start ##### -->
-  <section class="newsletter-area section-padding-100 bg-img bg-overlay jarallax big-obuna" style="background-image: url('img/fon1.jpg');">
-    <div class="container">
-      <!-- Newsletter Form -->
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-8">
-            <h4>@lang('messages.Сайтга мурожаатлар')</h4>
-            <ul class="skill-list"> 
-              <li class="skill">
-                <h3>@lang('messages.QABUL QILINDI') : 930</h3>
-                <progress class="skill-2" max="100" value="75">
-                  <strong>@lang('messages.Skill Level') : 75%</strong>
-                </progress>
-              </li>
-              <li class="skill">
-                <h3>@lang('messages.ISH JARAYONIDA') : 500</h3>
-                <progress class="skill-1" max="100" value="50">
-                  <strong>@lang('messages.Skill Level') : 50%</strong>
-                </progress>
-              </li>
+    <section class="newsletter-area section-padding-100 bg-img bg-overlay jarallax big-obuna"
+        style="background-image: url('img/fon1.jpg');">
+        <div class="container">
+            <!-- Newsletter Form -->
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="rm-card-item shadown p-3">
+                        <div class="rm-card-item_content maee">
+                            <h3 class="rm-title"><i class="icon-forum"></i>Saytga murojaatlar</h3>
+                            <!-- <p class="psor">Сайтимизда қанақа мавзулар ёритилиши керак деб биласиз?</p> -->
+                        </div>
+                        <form>
+                            <div class="custom-control custom-radio">
+                                <div>QABUL QILINDI : 930 </div>
+                                <div class="progress clearfix">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="34" aria-valuemin="0"
+                                        aria-valuemax="100" style="width:92%">
+                                        92%
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <div>ISH JARAYONIDA : 500</div>
+                                <div class="progress clearfix">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="34" aria-valuemin="0"
+                                        aria-valuemax="100" style="width:84%">
+                                        74%
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <div>KO'RIB CHIQILDI : 100</div>
+                                <div class="progress clearfix">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="34" aria-valuemin="0"
+                                        aria-valuemax="100" style="width:34%">
+                                        34%
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <button type="submit" class="btn famie-btn mt-3" data-toggle="modal"
+                            data-target="#mycontacts">Ariza yuborish</button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="rm-card-item shadown p-3">
+                        <div class="rm-card-item_content">
+                            <h3 class="rm-title"><i class="icon-forum"></i> So'rovnoma</h3>
+                            <p class="psor">Сайтимизда қанақа мавзулар ёритилиши керак деб биласиз?</p>
+                        </div>
+                        <form>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" class="custom-control-input" id="customRadio" name="example1"
+                                    value="customEx">
+                                <label class="custom-control-label" for="customRadio"> Тракторлар ҳақида кўпроқ
+                                    маълумот</label>
+                                <!-- <div class="progress clearfix">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100" style="width:34%">
+                                    34%
+                                </div>
+                            </div> -->
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" class="custom-control-input" id="customRadio1" name="example1"
+                                    value="customEx">
+                                <label class="custom-control-label" for="customRadio1">Комбайнлар ҳақида кўпроқ
+                                    маълумот</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" class="custom-control-input" id="customRadio2" name="example1"
+                                    value="customEx">
+                                <label class="custom-control-label" for="customRadio2">Лизингга оид материаллар</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" class="custom-control-input" id="customRadio3" name="example1"
+                                    value="customEx">
+                                <label class="custom-control-label" for="customRadio3">Мамлакатимиздаги долзарб
+                                    янгиликлар</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" class="custom-control-input" id="customRadio4" name="example1"
+                                    value="customEx">
+                                <label class="custom-control-label" for="customRadio4">Қишлоқ хўжалигига оид
+                                    янгиликлар</label>
+                            </div>
+                            <button type="submit" class="btn famie-btn">Обуна бўлиш</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="rm-card-item shadown p-3">
+                        <div class="rm-card-item_content">
 
-              <li class="skill">
-                <h3>@lang('messages.KORIB CHIQILDI') : 100</h3>
-                <progress class="skill-3" max="100" value="25">
-                  <strong>@lang('messages.Skill Level') : 25%</strong>
-                </progress>
-              </li>
-            </ul>
-            <button type="submit" class="btn famie-btn">@lang('messages.Обуна бўлиш')</button>
+                            <h3 class="rm-title"><i class="icon-price"></i> Valyuta kurslari</h3>
+                            <table class="table rm-table text-right">
+                                <thead>
+                                    <tr>
+                                        <td class="text-center"><i class="icon-circle"></i></td>
+                                        <td>MB kursi</td>
+                                        <td colspan="2" class="text-center">Ko'rsatkichi</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  @for ($i = 1; $i <= count($valyuta); $i++) 
+                                    <tr>
+                                        <td class="text-center">{{ $valyuta[$i]['Ccy'] }}</td>
+                                        <td>{{ $valyuta[$i]['summ'] }}</td>
+                                        <td><span class="{{ ($valyuta[$i]['Diff']>=0)?'oi oi-caret-top':'oi oi-caret-top' }}"></span><?=$valyuta[$i]['Diff']?></td>
+                                    </tr>
+                                  @endfor
+                                    
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- <div class="col-12 col-lg-4">
-          <form action="#" method="post" class="obuna">
-            <input type="text" class="form-control" placeholder="Исм">
-            <input type="text" class="form-control" placeholder="Email">
-            <button type="submit" class="btn famie-btn">Обуна бўлиш</button>
-          </form>
-        </div> -->
-        <div class="col-12 col-lg-4">
-          <h4>@lang('messages.Саволлар ва жавоблар')</h4>
-          <form action="#" method="post">
-              <div class="row">
-                <div class="col-lg-6">
-                  <input type="text" class="form-control" name="name" placeholder="@lang('messages.Your Name')">
-                </div>
-                <div class="col-lg-6">
-                  <input type="email" class="form-control" name="email" placeholder="@lang('messages.Your Email')">
-                </div>
-                <div class="col-12">
-                  <input type="text" class="form-control" name="subject" placeholder="@lang('messages.Your Subject')">
-                </div>
-                <div class="col-12">
-                  <textarea name="message" class="form-control" cols="30" rows="10" placeholder="@lang('messages.1')"></textarea>
-                </div>
-                <div class="col-12">
-                  <button type="submit" class="btn famie-btn">@lang('messages.Send Message')</button>
-                </div>
-              </div>
-            </form>
-        </div>
-            
-      </div>
-    </div>
-  </section>
-  <!-- ##### Newsletter Area End ##### -->
+    </section>
+    <!-- ##### Newsletter Area End ##### -->
 
 
   <!-- ##### News Area Start ##### -->
@@ -316,49 +428,21 @@
   </section>
  <!-- ##### News Area end ##### -->
  
-  <section class="fdb-block  bg-gray section-padding-100">
-      <div class="container">
-        <div class="row">
-          <!-- Single Information Area -->
-          <div class="col-12 col-md-3">
-            <div class="single-information-area text-center  wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
-              <div class="contact-icon">
-                <i class="icon-telegram"></i>
-              </div>
-              <h5>@lang('messages.Telegram')</h5>
-              <h6><a href="https://t.me/{{ setting('site.telegram') }}">{{ setting('site.telegram') }}</a></h6>
+ <section class="silder-partners">
+        <div class="container">
+            <div class="owl-carousel owl-theme" id="ham">
+              @foreach($partner as $value)
+                <div class="item">
+                    <div class="single-logo-container">
+                        <a target="_blank" href="{{ $value->link }}" tabindex="-1">
+                            <img title="{{ $value->link }}" class="wls-logo" alt="#" src="{{ Voyager::image($value->image) }}">
+                        </a>
+                    </div>
+                </div>
+              @endforeach
+              
             </div>
-          </div>
-          <!-- Single Information Area -->
-          <div class="col-12 col-md-3">
-            <div class="single-information-area text-center  wow fadeInUp" data-wow-delay="500ms" style="visibility: visible; animation-delay: 500ms; animation-name: fadeInUp;">
-              <div class="contact-icon">
-                <i class="icon_phone"></i>
-              </div>
-              <h5>@lang('messages.Телефон')</h5>
-              <h6><a href="tel:{{ setting('site.tel') }}">{{ setting('site.tel') }}</a></h6>
-            </div>
-          </div>
-          <!-- Single Information Area -->
-          <div class="col-12 col-md-3">
-            <div class="single-information-area text-center  wow fadeInUp" data-wow-delay="1000ms" style="visibility: visible; animation-delay: 1000ms; animation-name: fadeInUp;">
-              <div class="contact-icon">
-                <i class="icon_mail_alt"></i>
-              </div>
-              <h5>@lang('messages.Эл.адрес')</h5>
-              <h6><a href="mailto:{{ setting('site.email') }}">{{ setting('site.email') }}</a></h6>
-            </div>
-          </div>
-          <div class="col-12 col-md-3">
-            <div class="single-information-area text-center  wow fadeInUp" data-wow-delay="1500ms" style="visibility: visible; animation-delay: 1500ms; animation-name: fadeInUp;">
-              <div class="contact-icon">
-                <i class="icon_pin_alt"></i>
-              </div>
-              <h5>@lang('messages.Адрес')</h5>
-              <h6><a href="#">{{ setting('site.address') }}</a></h6>
-            </div>
-          </div>
         </div>
-      </div>
-  </section>
+    </section>
+    
 @endsection
