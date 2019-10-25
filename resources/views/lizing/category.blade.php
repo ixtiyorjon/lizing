@@ -8,18 +8,18 @@
       <div class="row h-100 align-items-center">
         <div class="col-12">
           <div class="breadcrumb-text">
-            <h2>Лизинг техника</h2>
+            <h2>@lang('messages.Technique category')</h2>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="famie-breadcrumb">
+  <div class="famie-breadcrumb"  style="padding-bottom: 0">
     <div class="container">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> Главная</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Лизинг техника</li>
+          <li class="breadcrumb-item"><a href="/"><i class="fa fa-home"></i> @lang('messages.Главная')</a></li>
+          <li class="breadcrumb-item active" aria-current="page">@lang('messages.Technique category')</li>
         </ol>
       </nav>
     </div>
@@ -30,8 +30,7 @@
 <section class="technique techniqueProList bg-white mt-50 mb-50">
     <div class="container">
         <div class="section-heading"> 
-            <h2 class=" bg-white"><span>Lizing  </span>Texnika</h2>
-            <!-- <img src="img/core-img/decor.png" alt=""> -->
+            <h2>@lang('messages.<span> Leasing </span> Technique')</h2>
         </div>
         <div class="row">
         

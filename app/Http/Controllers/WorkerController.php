@@ -14,7 +14,11 @@ class WorkerController extends Controller
      */
     public function index()
     {
-        return view('workers.index');
+        $model = Worker::paginate(10);
+
+        return view('workers.index',[
+            'model' => $model
+        ]);
     }
 
     /**

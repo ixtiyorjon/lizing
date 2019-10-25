@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\OnlineOrder;
+use App\Texnic;
+use App\TexnicsCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 
 class OnlineOrderController extends Controller
 {
@@ -14,7 +17,11 @@ class OnlineOrderController extends Controller
      */
     public function index()
     {
-        return view('online_order.index');
+        $model = OnlineOrder::where('given','active')->orderBy('date','asc')->get();
+
+        return view('online_order.index',[
+            'model' => $model
+        ]);
     }
 
     /**
@@ -81,5 +88,40 @@ class OnlineOrderController extends Controller
     public function destroy(OnlineOrder $online_order)
     {
         //
+    }
+    public function texnicsList(){
+        
+        if($_GET['category']=='category'){
+
+            $texnics_category = Texnic::where('texnics_category',$_GET['category_id'])->get(); 
+            $texnics_category = View::make('online_order.collection',['model'=>$texnics_category])->render();
+
+            $category = TexnicsCategory::find($_GET['category_id']);
+
+            $order = OnlineOrder::where(['given'=>'active','category_id'=>$_GET['category_id']])->get();    
+            $order = View::make('online_order.table',[
+                'model'=>$order,
+                'category'=>$category,
+                'category_id'=>$_GET['category_id'],
+                'cat_name'=>$_GET['category']
+            ])->render();
+            
+            return ['html'=>$texnics_category,'model'=>$order];
+        }
+
+        if($_GET['category']=='texnics'){
+
+            $category = Texnic::find($_GET['category_id']);
+
+            $order = OnlineOrder::where(['given'=>'active','texnics_id'=>$_GET['category_id']])->get();    
+            $order = View::make('online_order.table',[
+                'model'=> $order,
+                'category'=> $category,
+                'category_id'=> $_GET['category_id'],
+                'cat_name'=> $_GET['category']
+            ])->render();
+            
+            return ['model'=>$order];
+        }
     }
 }

@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Lizing;
 use Illuminate\Http\Request;
 use App\TexnicsCategory;
+use App\TexnicsSubcategory;
 use App\Texnic;
+use Illuminate\Support\Facades\View;
 
 class LizingController extends Controller
 {
@@ -14,12 +16,24 @@ class LizingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function texnics($slug)
+    public function texnics($slug,$id=null)
     {
+        // dd($id);
         $texnics_category = TexnicsCategory::get();
         $Breadcrumbs = TexnicsCategory::where('slug',$slug)->first();
-        $texnics = Texnic::where('texnics_category',$Breadcrumbs->id)->paginate(10);
+        $subcat = TexnicsSubcategory::where('slug',$id)->first();
 
+        if(!$id) $texnics = Texnic::where('texnics_category',$Breadcrumbs->id)->paginate(10);
+
+        if($id) $texnics = Texnic::where(['texnics_category'=>$Breadcrumbs->id,'texnics_subcategory'=>$subcat->id])->paginate(10);
+
+        if (request()->ajax()) {
+            return View::make('lizing.index',[
+                'texnics_category' => $texnics_category,
+                'Breadcrumbs' => $Breadcrumbs,
+                'texnics' => $texnics,
+            ])->renderSections()['content'];
+        }
         return view('lizing.index',[
             'texnics_category' => $texnics_category,
             'Breadcrumbs' => $Breadcrumbs,
@@ -30,13 +44,30 @@ class LizingController extends Controller
     public function category()
     {
         $texnics_category = TexnicsCategory::get();
+
+        if (request()->ajax()) {
+            return View::make('lizing.category',[
+                'texnics_category' => $texnics_category,
+            ])->renderSections()['content'];
+        }
+
         return view('lizing.category',[
             'texnics_category' => $texnics_category,
         ]);
     }
 
-    public function more(){
-        return view('lizing.more');
+    public function more($slug){
+        $model = Texnic::where('slug',$slug)->first();        
+        
+        if (request()->ajax()) {
+            return View::make('lizing.more',[
+                'model' => $model
+            ])->renderSections()['content'];
+        }
+        
+        return view('lizing.more',[
+            'model' => $model
+        ]);
     }
     /**
      * Show the form for creating a new resource.

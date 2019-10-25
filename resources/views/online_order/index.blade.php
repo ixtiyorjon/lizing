@@ -3,7 +3,7 @@
 @section('content')
 
   <!-- ##### Breadcrumb Area Start ##### -->
-  <div class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url('img/bg-img/18.jpg');">
+  <div class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url('/img/bg-img/18.jpg');">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12">
@@ -18,7 +18,7 @@
     <div class="container">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> @lang('messages.Главная') </a></li>
+          <li class="breadcrumb-item"><a href="/"><i class="fa fa-home"></i> @lang('messages.Главная') </a></li>
           <li class="breadcrumb-item active" aria-current="page"> @lang('messages.navbat')</li>
         </ol>
       </nav>
@@ -28,85 +28,74 @@
 
   <!-- ##### Team Member Area Start ##### -->
   <section class="team-member-area mb-50">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <!-- Section Heading -->
-          <div class="section-heading"> 
-              <h2 class=" bg-white"><span>@lang('messages.Lizing')</span> @lang('messages.navbat')</h2>
-              <!-- <img src="img/core-img/decor.png" alt=""> -->
-          </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Section Heading -->
+                    <div class="section-heading">
+                        <h2 class=" bg-white"><span>@lang('messages.Leasing technique')</span> @lang('messages.Online queue')</h2>
+                        <!-- <img src="img/core-img/decor.png" alt=""> -->
+                    </div>
+                </div>
+            </div>
+
+            <form>
+                <div class="form-row">
+                    <div class="col-12 col-md-6">
+                        <div class="form-group">
+                            <label for="inputState1">@lang('messages.Brand of machinery')</label>
+                            <select id="inputStat1 category_id" class="form-control category_id" >
+                                <option value="" disabled selected></option>
+                                @foreach (\App\TexnicsCategory::get() as $item)
+                                    <option value="{{ $item->id }}">{{ $item->getTranslatedAttribute('title',App::getLocale()) }}</option> 
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <div class="form-group">
+                            <label for="inputState2">@lang('messages.The name of the technique'):</label>
+                            <select id="texnics_id" class="form-control texnics_id">
+                               
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+            </form>
+        <div  id="table">
+            <table id="example" class="table table-striped table-bordered" style="width:100%">
+                <thead>
+                    <tr>
+                        <th scope="col">№</th>
+                        <th scope="col">@lang('messages.Name of Provinces')</th>
+                        <th scope="col">@lang('messages.Name of districts')</th>
+                        <th scope="col">@lang('messages.Name of lessees')</th>
+                        <th scope="col">@lang('messages.Date')</th>
+                        <th scope="col">@lang('messages.Number of techniques')</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $i=1;?>
+                    @foreach($model as $value)
+                        <tr>
+                            <th scope="row"><?php echo $i; $i++;?></th>
+                            <td class="td1"><?php $m=\App\Region::find($value->viloyat); echo $m->region_uz ?></td>
+                            <td class="td2"><?php $m=\App\City::find($value->tuman); echo $m->city_uz ?></td>
+                            <td class="td3">{{ $value->nomi }}</td>
+                            <td class="td4">{{ $value->date }}</td>
+                            <td class="td5">{{ $value->number }}</td>
+                        </tr>
+                    @endforeach
+  
+                </tbody>
+
+            </table>
+
         </div>
-      </div>
-
-      <form class="search-container">
-          <input type="text" id="search-bar" placeholder="What can I help you with today?">
-          <a href="#"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
-      </form>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-              <th colspan="3" >
-                <p>Фермер хужалиги номи </p>
-              </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="col">1</th>
-            <th scope="col">Рустам ва 3-Рейх Фермер хужалиги. Кишлок 69</th>
-            <th scope="col">02.05.2019</th>
-          </tr>
-          <tr>
-              <th scope="col">2</th>
-              <th scope="col">Азиз ва Лазиз фермер хужалиги</th>
-              <th scope="col">02.05.2019</th>
-          </tr>
-          <tr>
-            <th scope="col">3</th>
-            <th scope="col">Рустам ва 3-Рейх Фермер хужалиги. Кишлок 69</th>
-            <th scope="col">02.05.2019</th>
-          </tr>
-          <tr>
-              <th scope="col">4</th>
-              <th scope="col">Азиз ва Лазиз фермер хужалиги</th>
-              <th scope="col">02.05.2019</th>
-          </tr>
-          <tr>
-            <th scope="col">6</th>
-            <th scope="col">Рустам ва 3-Рейх Фермер хужалиги. Кишлок 69</th>
-            <th scope="col">02.05.2019</th>
-          </tr>
-          <tr>
-              <th scope="col">7</th>
-              <th scope="col">Азиз ва Лазиз фермер хужалиги</th>
-              <th scope="col">02.05.2019</th>
-          </tr>
-          <tr>
-            <th scope="col">8</th>
-            <th scope="col">Рустам ва 3-Рейх Фермер хужалиги. Кишлок 69</th>
-            <th scope="col">02.05.2019</th>
-          </tr>
-          <tr>
-              <th scope="col">9</th>
-              <th scope="col">Азиз ва Лазиз фермер хужалиги</th>
-              <th scope="col">02.05.2019</th>
-          </tr>
-          <tr>
-            <th scope="col">10</th>
-            <th scope="col">Рустам ва 3-Рейх Фермер хужалиги. Кишлок 69</th>
-            <th scope="col">02.05.2019</th>
-          </tr>
-          <tr>
-              <th scope="col">11</th>
-              <th scope="col">Азиз ва Лазиз фермер хужалиги</th>
-              <th scope="col">02.05.2019</th>
-          </tr>
-        </tbody>
-      </table>
-
-    </div>
-  </section>
+        </div>
+    </section>
   <!-- ##### Team Member Area End ##### -->
-
+<input type="hidden" id="category" value="category">
 @endsection

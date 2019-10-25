@@ -18,7 +18,7 @@
     <div class="container">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> @lang('messages.Главная')</a></li>
+          <li class="breadcrumb-item"><a href="/"><i class="fa fa-home"></i> @lang('messages.Главная')</a></li>
           <li class="breadcrumb-item active" aria-current="page">@lang('messages.qonun')@lang('messages.ustaf')</li>
         </ol>
       </nav>
@@ -38,101 +38,42 @@
             </div>
 
             <div class="row mb-30">
+
+              @foreach($model as $value)
                 <div class="col-12">
                     <div class="qoust mb-30 wow fadeInUp" data-wow-delay="200ms">
                           <div class="qoust_info">
-                              Устав АЛК «Ўзқишлоқхўжаликмашлизинг» 10.06.2014
+                              {{ $value->getTranslatedAttribute('title',App::getLocale()) }}
                           </div>
                           <ul class="d-flex justify-content-end mt-15">
-                            <li><a><i class="calendar"></i>1 май 2019</a></li>
-                            <li><a href="img/prezentatsiya.zip"><i class="fa fa-print"></i>Юклаб олиш</a></li>
-                            <li><a href="img/prezentatsiya.pdf" target="_blank"><i class="fa fa-angle-right"></i>Батафсил</a></li>
+                            <li>
+                              <a><i class="calendar"></i>{{ date("j F Y", strtotime($value->date)) }}</a>
+                            </li>
+                            <li>
+                              @php $icons=json_decode($value->file) @endphp
+                              @foreach($icons as $icon)
+                              <a href="{{ Voyager::image($icon->download_link) }}"><i class="fa fa-print"></i>@lang('messages.Download')</a>
+                              @endforeach
+                            </li>
+                            <li>
+                              <a href="/usefull-staff/{{ $value->id }}/more" target="_blank"><i class="fa fa-angle-right"></i>@lang('messages.Read More')</a>
+                            </li>
                           </ul>
                     </div>
                 </div>
-                
-                <div class="col-12">
-                    <div class="qoust  mb-30 wow fadeInUp"  data-wow-delay="300ms">
-                          <div class="qoust_info " >
-                              Устав АЛК «Ўзқишлоқхўжаликмашлизинг» 10.06.2014
-                          </div>
-                          <ul class="d-flex justify-content-end mt-15">
-                            <li><a><i class="calendar"></i>1 май 2019</a></li>
-                            <li><a href="img/prezentatsiya.zip"><i class="fa fa-print"></i>Юклаб олиш</a></li>
-                            <li><a href="img/prezentatsiya.pdf" target="_blank"><i class="fa fa-angle-right"></i>Батафсил</a></li>
-                          </ul>
-                    </div>
-                </div>
-
-                <div class="col-12">
-                    <div class="qoust mb-30 wow fadeInUp" data-wow-delay="200ms">
-                          <div class="qoust_info">
-                              Устав АЛК «Ўзқишлоқхўжаликмашлизинг» 10.06.2014
-                          </div>
-                          <ul class="d-flex justify-content-end mt-15">
-                            <li><a><i class="calendar"></i>1 май 2019</a></li>
-                            <li><a href="img/prezentatsiya.zip"><i class="fa fa-print"></i>Юклаб олиш</a></li>
-                            <li><a href="img/prezentatsiya.pdf" target="_blank"><i class="fa fa-angle-right"></i>Батафсил</a></li>
-                          </ul>
-                    </div>
-                </div>
-                
-                <div class="col-12">
-                    <div class="qoust  mb-30 wow fadeInUp"  data-wow-delay="300ms">
-                          <div class="qoust_info " >
-                              Устав АЛК «Ўзқишлоқхўжаликмашлизинг» 10.06.2014
-                          </div>
-                          <ul class="d-flex justify-content-end mt-15">
-                            <li><a><i class="calendar"></i>1 май 2019</a></li>
-                            <li><a href="img/prezentatsiya.zip"><i class="fa fa-print"></i>Юклаб олиш</a></li>
-                            <li><a href="img/prezentatsiya.pdf" target="_blank"><i class="fa fa-angle-right"></i>Батафсил</a></li>
-                          </ul>
-                    </div>
-                </div>
-
-                <div class="col-12">
-                    <div class="qoust mb-30 wow fadeInUp" data-wow-delay="200ms">
-                          <div class="qoust_info">
-                              Устав АЛК «Ўзқишлоқхўжаликмашлизинг» 10.06.2014
-                          </div>
-                          <ul class="d-flex justify-content-end mt-15">
-                            <li><a><i class="calendar"></i>1 май 2019</a></li>
-                            <li><a href="img/prezentatsiya.zip"><i class="fa fa-print"></i>Юклаб олиш</a></li>
-                            <li><a href="img/prezentatsiya.pdf" target="_blank"><i class="fa fa-angle-right"></i>Батафсил</a></li>
-                          </ul>
-                    </div>
-                </div>
-                
-                <div class="col-12">
-                    <div class="qoust  mb-30 wow fadeInUp"  data-wow-delay="300ms">
-                          <div class="qoust_info " >
-                              Устав АЛК «Ўзқишлоқхўжаликмашлизинг»  10.06.2014
-                          </div>
-                          <ul class="d-flex justify-content-end mt-15">
-                            <li><a><i class="calendar"></i>1 май 2019</a></li>
-                            <li><a href="img/prezentatsiya.zip"><i class="fa fa-print"></i>Юклаб олиш</a></li>
-                            <li><a href="img/prezentatsiya.pdf" target="_blank"><i class="fa fa-angle-right"></i>Батафсил</a></li>
-                          </ul>
-                    </div>
-                </div>
-
-
+              @endforeach 
 
             </div>
 
             <!-- pagination -->
             <nav>
-              <ul class="pagination wow fadeInUp" data-wow-delay="900ms">
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
-              </ul>
+              {{ $model->links() }}
             </nav>
         </div>
 
         <!-- Sidebar Area -->
         <div class="col-12 col-md-4">
-           @include('left_block.index')
+           {{ menu('Меню справа','left_block.index') }}
         </div>
       </div>
     </div>

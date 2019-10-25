@@ -6,5 +6,5 @@ namespace App;
 
 class OnlineOrder extends AppModels
 {
-    protected $translatable = ['title', 'body'];
+    protected $fillable = ['category_id', 'texnics_id','viloyat','tuman','nomi','date','number','given'];
 }

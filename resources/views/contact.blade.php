@@ -19,7 +19,7 @@
     <div class="container">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> @lang('messages.Главная')</a></li>
+          <li class="breadcrumb-item"><a href="/"><i class="fa fa-home"></i> @lang('messages.Главная')</a></li>
           <li class="breadcrumb-item active" aria-current="page"> @lang('messages.Contact')</li>
         </ol>
       </nav>
@@ -59,30 +59,23 @@
         </div>
   
         <div class="col-12 col-md-6 ml-auto pt-5 pt-md-0">
-          <form>
+          <form action="/question" method="post">
+            @csrf
             <div class="row">
               <div class="col">
-                <input type="text" class="form-control" placeholder="@lang('messages.Your Name')">
-              </div>
-              <div class="col">
-                <input type="text" class="form-control" placeholder="@lang('messages.Last Name')">
+                <input type="text" name="name" class="form-control" placeholder="@lang('messages.Your Name')">
               </div>
             </div>
   
             <div class="row mt-4">
               <div class="col">
-                <input type="email" class="form-control" placeholder="@lang('messages.Your Email')">
+                <input type="email" name="email" class="form-control" placeholder="@lang('messages.Your Email')">
               </div>
             </div>
-  
+
             <div class="row mt-4">
               <div class="col">
-                <input type="email" class="form-control" placeholder="@lang('messages.Your Subject')">
-              </div>
-            </div>
-            <div class="row mt-4">
-              <div class="col">
-                <textarea class="form-control" name="message" rows="3" placeholder="@lang('messages.1')"></textarea>
+                <textarea class="form-control" name="body" rows="3" placeholder="@lang('messages.1')"></textarea>
               </div>
             </div>
             <div class="row mt-4">

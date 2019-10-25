@@ -56,7 +56,7 @@
 
         <!-- Sidebar Area -->
         <div class="col-12 col-md-4">
-          @include('left_block.index')
+          {{ menu('Меню справа','left_block.index') }}
         </div>
       </div>
     </div>

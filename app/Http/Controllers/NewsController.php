@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\News;
+use Illuminate\Support\Facades\View;
 
-class NewsController extends Controller
+
+class NewsController extends AppController
 {
     /**
      * Display a listing of the resource.
@@ -15,6 +17,13 @@ class NewsController extends Controller
     public function index()
     {
         $model = News::where('status','active')->orderBy('id','DESC')->paginate(2);
+
+        if (request()->ajax()) {
+            return View::make('news.news',[
+                'model' => $model
+            ])->renderSections()['content'];
+        }
+
         return view('news.news',[
             'model' => $model
         ]);

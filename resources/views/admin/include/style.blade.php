@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="/css/datepicer/css/datepicker.min.css">
 <style type="text/css">
 	.fade-scale {
 	  transform: scale(0);
@@ -6,7 +7,10 @@
 	  -o-transition: all .25s linear;
 	  transition: all .25s linear;
 	}
-
+	.datepicker.-bottom-left-.-from-bottom-.active{
+		position: relative;
+		z-index: 999999;
+	}
 	.fade-scale.in {
 	  opacity: 1;
 	  transform: scale(1);
@@ -51,4 +55,16 @@
 	    text-decoration: none;
 	    border-radius: 5px;
 	}
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+bottom: .5em;
+}
 </style>

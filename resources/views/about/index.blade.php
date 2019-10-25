@@ -3,7 +3,7 @@
 @section('content')
 
   <!-- ##### Breadcrumb Area Start ##### -->
-  <div class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url('img/bg-img/18.jpg');">
+  <div class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url('/img/bg-img/18.jpg');">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-12">
@@ -40,7 +40,7 @@
                 {!! $model->getTranslatedAttribute('body',App::getLocale()) !!}
               </p>
 
-              <img class="w-100 mb-30" src="/{{ Voyager::image($model->image) }}" alt="">
+              <img class="w-100 mb-30" src="{{ Voyager::image($model->image) }}" alt="">
 
           </div>
           <a href="{{ URL::previous() }}" class="btn famie-btn mt-30">@lang('messages.Orqaga')</a>

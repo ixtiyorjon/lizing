@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Question;
 
 class QuestAnswerController extends Controller
 {
@@ -13,7 +14,11 @@ class QuestAnswerController extends Controller
      */
     public function index()
     {
-        return view('quest_answer.index');
+        $model = Question::where('status','active')->orderBy('id','desc')->paginate(20);
+
+        return view('quest_answer.index',[
+            'model' => $model
+        ]);
     }
 
     /**

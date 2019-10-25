@@ -14,7 +14,7 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -35,7 +35,13 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Question::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'body' => $request->body
+        ]);
+
+        return back();
     }
 
     /**

@@ -51,9 +51,12 @@
           alert('Maydonlari to`liq kiritish shart');
         } 
       }); 
+      
 
       $('.ochirish1').click(function(e){  
           e.preventDefault();
+          var r = confirm('Are you sure you want to delete?');
+          if (r == true) {
            $.ajax({  
                 url:$(this).attr('href'),  
                 method:"GET",  
@@ -69,6 +72,7 @@
                   });
                 }  
            });  
+          }
       }); 
       $(".editor").click(function(e) {
         e.preventDefault();

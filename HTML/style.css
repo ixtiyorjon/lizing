@@ -4308,3 +4308,118 @@ input#search-bar:focus:-ms-placeholder {
   width: 20px;
   height: 21px;
 }
+@media only screen and (max-width: 979px){
+/******************************/
+    .classy-navbar-toggler{
+        display: block;
+    }
+    .my-slidre .navi,
+    .rt-info-text-8,
+    #eyeIcon
+    {
+        display: none;
+    }
+    .container {
+        max-width: 100%;
+    }
+    .news-area.p-50{
+        padding: 15px !important;
+    }
+/******************************/
+
+    .classynav> ul{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: unset;
+            -ms-flex-align: unset;
+                align-items: unset;
+        height: auto;
+        flex-direction: column;
+    }
+    .breakpoint-on .classy-navbar .classy-menu.menu-on {
+        left: 0;
+        width: 100%;
+    }
+    .breakpoint-on .classy-navbar .classy-menu,
+    .breakpoint-on .classy-navbar .classy-menu.menu-on
+    {
+        top: 80px;
+        padding-top: 1px;
+    }
+    .top-header-content .top-header-meta {
+        width: auto;
+    }
+    .my-lang button {
+        padding: 5px 5px;
+        min-width: 53px;
+        margin-right: 20px
+    }
+    .classy-navbar-toggler .navbarToggler span{
+        margin-top: 7px;
+    }
+    .classy-navbar-toggler .navbarToggler.active span{
+        margin-top: 5px;
+    }
+    .sticky-wrapper{
+        border: none;
+    }
+    .slider_main_block>div,
+    .slider_main_block,
+    .my-slidre
+    {
+        height: 450px!important;
+    }
+    .slider_main_block .site-slider__content {
+        width: 100%;
+        bottom: 45%;
+        left: 0px;
+        right: 0px;
+        padding: 0 20px;
+    }
+    .top-header-content {
+        z-index: 999;
+        position: fixed;
+        width: 100%;
+        left: 0;
+        padding: 10px 20px;
+    }
+    .news-area.bgImg{
+        background-image: initial;
+    }
+    .breakpoint-on .classynav{
+        padding: 0px;
+    }
+    .breakpoint-on .classynav > ul > li > a{
+        background-color: #0fb29d;
+    }
+    .classynav> ul> li.active {
+        border-bottom: 1px solid #0fb29d;
+    }
+    .breakpoint-on .classynav ul li a {
+        padding: 0 20px;
+        height: 42px;
+        line-height: 44px;
+    }
+/* end max-width: 979px*/  
+}
+
+@media only screen and (max-width: 768px){
+
+/* end max-width: 768px*/  
+}
+
+@media only screen and (max-width: 576px){
+
+/* end max-width: 576px*/  
+}
+
+@media only screen and (max-width: 500px){
+
+/* end max-width: 500px*/  
+}
+
+@media only screen and (max-width: 320px){
+
+/* end max-width: 320px*/  
+}

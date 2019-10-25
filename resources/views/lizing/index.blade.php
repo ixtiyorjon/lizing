@@ -8,7 +8,7 @@
       <div class="row h-100 align-items-center">
         <div class="col-12">
           <div class="breadcrumb-text">
-            <h2>Лизинг техника</h2>
+            <h2>@lang('messages.Leasing technique')</h2>
           </div>
         </div>
       </div>
@@ -18,8 +18,8 @@
     <div class="container">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/"><i class="fa fa-home"></i> Главная</a></li>
-          <li class="breadcrumb-item"><a href="/category-texnics">Лизинг техника</a></li>
+          <li class="breadcrumb-item"><a href="/"><i class="fa fa-home"></i> @lang('messages.Главная')</a></li>
+          <li class="breadcrumb-item"><a href="/category-texnics">@lang('messages.Leasing technique')</a></li>
           <li class="breadcrumb-item active" aria-current="page">{{ $Breadcrumbs->getTranslatedAttribute('title',App::getLocale()) }}</li>
         </ol>
       </nav>
@@ -34,25 +34,45 @@
         <div class="col-12">
           <!-- Section Heading -->
             <div class="section-heading"> 
-                <h2 class=" bg-white"><span>Lizing  </span>Texnika</h2>
+                <h2 class=" bg-white">@lang('messages.<span> Leasing </span> Technique')</h2>
             </div>
         </div>
 
         <div class="col-12 col-sm-12 col-lg-3">
   
            
-            <div class="sticky" id='cssmenua2'>
-                <ul>
-                    @foreach($texnics_category as $value)
-                        <li class='active has-sub'><a href='/texnics/{{ $value->slug }}'><span>{{ $value->getTranslatedAttribute('title',App::getLocale()) }}</span></a>
-                            <ul>
-                                @foreach(\App\TexnicsSubcategory::getTexnics($value->id) as $sub_cat)
-                                <li><a href='#'><span>{{ $sub_cat->getTranslatedAttribute('title',App::getLocale()) }}</span></a></li>
-                                @endforeach
-                            </ul>
-                        </li>
-                    @endforeach
-                </ul>
+            <!--<div class="sticky" id='cssmenua2'>-->
+            <!--    <ul>-->
+            <!--        @foreach($texnics_category as $value)-->
+            <!--            <li class='active has-sub'><a href='/texnics/{{ $value->slug }}'><span>{{ $value->getTranslatedAttribute('title',App::getLocale()) }}</span></a>-->
+            <!--                <ul>-->
+            <!--                    @foreach(\App\TexnicsSubcategory::getTexnics($value->id) as $sub_cat)-->
+            <!--                      <li><a href='/texnics/{{ $value->slug }}/{{ $sub_cat->slug }}'><span>{{ $sub_cat->getTranslatedAttribute('title',App::getLocale()) }}</span></a></li>-->
+            <!--                    @endforeach-->
+            <!--                </ul>-->
+            <!--            </li>-->
+            <!--        @endforeach-->
+            <!--    </ul>-->
+            <!--</div>-->
+            
+            <div id='cssmenua3'>
+               <ul>
+                  <!--<li class='active'><a href='#'><span>Home</span></a></li>-->
+                  <li class='has-sub'><a href='#'><span>Products</span></a>
+                     <ul>
+                        <li><a href='#'><span>Product 1</span></a></li>
+                        <li><a href='#  '><span>Product 2</span></a></li>
+                        <li class='last'><a href='#'><span>Product 3</span></a></li>
+                     </ul>
+                  </li>
+                  <li class='has-sub'><a href='#'><span>About</span></a>
+                     <ul>
+                        <li><a href='#'><span>Company</span></a></li>
+                        <li class='last'><a href='#'><span>Contact</span></a></li>
+                     </ul>
+                  </li>
+                  <li class='last'><a href='#'><span>Contact</span></a></li>
+               </ul>
             </div>
           
         </div>
@@ -63,7 +83,8 @@
                 <div class="mash_pra row mb-30">
                     <div class="col-12 col-sm-12 col-lg-4 taimg">
                         <a href="#">
-                            <img src="{{ Voyager::image($value->image) }}" alt="" class="timg">
+                          <?php $image = json_decode($value->image)?>
+                            <img src="{{ Voyager::image($image[0]) }}" alt="" class="timg">
                         </a>
                     </div>
                     <div class="col-12 col-sm-12 col-lg-8">
@@ -73,15 +94,15 @@
                             </div>
                             <div class="tinfosumm">
                                 <ul>  
-                                    <li>Техника нархи:  <span>{{ $value->narxi }} мл,сум</span></li>
-                                    <li>Аванс суммаси:   <span>{{ $value->avans_summ }} мл,сум</span></li>
-                                    <li>Аванс:           <span>{{ $value->avans }}%</span></li>
-                                    <li>Лизинг муддати:   <span>{{ $value->muddat }} йилгача</span></li>
-                                    <li>Yetkazib berish:   <span>{{ $value->dostavka }} kun</span></li>
+                                    <li>@lang('messages.Cost of machinery'):  <span>{{ $value->narxi }} @lang('messages.ml, sum')</span></li>
+                                    <li>@lang('messages.Advance amount'):   <span>{{ $value->avans_summ }} @lang('messages.ml, sum')</span></li>
+                                    <li>@lang('messages.Advance'):           <span>{{ $value->avans }}%</span></li>
+                                    <li>@lang('messages.Leasing term'):   <span>{{ $value->muddat }} @lang('messages.Up to the year')</span></li>
+                                    <li>@lang('messages.Delivery'):   <span>{{ $value->dostavka }} @lang('messages.day')</span></li>
                                 </ul>
                             </div>
                             <div class="tinfopad">
-                                <a href="/texnics_more/{{ $value->slug }}">Батафсил</a>
+                                <a href="/texnics_more/{{ $value->slug }}">@lang('messages.Read More')</a>
                             </div>
                         </div>
                     </div>
@@ -95,4 +116,35 @@
   </section>
   <!-- ##### Team Member Area End ##### -->
 
+
+
+
 @endsection
+
+@section('script')
+    <script>
+        ( function( $ ) {
+        $( document ).ready(function() {
+        $('#cssmenua3 > ul > li > a').click(function() {
+          $('#cssmenua3 li').removeClass('active');
+          $(this).closest('li').addClass('active'); 
+          var checkElement = $(this).next();
+          if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+            $(this).closest('li').removeClass('active');
+            checkElement.slideUp('normal');
+          }
+          if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+            $('#cssmenua3 ul ul:visible').slideUp('normal');
+            checkElement.slideDown('normal');
+          }
+          if($(this).closest('li').find('ul').children().length == 0) {
+            return true;
+          } else {
+            return false;   
+          }     
+        });
+        });
+        } )( jQuery );
+
+    </script>
+@stop

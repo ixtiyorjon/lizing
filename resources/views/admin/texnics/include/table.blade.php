@@ -2,18 +2,18 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col" class="td1">Name en</th>
-          <th scope="col" class="td1">Name ru</th>
-          <th scope="col" class="td1">Name uz</th>
-          <th scope="col" class="td1">Name uzk</th>
-          <th scope="col" class="td2">value</th>
+          <th scope="col" class="td1">Paramert nomi ( en )</th>
+          <th scope="col" class="td1">Paramert nomi ( ru )</th>
+          <th scope="col" class="td1">Paramert nomi ( uz )</th>
+          <th scope="col" class="td1">Paramert nomi (uzk)</th>
+          <th scope="col" class="td2">Qiymati (raqam)</th>
           <th style="display: none" class="td3">tex id</th>
           <th class="td3">MVC</th>
         </tr>
       </thead>
       <tbody>
-        @if($model==false)
-        <tr scope="row"><th>Malumot yo`q</th></tr>
+        @if(count($model)==0)
+          <tr scope="row"><th colspan="7" style="text-align: center;">Malumot yo`q</th></tr>
         @endif
         <?php $i=1; foreach($model as $value) : ?>
           <tr>
@@ -54,7 +54,7 @@
             <td class="td3" style="width: 50px">
               <span id="{{ $value->id }}mvc">
                 <a href="/admin/params/{{ $value->id }}/edit" class="editor" id="#{{ $value->id }}"><i class="glyphicon glyphicon-pencil"></i></a>
-                <a onclick="return confirm('Are you sure you want to delete?');" href="/admin/params/delete/{{ $value->id }}"  class="ochirish1"><i class="glyphicon glyphicon-trash"></i></a>
+                <a href="/admin/params/delete/{{ $value->id }}"  class="ochirish1"><i class="glyphicon glyphicon-trash"></i></a>
               </span>
               <span id="{{ $value->id }}edit_del" style="display: none">
                 <a href="/admin/params/edit/{{ $value->id }}" class="saqlash" id="#{{ $value->id }}"><i class="glyphicon glyphicon-floppy-disk"></i></a>

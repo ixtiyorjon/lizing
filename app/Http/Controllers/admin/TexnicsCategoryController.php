@@ -18,7 +18,7 @@ class TexnicsCategoryController extends Controller
      */
     public function index()
     {
-        $model = TexnicsCategory::get();
+        $model = TexnicsCategory::paginate(20);
 
         return view('admin.category.index',[
             'model' => $model
@@ -146,7 +146,7 @@ class TexnicsCategoryController extends Controller
 
  // dd($request->image);         
         $this->validate($request,[
-            'title_en'=>'required|unique:texnics_categories,title',
+            'title_en'=>'required|unique:texnics_categories,title,'. $id,
             'title_ru'=>'required',
             'title_uz'=>'required',
             'title_uzk'=>'required',
@@ -189,7 +189,7 @@ class TexnicsCategoryController extends Controller
                 'value' => $val
             ]);
         }
-        // return redirect()->route('texnics-category.index');
+        return redirect()->route('texnics-category.index');
 
     }
 

@@ -15,8 +15,15 @@ class CreateOnlineOrdersTable extends Migration
     {
         Schema::create('online_orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('data');
+            $table->integer('category_id');
+            $table->integer('texnics_id');
+            $table->string('viloyat');
+            $table->string('tuman');
+            $table->string('nomi');
+            $table->string('date');
+            $table->integer('number');
+            $table->string('given');
+            $table->string('sorting');
             $table->timestamps();
         });
     }

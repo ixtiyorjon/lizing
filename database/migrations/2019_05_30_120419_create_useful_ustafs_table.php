@@ -17,6 +17,7 @@ class CreateUsefulUstafsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('body');
+            $table->string('date');
             $table->string('file');
             $table->timestamps();
         });

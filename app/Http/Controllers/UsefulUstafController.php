@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Useful_ustaf;
+use App\UsefulUstaf;
 use Illuminate\Http\Request;
 
 class UsefulUstafController extends Controller
@@ -14,7 +14,20 @@ class UsefulUstafController extends Controller
      */
     public function index()
     {
-        return view('useful_ustaf.index');
+        $model = UsefulUstaf::orderBy('id','desc')->paginate(20);
+
+
+        return view('useful_ustaf.index',[
+            'model' => $model
+        ]);
+    }
+    public function more($id){
+        
+        $model = UsefulUstaf::find($id);
+
+        return view('useful_ustaf.more',[
+            'model' => $model
+        ]);
     }
 
     /**

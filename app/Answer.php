@@ -2,9 +2,15 @@
 
 namespace App;
 
-// use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-class Answer extends AppModels
+class Answer extends Model
 {
-    protected $translatable = ['title', 'body'];
+    protected $fillable = ['question_id', 'body'];
+
+    public static function getAll($id){
+    	$model = Answer::where('question_id',$id)->get();
+
+    	return $model;
+    }
 }

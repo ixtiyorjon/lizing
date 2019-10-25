@@ -8,7 +8,7 @@
       <div class="row h-100 align-items-center">
         <div class="col-12">
           <div class="breadcrumb-text">
-            <h2>@lang('messages.Новости')</h2>
+            <h2>@lang('messages.Search')</h2>
           </div>
         </div>
       </div>
@@ -19,7 +19,7 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/"><i class="fa fa-home"></i> @lang('messages.Главная')</a></li>
-          <li class="breadcrumb-item active" aria-current="page">@lang('messages.Новости')</li>
+          <li class="breadcrumb-item active" aria-current="page">@lang('messages.Search')</li>
         </ol>
       </nav>
     </div>
@@ -57,7 +57,7 @@
 
         <!-- Sidebar Area -->
         <div class="col-12 col-md-4">
-          @include('left_block.index')
+          {{ menu('Меню справа','left_block.index') }}
         </div>
       </div>
     </div>

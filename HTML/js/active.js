@@ -119,6 +119,11 @@
     $('.closeIcon').on('click', function () {
         $('.search-form').removeClass('search-active');
     });
+    $(document).click(function(event) {
+        if (!$(event.target).closest("#searchIcon").length && !$(event.target).closest("#search").length) {
+          $(".search-form").removeClass("search-active");
+        }
+      });
 
     // :: 11.0 Wow Active Code
     if (browserWindow.width() > 767) {

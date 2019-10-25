@@ -9,17 +9,17 @@
 @section('content')
 
 	<div class="container">
-		<!-- Button trigger modal -->
+	<br>
 	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-	  Add Category Texnics
+	  Yangi kategoriya qo'shish
 	</button>
 
 		<table class="table table-striped table-bordered">
 		  <thead>
 		    <tr>
 		      <th scope="col">#</th>
-		      <th scope="col" class="td1">Category</th>
-		      <th scope="col" class="td2">Sub Category</th>
+		      <th scope="col" class="td1">Kategoriya nomi (uz)</th>
+		      <th scope="col" class="td2">Quyi kategoriya (uz)</th>
 		      <th class="td3">MVC</th>
 		    </tr>
 		  </thead>
@@ -31,7 +31,7 @@
 			      <td class="td2">
 			      	<ul class="list-group">
 			      		<li class="list-group-item text-center add_li">
-			      			<a data="{{ $value->id }}" type="button"  class="btn btn-primary btn-lg tex_cat_id" data-toggle="modal" data-target="#myModal1">ADD CATEGOPRY</a>
+			      			<a data="{{ $value->id }}" type="button"  class="btn btn-primary btn-lg tex_cat_id" data-toggle="modal" data-target="#myModal1">Quyi kategoriya yaratish</a>
 			      		</li>
 			      		@foreach(\App\TexnicsSubcategory::getTexnics($value->id) as $tex_sub_cat)
 							<li class="list-group-item">{{ $tex_sub_cat->title }} 
@@ -49,6 +49,7 @@
 		    </tr>
 		  </tbody>
 		</table>
+		{{ $model->links() }}
 	</div>
 
 <!-- Modal -->

@@ -142,7 +142,7 @@ class TexnicsSubcategoryController extends Controller
         $model = TexnicsSubcategory::find($id);
 
         $this->validate($request,[
-            'title_en'=>'required|unique:texnics_subcategories,title',
+            'title_en'=>'required|unique:texnics_subcategories,title,'. $id,
             'title_ru'=>'required',
             'title_uz'=>'required',
             'title_uzk'=>'required',
@@ -201,5 +201,12 @@ class TexnicsSubcategoryController extends Controller
         Translation::where(['table_name'=>'texnics_subcategories','foreign_key'=>$id])->delete();
         
         return back();
+    }
+    public function list(){
+        $model = TexnicsSubcategory::where('texnics_categories_id',$_POST['category_id'])->get();    
+        
+        $html = View::make('admin.subcategory.list',['model'=>$model])->render();
+        
+        return $html;    
     }
 }

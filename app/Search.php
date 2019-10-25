@@ -17,7 +17,7 @@ class Search extends Model
         ->whereTranslation('title','LIKE',"%{$q}%")
         ->orWhere('body', 'LIKE', "%{$q}%")
         ->unionAll($news)
-        ->paginate(10)
+        ->paginate(20)
         // ->get()
         ;
         return $model;

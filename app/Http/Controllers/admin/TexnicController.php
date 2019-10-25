@@ -52,28 +52,36 @@ class TexnicController extends Controller
             'image'=>'required',
             'image'=>'max:1024',
         ]);
-// dd($request);     
-      $month=date('F').date('Y');
 
-    if($request->hasFile('image')){
+        $allowedfileExtension=['JPEG','jpeg','JPG','jpg','png'];
+        $month=date('F').date('Y');
+
+        if($request->hasFile('image')){
+
+          $files = $request->file('image');
+          $item = [];
+// dd($request->file('image'));
+          $i=0;
+          foreach($files as $file){
+
+            $filenameWithExt = $request['image'][$i]->getClientOriginalName();     
       
-      $filenameWithExt = $request->file('image')->getClientOriginalName();     
-      
-      // Get just the filename 
-      $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get just the filename 
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
 
-      // Get extension
-      $extension = $request->file('image')->getClientOriginalExtension();
+            // Get extension
+            $extension = $request['image'][$i]->getClientOriginalExtension();
 
-      // Create new filename
-      $filenameToStore = $filename.'_'.time().'.'.$extension;          
+            // Create new filename
+            $filenameToStore = $filename.'_'.time().'.'.$extension;          
 
-        $path=$request->file('image')->storeAs('public/texnics/'.$month,$filenameToStore);
-      }
+              $item[]=$request['image'][$i]->storeAs('public/photos/'.$month,$filenameToStore);
+              $i++;
 
-      else{
-        $path="";
-      }
+          }
+
+        }
+
 
         $texnics = new Texnic;
         $texnics->name=$request->name_en;
@@ -83,8 +91,11 @@ class TexnicController extends Controller
         $texnics->yillik_foiz=$request->yillik_foiz;
         $texnics->muddat=$request->muddat;
         $texnics->dostavka=$request->dostavka;
+        $texnics->texnics_category=$request->category_id;
+        $texnics->texnics_subcategory=$request->subcategory_id;
         $texnics->slug=str_slug($request->name_en);
-        $texnics->image=$path ? "texnics/".$month."/".$filenameToStore : "";
+        $texnics->image=$item ? json_encode($item) : "";
+        // $texnics->image=$path ? json_encode($path) : "";
         $texnics->save();
 
         $arr = ['ru'=>$request->name_ru,'uz'=>$request->name_uz,'uzk'=>$request->name_uzk];
@@ -102,12 +113,7 @@ class TexnicController extends Controller
         return back()->with('success',"Ваш запрос был успешно отправлен");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         $model = Texnic::whereTranslation('id',$id)->first();
@@ -145,9 +151,9 @@ class TexnicController extends Controller
     public function update(Request $request, $id)
     {
         $model = Texnic::find($id);
-
+// dd($request->file('image'));
         $this->validate($request,[
-            'name_en'=>'required|unique:texnics,name',
+            'name_en'=>'required|unique:texnics,name,' . $id,
             'name_ru'=>'required',
             'name_uz'=>'required',
             'name_uzk'=>'required',
@@ -160,27 +166,35 @@ class TexnicController extends Controller
             // 'slug'=>'required',
         ]);
         
-          $month=date('F').date('Y');
+        $month=date('F').date('Y');
 
-        if($request->hasFile('image')){
-          
-          $filenameWithExt = $request->file('image')->getClientOriginalName();     
-          
+        $path = [];
+
+      if($request->hasFile('image')){
+
+        $images = $request->file('image');
+
+        foreach ($images as $image) {
+
+          $filenameWithExt = $image->getClientOriginalName();     
+      
           // Get just the filename 
           $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
 
           // Get extension
-          $extension = $request->file('image')->getClientOriginalExtension();
+          $extension = $image->getClientOriginalExtension();
 
           // Create new filename
           $filenameToStore = $filename.'_'.time().'.'.$extension;          
 
-            $path=$request->file('image')->storeAs('public/texnics/'.$month,$filenameToStore);
+          $path[]=$image->storeAs('public/photos/'.$month,$filenameToStore);
+
         }
 
-        else{
-            $path="";
-        }
+      }
+      else{
+          $path="";
+      }
 
         $model->update([
             'name' => $request->name_en,
@@ -191,7 +205,7 @@ class TexnicController extends Controller
             'muddat' => $request->muddat,
             'dostavka' => $request->dostavka,
             'slug' => str_slug($request->name_en),
-            'image' => $path ? "texnics/".$month."/".$filenameToStore : $request->hidden_image
+            'image' => $path ? json_encode($path) : $request->hidden_image
         ]);
 
         $arr = ['ru'=>$request->name_ru,'uz'=>$request->name_uz,'uzk'=>$request->name_uzk];
@@ -234,5 +248,13 @@ class TexnicController extends Controller
       $html = View::make('admin.texnics.params',['id' => $id,'model' =>$model])->render();
       
       return $html;
+    }
+
+    public function texnicsList(){
+      $model = Texnic::where('texnics_category',$_POST['category_id'])->get();    
+        
+        $html = View::make('admin.texnics.collection',['model'=>$model])->render();
+        
+        return $html;
     }
 }

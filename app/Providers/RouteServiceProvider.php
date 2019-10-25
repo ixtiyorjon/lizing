@@ -42,6 +42,10 @@ class RouteServiceProvider extends ServiceProvider
                 }
             $view->with('locale', $str);
         });
+        view()->composer('layouts.main',function($view){
+           $model = \App\Socl::all();
+            $view->with('socials', $model);
+        });
     }
 
     /**

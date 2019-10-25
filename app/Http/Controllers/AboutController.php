@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\About;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 
 class AboutController extends Controller
 {
@@ -15,6 +16,9 @@ class AboutController extends Controller
     public function index()
     {
         $model = About::first();
+        if (request()->ajax()) {
+            return View::make('about.index',['model'=>$model])->renderSections()['content'];
+        }
 
         return view('about.index',[
             'model' => $model
