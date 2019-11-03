@@ -12,6 +12,7 @@ class Search extends Model
         ->orWhere('body', 'LIKE', "%{$q}%")
         // ->get()
         ;
+        $news['link'] = 'news';
         // ->paginate(1);
         $model = \App\Slider::select('id','title','body','image')
         ->whereTranslation('title','LIKE',"%{$q}%")

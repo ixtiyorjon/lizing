@@ -34,6 +34,7 @@
         <div class="col-12 col-md-8">
           <div class="posts-area">
             <!-- Single Blog Post Area -->
+            {{ dd($model) }}
             @foreach($model as $value)
             <div class="single-blog-post-area mb-50 wow fadeInUp" data-wow-delay="100ms">
               <h6><i class="calendar" style="  -webkit-mask: url(/img/calendar.svg);mask: url(/img/calendar.svg);"></i>
