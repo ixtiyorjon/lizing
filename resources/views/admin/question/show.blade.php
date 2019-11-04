@@ -6,20 +6,20 @@
 		<form action="/question" method="post">
 			@csrf
 		  <div class="row" >
-		    <div class="col-lg-12">
-		    	<label>F  I  O</label>
+		    <div>
+		    	<label>Ф И Ш</label>
 		      <input type="text" class="form-control" required name="name" value="{{ $model->name }}">
-		    </div>
-		    <div class="col-lg-12">
-		    	<label>Email</label>
+		    </div><br>
+		    <div>
+		    	<label>почта</label>
 		      <input type="email" class="form-control" required name="email" value="{{ $model->email }}">
-		    </div>
+		    </div><br>
 		    <div class="col-12">
-		    	<label>Savol</label>
+		    	<label>вопросы</label>
 		      <textarea name="body" class="form-control" required cols="30" rows="10">{{ $model->body }}</textarea>
 		    </div>
 		    <div class="col-12">
-		      <button type="submit" class="btn btn-primary">Saqlash</button>
+		      <button type="submit" class="btn btn-primary">Сохранить</button>
 		    </div>
 		  </div>
 		</form>

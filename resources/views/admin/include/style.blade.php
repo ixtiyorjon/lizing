@@ -49,7 +49,7 @@
 	}
 	#parametr{
 		border: 1px solid #333;
-	    padding: 10px;
+	    padding: 5px;
 	    background: #337ab7;
 	    color: #fff;
 	    text-decoration: none;

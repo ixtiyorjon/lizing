@@ -6,7 +6,7 @@
 
       $('#add').click(function(){  
            i++;  
-           $('#dynamic_field').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="name['+i+'][name_en]" required placeholder="Name en" class="form-control name_list" /></td><td><input type="text" name="name['+i+'][name_ru]" required placeholder="Name ru" class="form-control name_list" /></td><td><input type="text" name="name['+i+'][name_uz]" required placeholder="Name uz" class="form-control name_list" /></td><td><input type="text" name="name['+i+'][name_uzk]" required placeholder="Name uzk" class="form-control name_list" /></td><td><input type="text" name="name['+i+'][value]" required placeholder="Value ( number )" class="form-control name_list" /></td><td style="display: none"><input type="text" name="name['+i+'][texnics_id]" value="{{ $id }}" class="form-control name_list"></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');  
+           $('#dynamic_field').append('<tr id="row'+i+'" class="dynamic-added"><td><input type="text" name="name['+i+'][name_en]" required placeholder="Название en" class="form-control name_list" /></td><td><input type="text" name="name['+i+'][name_ru]" required placeholder="Название ru" class="form-control name_list" /></td><td><input type="text" name="name['+i+'][name_uz]" required placeholder="Название uz" class="form-control name_list" /></td><td><input type="text" name="name['+i+'][name_uzk]" required placeholder="Название uzk" class="form-control name_list" /></td><td><input type="text" name="name['+i+'][value]" required placeholder="Значение ( номер )" class="form-control name_list" /></td><td style="display: none"><input type="text" name="name['+i+'][texnics_id]" value="{{ $id }}" class="form-control name_list"></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');  
       });  
       $(document).on('click', '.btn_remove', function(){  
            var button_id = $(this).attr("id");   
@@ -48,7 +48,7 @@
                 }  
            }); 
         }else{
-          alert('Maydonlari to`liq kiritish shart');
+          alert('Поля обязательны для заполнения');
         } 
       }); 
       
@@ -166,7 +166,7 @@
             });
           })
           .fail(function() {
-              alert("So`rov bajarilmadi qayta urinib koring");
+              alert("Запрос не выполнен, попробуйте еще раз");
               $(this).show();
           });
       });

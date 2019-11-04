@@ -2,18 +2,18 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col" class="td1">Paramert nomi ( en )</th>
-          <th scope="col" class="td1">Paramert nomi ( ru )</th>
-          <th scope="col" class="td1">Paramert nomi ( uz )</th>
-          <th scope="col" class="td1">Paramert nomi (uzk)</th>
-          <th scope="col" class="td2">Qiymati (raqam)</th>
+          <th scope="col" class="td1">параметра ( en )</th>
+          <th scope="col" class="td1">параметра ( ru )</th>
+          <th scope="col" class="td1">параметра ( uz )</th>
+          <th scope="col" class="td1">параметра (uzk)</th>
+          <th scope="col" class="td2"> Значение </th>
           <th style="display: none" class="td3">tex id</th>
           <th class="td3">MVC</th>
         </tr>
       </thead>
       <tbody>
         @if(count($model)==0)
-          <tr scope="row"><th colspan="7" style="text-align: center;">Malumot yo`q</th></tr>
+          <tr scope="row"><th colspan="7" style="text-align: center;">Нет информации</th></tr>
         @endif
         <?php $i=1; foreach($model as $value) : ?>
           <tr>

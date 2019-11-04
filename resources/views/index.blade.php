@@ -338,6 +338,13 @@
                                 </thead>
                                 <tbody>
                                  
+                                    @for ($i = 1; $i <= count($valyuta); $i++) 
+                                    <tr>
+                                        <td class="text-center">{{ $valyuta[$i]['Ccy'] }}</td>
+                                        <td>{{ $valyuta[$i]['summ'] }}</td>
+                                        <td><span class="{{ ($valyuta[$i]['Diff']>=0)?'oi oi-caret-top':'oi oi-caret-top' }}"></span><?=$valyuta[$i]['Diff']?></td>
+                                    </tr>
+                                  @endfor
                                     
                                 </tbody>
                             </table>

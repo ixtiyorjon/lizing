@@ -10,15 +10,18 @@
 @stop
 @section('content')
 	<div class="container">
-		<h3>Savollar va Javoblar </h3><br>
+		<h3>Вопросы и ответы</h3><br>
+		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalCreate">
+	  		Введите новый вопрос
+		</button>
 		<table class="table table-striped table-bordered">
 		  <thead>
 		    <tr>
 		      <th scope="col" style="width: 10px">#</th>
-		      <th scope="col" class="td" style="width: 50px">F I O</th>
-		      <th scope="col" class="td" style="width: 50px">email</th>
-		      <th class="td3">Savollar</th>
-		      <th class="td3" style="width: 100px">Javoblar</th>
+		      <th scope="col" class="td" style="width: 50px">Ф И Ш</th>
+		      <th scope="col" class="td" style="width: 50px">почта</th>
+		      <th class="td3">Вопросы</th>
+		      <th class="td3" style="width: 100px">Ответы</th>
 		      <th scope="col">MVC</th>
 		    </tr>
 		  </thead>
@@ -32,10 +35,15 @@
 			      <td class="td1" style="width: 50px">{{ $value->email }}</td>
 			      <td class="td1">{{ $value->body }}</td>
 			      <td class="td1" style="width: 300px">
-			      	<ul class="list-group">
+			      	<ul class="list-group" style="margin: 0;">
 			      		<li class="list-group-item text-center add_li">
-			      			<button type="button" class="btn btn-primary answer" data-toggle="modal" data-target="#myModal" id="{{ $value->id }}" style="width: 100%; height: 30px;">Javob yozish</button>
+			      			<button type="button" class="btn btn-primary answer" data-toggle="modal" data-target="#myModal" id="{{ $value->id }}" style="width: 100%; height: 30px;">Ответы</button>
 			      		</li>
+			      		@if(count(\App\Answer::getAll($value->id))==0)
+			      			<li class="list-group-item" style="color: red;font-weight: bold; padding: 0 10px;">
+			      				Нет ответа
+						    </li>
+						@endif
 			      		@foreach(\App\Answer::getAll($value->id) as $answer)
 							<li class="list-group-item">{{str_limit($answer->body,20) }}
 							  	<div class="pull-right">

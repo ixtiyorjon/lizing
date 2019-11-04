@@ -18,7 +18,7 @@ class TexnicController extends Controller
      */
     public function index()
     {
-        $model = Texnic::get();
+        $model = Texnic::paginate(15);
 
         return view('admin.texnics.index',[
             'model' => $model

@@ -7,53 +7,53 @@
     	@csrf
     	<input type="hidden" name="_method" value="PUT">
     	<div class="form-group col-lg-3">
-			    <label for="email">Texnika nomi ( en ):</label>
+			    <label for="email">Наименование тех. ( en ):</label>
 			    <input type="text" class="form-control" required name="name_en" value="{{ $model->getTranslatedAttribute('name','en') }}">
 			  </div>
 			  <div class="form-group col-lg-3">
-			    <label for="email">Texnika nomi ( ru ):</label>
+			    <label for="email">Наименование тех. ( ru ):</label>
 			    <input type="text" class="form-control" required name="name_ru" value="{{ $model->getTranslatedAttribute('name','ru') }}">
 			  </div>
 			  <div class="form-group col-lg-3">
-			    <label for="email">Texnika nomi ( uz ):</label>
+			    <label for="email">Наименование тех. ( uz ):</label>
 			    <input type="text" class="form-control" required name="name_uz" value="{{ $model->getTranslatedAttribute('name','uz') }}">
 			  </div>
 			  <div class="form-group col-lg-3">
-			    <label for="email">Texnika nomi ( uzk ):</label>
+			    <label for="email">Наименование тех. ( uzk ):</label>
 			    <input type="text" class="form-control" required name="name_uzk" value="{{ $model->getTranslatedAttribute('name','uzk') }}">
 			  </div>
-			  <div class="form-group">
+			  <div class="form-group col-lg-12">
 		        {{-- <img width="100px" src="{{ Voyager::image($model->image) }}"/><br> --}}
-			    <label for="pwd">Rasmlar (bir nechta bo'lishi mumkin):</label>
+			    <label for="pwd">Фотографии (может быть несколько):</label>
 			    <input type="file" class="form-control" name="image[]" enctype="multipart/form-data" multiple>
 			    <input type="hidden" class="form-control" name="hidden_image" value="{{ $model->image }}">
 			  </div>
 			  <div class="form-group col-lg-4">
-			    <label for="email">Техника нархи ( сум ):</label>
-			    <input type="text" class="form-control" name="narxi" required placeholder="мисол: 585 210 000" value="{{ $model->narxi }}">
+			    <label for="email">Стоимость оборудования ( сум ):</label>
+			    <input type="text" class="form-control" name="narxi" required placeholder="например: 585 210 000" value="{{ $model->narxi }}">
 			  </div>
 			  <div class="form-group col-lg-4">
-			    <label for="email">Аванс суммаси ( сум ):</label>
-			    <input type="text" class="form-control" name="avans_summ" required placeholder="мисол: 117 042 000" value="{{ $model->avans_summ }}">
+			    <label for="email">Сумма аванса ( сум ):</label>
+			    <input type="text" class="form-control" name="avans_summ" required placeholder="например: 117 042 000" value="{{ $model->avans_summ }}">
 			  </div>
 			  <div class="form-group col-lg-4">
 			    <label for="email">Аванс ( % ):</label>
-			    <input type="text" class="form-control" name="avans" required placeholder="мисол: 20%" value="{{ $model->avans }}">
+			    <input type="text" class="form-control" name="avans" required placeholder="например: 20%" value="{{ $model->avans }}">
 			  </div>
 			  <div class="form-group col-lg-4">
-			    <label for="email">йиллик маржа ( % ):</label>
-			    <input type="text" class="form-control" name="yillik_foiz" required placeholder="мисол: 7%" value="{{ $model->yillik_foiz }}">
+			    <label for="email">годовая маржа ( % ):</label>
+			    <input type="text" class="form-control" name="yillik_foiz" required placeholder="например: 7%" value="{{ $model->yillik_foiz }}">
 			  </div>
 			  <div class="form-group col-lg-4">
-			    <label for="email">Лизинг муддати ( йилгача ):</label>
-			    <input type="text" class="form-control" name="muddat" required placeholder="мисол: 7,10,12" value="{{ $model->muddat }}">
+			    <label for="email">Срок лизинга ( год ):</label>
+			    <input type="text" class="form-control" name="muddat" required placeholder="например: 7,10,12" value="{{ $model->muddat }}">
 			  </div>
 			  <div class="form-group col-lg-4">
-			    <label for="email">Техника етказиб муддати ( кун ):</label>
-			    <input type="text" class="form-control" name="dostavka" required placeholder="мисол: 120" value="{{ $model->dostavka }}">
+			    <label for="email">Доставка оборудования ( день ):</label>
+			    <input type="text" class="form-control" name="dostavka" required placeholder="например: 120" value="{{ $model->dostavka }}">
 			  </div>
 			  <div class="modal-footer">
-			  <button type="submit" class="btn btn-primary">Saqlash</button>
+			  <button type="submit" class="btn btn-primary">Сохранить</button>
 			</div>
 		</form>
 	</div>

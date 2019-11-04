@@ -5,11 +5,11 @@
 		<table class="table table-striped table-bordered">
 		  <thead>
 		    <tr>
-		      <th scope="col" class="td1">Kategoriya nomi ( en )</th>
-		      <th scope="col" class="td1">Kategoriya nomi ( ru )</th>
-		      <th scope="col" class="td1">Kategoriya nomi ( uz )</th>
-		      <th scope="col" class="td1">Kategoriya nomi (uzk)</th>
-		      <th scope="col" class="td1">Rasm</th>
+		      <th scope="col" class="td1">Категории  ( en )</th>
+		      <th scope="col" class="td1">Категории  ( ru )</th>
+		      <th scope="col" class="td1">Категории  ( uz )</th>
+		      <th scope="col" class="td1">Категории  (uzk)</th>
+		      <th scope="col" class="td1">картина</th>
 		    </tr>
 		  </thead>
 		  <tbody>
@@ -23,10 +23,10 @@
 		  </tbody>
 		</table>
 		@if(!Request::ajax())
-		<a href="/admin/texnics-category" class="btn btn-success">Orqaga</a>
+		<a href="/admin/texnics-category" class="btn btn-success">назад</a>
 		@endif
-		<button type="button" class=" btn btn-success ozgartirish" data-dismiss="modal" aria-label="Close">Oynani yopish</button>  
-		<a href="/admin/texnics-category/{{ $model->id }}/edit" class="btn btn-primary ozgartirish pull-right"><i class="glyphicon glyphicon-pencil"></i>  O'zgartirish</a>
+		<button type="button" class=" btn btn-success ozgartirish" data-dismiss="modal" aria-label="Close">закрыта</button>  
+		<a href="/admin/texnics-category/{{ $model->id }}/edit" class="btn btn-primary ozgartirish pull-right"><i class="glyphicon glyphicon-pencil"></i>Изменение</a>
 	</div>
 {{-- @stop --}}
 <script type="text/javascript">

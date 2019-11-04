@@ -34,7 +34,7 @@
         <div class="col-12 col-md-8">
           <div class="posts-area">
             <!-- Single Blog Post Area -->
-            {{ dd($model) }}
+            {{-- {{ dd($model) }} --}}
             @foreach($model as $value)
             <div class="single-blog-post-area mb-50 wow fadeInUp" data-wow-delay="100ms">
               <h6><i class="calendar" style="  -webkit-mask: url(/img/calendar.svg);mask: url(/img/calendar.svg);"></i>
@@ -43,11 +43,13 @@
                   echo (App::getLocale()=='uzk')?$date->locale('uz')->isoFormat('LLLL'):$date->locale(App::getLocale())->isoFormat('LLLL');
                 ?>
               </h6>
-              <a href="/news/more/{{ $value->slug }}" class="post-title">{{ $value->title }}</a>
-              <img src="{{ Voyager::image($value->image) }}" alt="" class="post-thumb">
-              <p class="post-excerpt">
+              <a href="/texnics_more/{{ $value->slug }}" class="post-title">{{ $value->getTranslatedAttribute('name',App::getLocale()) }}</a>
+              <?php $images= json_decode($value->image)?>
+              <img src="/storage/{{ str_replace('public','',$images[0]) }}" alt="{{ $value->getTranslatedAttribute('name',App::getLocale()) }}" class="post-thumb">
+              {{-- <img src="{{ Voyager::image($value->image) }}" alt="" class="post-thumb"> --}}
+              {{-- <p class="post-excerpt">
                 {{ str_limit($value->body,100) }}
-              </p>
+              </p> --}}
             </div>
             @endforeach
             <!-- Single Blog Post Area -->

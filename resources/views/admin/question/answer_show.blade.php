@@ -7,11 +7,11 @@
 			@csrf
 		  <div class="row" >
 		    <div class="col-lg-12">
-		    	<label>Javob</label>
+		    	<label>ответ</label>
 		      <textarea name="body" class="form-control" required cols="30" rows="10">{{ $model->body }}</textarea>
 		    </div>
 		    <div class="col-12">
-		      <button type="submit" class="btn btn-primary">Saqlash</button>
+		      <button type="submit" class="btn btn-primary">Сохранить</button>
 		    </div>
 		  </div>
 		</form>

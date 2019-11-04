@@ -5,11 +5,11 @@
 		<table class="table table-striped table-bordered">
 		  <thead>
 		    <tr>
-		      <th scope="col" class="td1">Texnika nomi ( en )</th>
-		      <th scope="col" class="td1">Texnika nomi ( ru )</th>
-		      <th scope="col" class="td1">Texnika nomi ( uz )</th>
-		      <th scope="col" class="td1">Texnika nomi ( uzk )</th>
-		      <th scope="col" class="td1">Rasm</th>
+		      <th scope="col" class="td1">Техника ( en )</th>
+		      <th scope="col" class="td1">Техника ( ru )</th>
+		      <th scope="col" class="td1">Техника ( uz )</th>
+		      <th scope="col" class="td1">Техника ( uzk )</th>
+		      <th scope="col" class="td1">Фотографии</th>
 		    </tr>
 		  </thead>
 		  <tbody>
@@ -29,12 +29,12 @@
 		<table class="table table-striped table-bordered">
 		  <thead>
 		    <tr>
-		      <th scope="col" class="td1">Narxi</th>
-		      <th scope="col" class="td1">Avans summa</th>
-		      <th scope="col" class="td1">Avans</th>
-		      <th scope="col" class="td1">Yillik foiz</th>
-		      <th scope="col" class="td1">Muddat</th>
-		      <th scope="col" class="td1">Dostavka</th>
+		      <th scope="col" class="td1">Стоимость обю</th>
+		      <th scope="col" class="td1">Сумма аванса</th>
+		      <th scope="col" class="td1">Аванс</th>
+		      <th scope="col" class="td1">годовая маржа</th>
+		      <th scope="col" class="td1">Срок лизинга</th>
+		      <th scope="col" class="td1">Доставка</th>
 		    </tr>
 		  </thead>
 		  <tbody>
@@ -49,10 +49,10 @@
 		  </tbody>
 		</table>
 		@if(!Request::ajax())
-		<a href="/admin/texnics-subcategory" class="btn btn-success">Orqaga</a>
+		<a href="/admin/texnics-subcategory" class="btn btn-success">назад</a>
 		@endif
-		<button type="button" class=" btn btn-success ozgartirish" data-dismiss="modal" aria-label="Close">Yopish</button>  
-		<a href="/admin/texnic/{{ $model->id }}/edit" class="btn btn-primary ozgartirish pull-right"><i class="glyphicon glyphicon-pencil"></i>  O'zgartirish</a>
+		<button type="button" class=" btn btn-success ozgartirish" data-dismiss="modal" aria-label="Close">закрыта</button>  
+		<a href="/admin/texnic/{{ $model->id }}/edit" class="btn btn-primary ozgartirish pull-right"><i class="glyphicon glyphicon-pencil"></i>Изменение</a>
 	</div>
 {{-- @stop --}}
 <script type="text/javascript">

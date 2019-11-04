@@ -3,33 +3,33 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Kategoriya yaratish oynasi</h4>
+        <h4 class="modal-title" id="myModalLabel">Создать категории</h4>
       </div>
       <div class="modal-body">
         <form action="{{ $cat_url }}" method="post" enctype="multipart/form-data">
         	@csrf
-				  <div class="form-group col-lg-3">
-				    <label for="email">Kategoriya nomi ( en ):</label>
+				  <div class="form-group col-lg-6">
+				    <label for="email">Название категории ( en ):</label>
 				    <input type="text" class="form-control" required name="title_en" id="title">
 				  </div>
-				  <div class="form-group col-lg-3">
-				    <label for="email">Kategoriya nomi ( ru ):</label>
+				  <div class="form-group col-lg-6">
+				    <label for="email">Название категории ( ru ):</label>
 				    <input type="text" class="form-control" required name="title_ru" id="title">
 				  </div>
-				  <div class="form-group col-lg-3">
-				    <label for="email">Kategoriya nomi ( uz ):</label>
+				  <div class="form-group col-lg-6">
+				    <label for="email">Название категории ( uz ):</label>
 				    <input type="text" class="form-control" required name="title_uz" id="title">
 				  </div>
-				  <div class="form-group col-lg-3">
-				    <label for="email">Kategoriya nomi ( uzk ):</label>
+				  <div class="form-group col-lg-6">
+				    <label for="email">Название категории ( uzk ):</label>
 				    <input type="text" class="form-control" required name="title_uzk" id="title">
 				  </div>
-				  <div class="form-group">
-				    <label for="pwd">Rasm:</label>
+				  <div class="form-group col-lg-12">
+				    <label for="pwd">картина:</label>
 				    <input type="file" class="form-control" required name="image">
 				  </div>
 				  <div class="modal-footer">
-				  <button type="submit" class="btn btn-primary">Saqlash</button>
+				  <button type="submit" class="btn btn-primary">сохранение</button>
 				</div>
 				</form>
       </div>
@@ -42,37 +42,37 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Quyi kategoriya yaratish oynasi</h4>
+        <h4 class="modal-title" id="myModalLabel">Окно создания подкатегории</h4>
       </div>
       <div class="modal-body">
         <form action="{{ $subcat_url }}" method="POST" enctype="multipart/form-data">
         	@csrf
 		  <div class="form-group col-lg-3">
-		    <label for="email">Quyi kategoriya nomi (en):</label>
+		    <label for="email">Подкатегория (en):</label>
 		    <input type="text" class="form-control" required name="title_en" id="s_title">
 		  </div>
 		  <div class="form-group col-lg-3">
-		    <label for="email">Quyi kategoriya nomi (ru):</label>
+		    <label for="email">Подкатегория (ru):</label>
 		    <input type="text" class="form-control" required name="title_ru" id="title">
 		  </div>
 		  <div class="form-group col-lg-3">
-		    <label for="email">Quyi kategoriya nomi (uz):</label>
+		    <label for="email">Подкатегория (uz):</label>
 		    <input type="text" class="form-control" required name="title_uz" id="title">
 		  </div>
 		  <div class="form-group col-lg-3">
-		    <label for="email">Quyi kategoriya nomi (uzk):</label>
+		    <label for="email">Подкатегория (uzk):</label>
 		    <input type="text" class="form-control" required name="title_uzk" id="title">
 		  </div>
-		  <div class="form-group">
-		    <label for="pwd">Rasm:</label>
+		  <div class="form-group col-lg-12">
+		    <label for="pwd">картина:</label>
 		    <input type="file" class="form-control" required name="image">
 		  </div>
 		  <div class="form-group" style="display: none">
-		    <label for="email">Kategoriyani tanlang:</label>
+		    <label for="email">Выберите категорию:</label>
 		    <input type="text" class="form-control" name="texnics_categories_id" id="texnics_categories_id">
 		  </div>
 		  <div class="modal-footer">
-			  <button type="submit" class="btn btn-primary">Saqlash</button>
+			  <button type="submit" class="btn btn-primary">сохранение</button>
 			</div>
 		</form>
       </div>
@@ -84,7 +84,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Malumotni ko'rish</h4>
+        <h4 class="modal-title" id="myModalLabel">Показать информация</h4>
       </div>
       <div class="modal-body" id="modalContent1">
       	<img style='width:200px;display:block; margin: 0 auto;' src='/img/ajax.gif'>
