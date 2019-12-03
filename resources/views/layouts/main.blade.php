@@ -228,6 +228,8 @@
   <script src="/js/jarallax-video.min.js"></script>
   <!-- Active js -->
   <script type="text/javascript" src="/js/datatables.min.js"></script>
+
+  <script type="text/javascript" src="/js/calculation.js"></script>
     
     
   <script src="/js/active.js"></script>

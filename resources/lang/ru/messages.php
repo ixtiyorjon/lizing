@@ -130,7 +130,12 @@
 		'Indicator' => 'Индикатор',
 		'Our partners' => 'Наши партнеры',
 		'More' => 'Больше',
-
+		'Доставка оборудования ( день )' => 'Доставка оборудования ( день )',
+		'Leasing payment is the date of payment' => 'Лизинговый платеж - это дата платежа',
+		'The residual value of the technique' => 'Остаточная стоимость техники',
+		'Main debt' => 'Основной долг',
+		'Margin' => 'Маржа',
+		'Lease payment amount every 3 months' => 'Сумма лизингового платежа каждые 3 месяца',
 	];
 
 

@@ -92,6 +92,8 @@ class Controller extends BaseController
         $arr_foiz = preg_split ("/\,/", $model->yillik_foiz);
         $arr_muddat = preg_split ("/\,/", $model->muddat);
         $arr_avans = preg_split ("/\,/", $model->avans);
+        $avans_summ = '<option>'.$model->avans_summ.'</option>';
+        $dostavka = '<option>'.$model->dostavka.'</option>';
 
         $yillik_foiz='';
         for ($i=0; $i < count($arr_foiz); $i++) { 
@@ -112,7 +114,9 @@ class Controller extends BaseController
             't_sum' => $t_sum,
             'yillik_foiz' => $yillik_foiz,
             'muddat' => $muddat,
-            'avans' => $avans
+            'avans' => $avans,
+            'avans_summ' => $avans_summ,
+            'dostavka' => $dostavka,
         ]); 
     }
 }

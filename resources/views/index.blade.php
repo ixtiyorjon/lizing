@@ -333,18 +333,17 @@
                                     <tr>
                                         <td class="text-center"><i class="icon-circle"></i></td>
                                         <td>@lang('messages.MB Course')</td>
-                                        <td colspan="2" class="text-center">@lang('messages.Indicator')</td>
+                                        {{-- <td colspan="2" class="text-center">@lang('messages.Indicator')</td> --}}
                                     </tr>
                                 </thead>
                                 <tbody>
                                  
                                     @for ($i = 1; $i <= count($valyuta); $i++) 
-                                    <tr>
-                                        <td class="text-center">{{ $valyuta[$i]['Ccy'] }}</td>
-                                        <td>{{ $valyuta[$i]['summ'] }}</td>
-                                        <td><span class="{{ ($valyuta[$i]['Diff']>=0)?'oi oi-caret-top':'oi oi-caret-top' }}"></span><?=$valyuta[$i]['Diff']?></td>
-                                    </tr>
-                                  @endfor
+                                        <tr>
+                                            <td class="text-center">{{ $valyuta[$i]['code'] }}</td>
+                                            <td>{{ $valyuta[$i]['cb_price'] }}</td>
+                                        </tr>
+                                    @endfor
                                     
                                 </tbody>
                             </table>

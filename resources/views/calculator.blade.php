@@ -65,7 +65,7 @@
                     <div class="col-12 col-md-4">
                         <div class="form-group">
                             <label for="inputState3">@lang('messages.Cost of machinery'):(@lang('messages.ml, sum'))</label>
-                            <select id="inputState3" class="form-control summa">
+                            <select id="tex_narxi" class="form-control summa">
                                 <option selected id="t_sum"></option>
                             </select>
                         </div>
@@ -98,17 +98,17 @@
                     <div class="col-12 col-md-4">
                         <div class="form-group">
                             <label for="inputState4">@lang('messages.Prepayment amount'):(@lang('messages.ml, sum'))</label>
-                            <select id="inputState4" class="form-control summa">
-                                <option>180 000,000</option>
+                            <select id="avans_summ" class="form-control summa">
+                                
                             </select>
                         </div>
                     </div>
 
                     <div class="col-12 col-md-4">
                         <div class="form-group">
-                            <label for="inputState3">@lang('messages.Lease amount of the contract'):(@lang('messages.ml, sum'))</label>
-                            <select id="inputState3" class="form-control summa">
-                                <option>1 844 257,944</option>
+                            <label for="inputState3">@lang('messages.Доставка оборудования ( день )'):</label>
+                            <select id="delivery" class="form-control summa">
+                                
                             </select>
                         </div>
                     </div>
@@ -116,13 +116,14 @@
                     <div class="col-12 col-md-4">
                         <div class="form-group">
                             <label for="inputState3">@lang('messages.Date of leasing the machinery'):</label>
-                            <input type='text' class='datepicker-here form-control' placeholder="Выберите даты" />
+                            <input id="datetime" type="date" class='datepicker-here form-control' placeholder="Выберите даты" />
                         </div>
                     </div>
                     <div class="col-12 three-buttons">
-                        <button type="button" class="btn btn-light">@lang('messages.Cleaning')</button>
-                        <button type="button" class="btn btn-primary">@lang('messages.Export to Excel')</button>
-                        <button type="button" class="btn btn-success">@lang('messages.Calculation')</button>
+                        <button id="clearCalc" type="button" class="btn btn-light"  style="display: none">@lang('messages.Cleaning')</button>
+                        <button type="button" id="exportBtn" onclick="fnExcelReport();" class="btn btn-primary" style="display: none">@lang('messages.Export to Excel')</button>
+                        <button type="button" class="btn btn-success" id="calculation" >@lang('messages.Calculation')</button>
+                        <iframe id="txtArea1" style="display:none"></iframe>
                     </div>
 
                 </div>
@@ -140,83 +141,19 @@
             </div>
             
             <div class="table-responsive">
-                <table class="table table-sm kanrez axad">
+                <table class="table table-sm kanrez axad" id="headerTable">
                 <thead>
                     <tr>
-                        <th scope="col">Техниканинг қолдиқ қиймати</th>
-                        <th scope="col">Лизинг тўлови тўлашнинг охирги санаси</th>
-                        <th scope="col">Кунлар сони</th>
-                        <th scope="col">Техниканинг ҳар 3 ойлик лизинг даврига тўғри келадиган қиймати қисми</th>
-                        <th scope="col">Ҳар 3 ойлик давр учун ҳисобланган лизинг фоизи суммаси миқдори</th>
-                        <th scope="col">Ҳар 3 ойда тўланадиган лизинг тўлови миқдори</th>
+                        <th scope="col"> № </th>
+                        <th scope="col">@lang('messages.Leasing payment is the date of payment')</th>
+                        <th scope="col">@lang('messages.The residual value of the technique')</th>
+                        <th scope="col">@lang('messages.Main debt')</th>
+                        <th scope="col">@lang('messages.Margin')</th>
+                        <th scope="col">@lang('messages.Lease payment amount every 3 months')</th>
                     </tr>
                 </thead>
-                <tbody class="table-mycolor">
-                    <tr>
-                        <td scope="row">1</td>
-                        <td>720 000,000 </td>
-                        <td>31.05.2019 </td>
-                        <td>10 </td>
-                        <td>1 970,983 </td>
-                        <td>4 931,507</td>
-                        <td>6 902,490</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">2</td>
-                        <td>720 000,000 </td>
-                        <td>30.06.2019 </td>
-                        <td>30 </td>
-                        <td>5 912,948</td>
-                        <td>14 794,521</td>
-                        <td>20 707,469</td>
-                    </tr>
-                    <tr class="table-mycolor2">
-                        <td scope="row">#</td>
-                        <td>720 000,000 </td>
-                        <td>30.06.2019 </td>
-                        <td>40 </td>
-                        <td>7 883,931</td>
-                        <td>19 726,027</td>
-                        <td>27 609,958</td>
-                    </tr>
-                </tbody>
-                <tbody class="table-mycolor">
-                    <tr>
-                        <td scope="row">3</td>
-                        <td>712 116,069 </td>
-                        <td>31.07.2019</td>
-                        <td>31</td>
-                        <td>6 110,047</td>
-                        <td>15 120,273 </td>
-                        <td>21 230,319</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">4</td>
-                        <td>712 116,069</td>
-                        <td>31.08.2019 </td>
-                        <td>31 </td>
-                        <td>6 110,047</td>
-                        <td>15 120,273</td>
-                        <td>21 230,319</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">5</td>
-                        <td>712 116,069</td>
-                        <td>30.09.2019 </td>
-                        <td>30 </td>
-                        <td>5 912,948</td>
-                        <td>14 632,522</td>
-                        <td>20 545,470</td>
-                    </tr>
-                    <tr class="table-mycolor2">
-                        <td scope="row">#</td>
-                        <td>712 116,069</td>
-                        <td>30.09.2019 </td>
-                        <td>90 </td>
-                        <td>18 133, 042</td>
-                        <td>44 873 068‬</td>
-                        <td>63 006 108</td>
-                    </tr>
+                <tbody class="table-mycolor" id="t_body">
+                    
                 </tbody>
             </table>
             </div>

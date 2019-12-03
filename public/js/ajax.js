@@ -1,12 +1,4 @@
 
-	// $('.menyu').click(function(e){
-	// 	e.preventDefault();
-
-	// 	$('#AjaxContent')
-	// 	.load($(this).attr('href'));
-
-	// });	
-
 	$.ajaxSetup({
           headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -60,7 +52,6 @@
           },
           success:function(data)  
           {
-          	// console.log($(this).val());
             $("#table").html(data['model']);
           }  
         });  
@@ -77,12 +68,13 @@
           },
           success:function(data)  
           {
-            console.log(data);
-            // console.log($(this).val());
+            // console.log(data);
             $("#t_sum").html(data['t_sum']);
             $("#yillik_foiz").html(data['yillik_foiz']);
             $("#muddat").html(data['muddat']);
             $("#avans").html(data['avans']);
+            $("#avans_summ").html(data['avans_summ']);
+            $("#delivery").html(data['dostavka']);
           }  
         });  
     });

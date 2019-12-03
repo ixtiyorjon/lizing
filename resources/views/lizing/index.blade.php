@@ -39,40 +39,19 @@
         </div>
 
         <div class="col-12 col-sm-12 col-lg-3">
-  
-           
-            <!--<div class="sticky" id='cssmenua2'>-->
-            <!--    <ul>-->
-            <!--        @foreach($texnics_category as $value)-->
-            <!--            <li class='active has-sub'><a href='/texnics/{{ $value->slug }}'><span>{{ $value->getTranslatedAttribute('title',App::getLocale()) }}</span></a>-->
-            <!--                <ul>-->
-            <!--                    @foreach(\App\TexnicsSubcategory::getTexnics($value->id) as $sub_cat)-->
-            <!--                      <li><a href='/texnics/{{ $value->slug }}/{{ $sub_cat->slug }}'><span>{{ $sub_cat->getTranslatedAttribute('title',App::getLocale()) }}</span></a></li>-->
-            <!--                    @endforeach-->
-            <!--                </ul>-->
-            <!--            </li>-->
-            <!--        @endforeach-->
-            <!--    </ul>-->
-            <!--</div>-->
             
             <div id='cssmenua3'>
-               <ul>
-                  <!--<li class='active'><a href='#'><span>Home</span></a></li>-->
-                  <li class='has-sub'><a href='#'><span>Products</span></a>
-                     <ul>
-                        <li><a href='#'><span>Product 1</span></a></li>
-                        <li><a href='#  '><span>Product 2</span></a></li>
-                        <li class='last'><a href='#'><span>Product 3</span></a></li>
-                     </ul>
+              <ul>
+                @foreach($texnics_category as $value)
+                <li class='has-sub'><a href='/texnics/{{ $value->slug }}'><span>{{ $value->getTranslatedAttribute('title',App::getLocale()) }}</span></a>
+                  <ul>
+                    @foreach(\App\TexnicsSubcategory::getTexnics($value->id) as $sub_cat)
+                      <li><a href='/texnics/{{ $value->slug }}/{{ $sub_cat->slug }}'><span>{{ $sub_cat->getTranslatedAttribute('title',App::getLocale()) }}</span></a></li>
+                    @endforeach
+                  </ul>
                   </li>
-                  <li class='has-sub'><a href='#'><span>About</span></a>
-                     <ul>
-                        <li><a href='#'><span>Company</span></a></li>
-                        <li class='last'><a href='#'><span>Contact</span></a></li>
-                     </ul>
-                  </li>
-                  <li class='last'><a href='#'><span>Contact</span></a></li>
-               </ul>
+                  @endforeach
+              </ul>
             </div>
           
         </div>

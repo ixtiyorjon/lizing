@@ -11,66 +11,52 @@ class AppModels extends Model
     // protected $translatable = ['title', 'body'];
 
     public static function valuta(){
-        
-    $url = "http://cbu.uz/ru/arkhiv-kursov-valyut/json/";
-    $ch = curl_init();
-    $timeout = 0;
+       $valuta = file_get_contents('https://nbu.uz/uz/exchange-rates/json/');
 
-    curl_setopt ($ch, CURLOPT_URL, $url);
-    curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-
-    $valuta = curl_exec($ch);
-
-    curl_close($ch);
-
-    preg_match("/<span class=bld>(.*)<\/span>/", $valuta,  $converted);
-    $converted = preg_replace("/[^0-9.]/", "", $converted);
-// dd($valuta);
-    $valuta = json_decode($valuta, true); 
+        $valuta = json_decode($valuta, true); 
         $valyuta = [
             1 => [
-                    'summ' => $valuta[0]['Rate'],
-                    'Ccy' => $valuta[0]['Ccy'],
-                    'Diff' => $valuta[0]['Diff'],
-                    'Date' => $valuta[0]['Date']
-                    ],
+                    'title' => $valuta[23]['title'],
+                    'code' => $valuta[23]['code'],
+                    'cb_price' => $valuta[23]['cb_price'],
+                    'Date' => $valuta[23]['date']
+                ],
             2 => [
-                    'summ' => $valuta[1]['Rate'],
-                    'Ccy' => $valuta[1]['Ccy'],
-                    'Diff' => $valuta[1]['Diff'],
-                    'Date' => $valuta[1]['Date'],
-
-                    ],
+                    'title' => $valuta[18]['title'],
+                    'code' => $valuta[18]['code'],
+                    'cb_price' => $valuta[18]['cb_price'],
+                    'Date' => $valuta[18]['date']
+                ],
             3 => [
-                    'summ' => $valuta[2]['Rate'],
-                    'Ccy' => $valuta[2]['Ccy'],
-                    'Diff' => $valuta[2]['Diff'],
-                    'Date' => $valuta[2]['Date'],
-
-                    ],
+                    'title' => $valuta[7]['title'],
+                    'code' => $valuta[7]['code'],
+                    'cb_price' => $valuta[7]['cb_price'],
+                    'Date' => $valuta[7]['date']
+                ],
             4 => [
-                    'summ' => $valuta[4]['Rate'],
-                    'Ccy' => $valuta[4]['Ccy'],
-                    'Diff' => $valuta[4]['Diff'],
-                    'Date' => $valuta[4]['Date'],
-
-                    ],
+                    'title' => $valuta[3]['title'],
+                    'code' => $valuta[3]['code'],
+                    'cb_price' => $valuta[3]['cb_price'],
+                    'Date' => $valuta[3]['date']
+                ],
             5 => [
-                    'summ' => $valuta[13]['Rate'],
-                    'Ccy' => $valuta[13]['Ccy'],
-                    'Diff' => $valuta[13]['Diff'],
-                    'Date' => $valuta[13]['Date'],
-
-                    ],
+                   'title' => $valuta[0]['title'],
+                   'code' => $valuta[0]['code'],
+                    'cb_price' => $valuta[0]['cb_price'],
+                    'Date' => $valuta[0]['date']
+                ],
             6 => [
-                    'summ' => $valuta[3]['Rate'],
-                    'Ccy' => $valuta[3]['Ccy'],
-                    'Diff' => $valuta[3]['Diff'],
-                    'Date' => $valuta[3]['Date'],
-
-                    ]
+                    'title' => $valuta[1]['title'],
+                    'code' => $valuta[1]['code'],
+                    'cb_price' => $valuta[1]['cb_price'],
+                    'Date' => $valuta[1]['date']
+                ],
+            7 => [
+                    'title' => $valuta[8]['title'],
+                    'code' => $valuta[8]['code'],
+                    'cb_price' => $valuta[8]['cb_price'],
+                    'Date' => $valuta[8]['date']
+                ],
         ];
         return $valyuta;
     }

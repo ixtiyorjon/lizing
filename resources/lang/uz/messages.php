@@ -100,7 +100,7 @@
 		'Leasing calculator' => 'Lizing kalkulyatori',
 		'Leasing payments calculator' => 'Lizing to\'lovlari kalkulyatori',
 		'Annual leasing rate' => 'Yillik lizing stavkasi',
-		'Prepayment rate' => 'Oldindan to\'lov summasi',
+		'Prepayment rate' => 'Predoplata ( % )',
 		'Prepayment amount' => 'Oldindan to\'lov miqdori (avans)',
 		'Lease amount of the contract' => 'Shartnomani ijaraga berish miqdori',
 		'Date of leasing the machinery' => 'Texnikani lizingga olish sanasi',
@@ -130,6 +130,12 @@
 		'Indicator' => 'Ko\'rsatkich',
 		'Our partners' => 'Bizning hamkorlarimiz',
 		'More' => 'Ko\'proq',
+		'Доставка оборудования ( день )' => 'Uskunalarni etkazib berish ( kun )',
+		'Leasing payment is the date of payment' => 'Lizing to\'lash sanasi',
+		'The residual value of the technique' => 'Texnikaning qoldiq qiymati',
+		'Main debt' => 'Asosiy qarz',
+		'Margin' => 'Marja',
+		'Lease payment amount every 3 months' => 'Har uch oydagi to\'lovi miqdori',
 
 	];
 

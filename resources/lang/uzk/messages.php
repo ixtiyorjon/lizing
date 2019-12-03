@@ -100,7 +100,7 @@
 		'Leasing calculator' => 'Лизинг калкулятори',
 		'Leasing payments calculator' => 'Лизинг тўловлари калкулятори',
 		'Annual leasing rate' => 'Йиллик лизинг ставкаси',
-		'Prepayment rate' => 'Олдиндан тўлов суммаси',
+		'Prepayment rate' => 'Предоплата ( % )',
 		'Prepayment amount' => 'Олдиндан тўлов миқдори (аванс)',
 		'Lease amount of the contract' => 'Шартномани ижара суммаси',
 		'Date of leasing the machinery' => 'Техникани лизингга олиш санаси',
@@ -130,6 +130,12 @@
 		'Indicator' => 'Кўрсаткич',
 		'Our partners' => 'Бизнинг ҳамкорларимиз',
 		'More' => 'Кўпроқ',
+		'Доставка оборудования ( день )' => 'Ускуналарни етказиб бериш ( кун )',
+		'Leasing payment is the date of payment' => 'Лизинг тўлаш санаси',
+		'The residual value of the technique' => 'Техниканинг қолдиқ қиймати',
+		'Main debt' => 'Aсосий қарз',
+		'Margin' => 'Маржа',
+		'Lease payment amount every 3 months' => 'Ҳар уч ойдаги тўлови миқдори',
 
 	];
 
